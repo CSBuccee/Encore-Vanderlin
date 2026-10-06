@@ -1,6 +1,6 @@
 /datum/action/cooldown/spell/misty_step
 	name = "Misty Step"
-	desc = "Teleport to a targeted location within your field of view. Limited to a range of 5 tiles. Only works on the same plane as the caster."
+	desc = "Teleport to a targeted location you can see, even past windows, bars or other obstacles. Limited to a range of 5 tiles. Only works on the same plane as the caster."
 	button_icon = 'icons/mob/actions/roguespells.dmi'
 	button_icon_state = "rune6"
 	sound = 'sound/magic/blink.ogg'
@@ -67,9 +67,9 @@
 		to_chat(owner, span_warning("That location is too far away! I can only blink up to [max_range] tiles."))
 		return FALSE
 
-	var/path_err = validate_walk_path(start, T)
-	if(path_err)
-		to_chat(owner, span_warning(path_err))
+	// Only needs line of sight, so blinking past windows, bars, gates and open doors is fine
+	if(!can_see(start, T, max_range))
+		to_chat(owner, span_warning("I cannot see that location clearly enough to blink there!"))
 		return FALSE
 
 	owner.visible_message(span_warning("<b>[owner]'s body begins to shimmer with arcane energy as [owner.p_they()] prepare[owner.p_s()] to blink!</b>"),
