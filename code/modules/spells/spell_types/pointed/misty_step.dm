@@ -24,6 +24,7 @@
 
 	spell_impact_intensity = SPELL_IMPACT_NONE
 	spell_requirements = SPELL_REQUIRES_NO_ANTIMAGIC | SPELL_REQUIRES_HUMAN | SPELL_REQUIRES_SAME_Z
+	spell_flags = SPELL_RITUOS
 
 	var/max_range = 5
 	var/phase = /obj/effect/temp_visual/blink
