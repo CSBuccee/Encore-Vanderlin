@@ -214,7 +214,9 @@
 	for(var/turf/T in range(loc, rune_to_scribe.runesize))
 		//check for /sturcture subtypes in the turf's contents
 		for(var/obj/structure/S in T.contents)
-			return TRUE		//Found a structure, no need to continue
+			if(S.density)
+				return TRUE		//Found a structure, no need to continue
+
 		//check if turf itself is a /turf/closed subtype
 		if(istype(T,/turf/closed))
 			return TRUE
