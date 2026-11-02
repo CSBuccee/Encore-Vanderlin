@@ -21,3 +21,11 @@
 	piercing = 20
 	fire = 0
 	acid = 0
+
+/datum/armor/skin/mage_armor
+	blunt = 35
+	slash = 35
+	stab = 35
+	piercing = 15
+	fire = 0
+	acid = 0
