@@ -4331,6 +4331,7 @@
 #include "code\modules\spells\spell_types\pointed\lunge.dm"
 #include "code\modules\spells\spell_types\pointed\lux_tamper.dm"
 #include "code\modules\spells\spell_types\pointed\magic_stone.dm"
+#include "code\modules\spells\spell_types\pointed\mark_recall.dm"
 #include "code\modules\spells\spell_types\pointed\mend_item.dm"
 #include "code\modules\spells\spell_types\pointed\menhir.dm"
 #include "code\modules\spells\spell_types\pointed\mimicry.dm"
