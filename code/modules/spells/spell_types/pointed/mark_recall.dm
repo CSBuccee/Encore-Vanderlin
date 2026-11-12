@@ -181,12 +181,13 @@
 	icon = 'icons/effects/effects.dmi'
 	icon_state = "void_conduit"
 
-/obj/effect/exit_gateway/Initialize(mapload, _lifespan = 10)
+/obj/effect/exit_gateway/Initialize(mapload, _lifespan = 0)
 	..()
 	set_light(3, 2, 20, l_color = LIGHT_COLOR_BLUE)
 	visible_message(span_danger("<b>A large shimmering portal bursts opens and wind blows out of it!</b>"), blind_message = "I hear a thrumming rift open!")
 	playsound(src, 'sound/magic/shadowstep_destination.ogg', 100, FALSE)
-	QDEL_IN(src, _lifespan)
+	if (_lifespan > 0)
+		QDEL_IN(src, _lifespan)
 
 /obj/effect/exit_gateway/Destroy()
 	visible_message(span_boldnotice("[src] shudders before rapidly closing."))
