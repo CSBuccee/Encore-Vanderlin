@@ -613,7 +613,6 @@
 	icon_state = "cwarclub"
 	force = DAMAGE_CLUB - 5
 	force_wielded = DAMAGE_CLUB_WIELD
-	slowdown = 1
 	max_integrity = INTEGRITY_POOR
 	minstr = 10
 
