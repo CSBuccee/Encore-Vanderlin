@@ -164,7 +164,7 @@
 
 
 /obj/effect/portal/mage_gateway/Initialize(mapload, _creator, _lifespan = 0, obj/effect/portal/_linked, automatic_link = FALSE, turf/hard_target_override, atmos_link_override)
-	..()
+	. = ..()
 	set_light(3, 2, 20, l_color = LIGHT_COLOR_BLUE)
 	visible_message(span_danger("<b>A large shimmering portal bursts opens and whips wind towards it!</b>"), blind_message = "I hear a thrumming rift open!")
 	playsound(src, 'sound/magic/shadowstep_destination.ogg', 100, FALSE)
@@ -182,7 +182,7 @@
 	icon_state = "void_conduit"
 
 /obj/effect/exit_gateway/Initialize(mapload, _lifespan = 0)
-	..()
+	. = ..()
 	set_light(3, 2, 20, l_color = LIGHT_COLOR_BLUE)
 	visible_message(span_danger("<b>A large shimmering portal bursts opens and wind blows out of it!</b>"), blind_message = "I hear a thrumming rift open!")
 	playsound(src, 'sound/magic/shadowstep_destination.ogg', 100, FALSE)
