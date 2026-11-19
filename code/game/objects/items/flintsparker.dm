@@ -25,6 +25,7 @@
 			/obj/item/flashlight/flare,
 			/obj/item/smokebomb,
 			/obj/machinery/light/fueled,
+			/obj/item/explosive,
 		))
 
 /obj/item/flint/attack_self(mob/living/user, list/modifiers)
