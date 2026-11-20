@@ -5,6 +5,7 @@
 	icon_state = "hh"
 	icon_living = "hh"
 	icon_dead = "hhd"
+	faction = list(FACTION_NEUTRAL)//don't get dogpiled by guards
 
 	speak_emote = list("barks", "whines")
 	emote_hear = list("barks.", "growls.")
