@@ -2364,6 +2364,7 @@
 #include "code\game\objects\structures\decorations\astratanshard.dm"
 #include "code\game\objects\structures\decorations\celebration.dm"
 #include "code\game\objects\structures\decorations\stone_path.dm"
+#include "code\game\objects\structures\domotan\fluffdeco.dm"
 #include "code\game\objects\structures\domotan\walldeco.dm"
 #include "code\game\objects\structures\fake_machines\_fake_machine.dm"
 #include "code\game\objects\structures\fake_machines\ATM.dm"

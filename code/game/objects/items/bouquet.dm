@@ -16,10 +16,15 @@
 	desc =  "A bouquet of rosas, one of Pomette's most beautiful flowers. They are a symbol of love and devotion."
 	icon_state = "bouquet_rosa"
 
-/obj/item/bouquet/salvia
-	name = "salvia bouquet"
-	desc = "A bouquet of sweet smelling salvia, a beautiful and royal purple flower."
-	icon_state = "bouquet_salvia"
+/obj/item/bouquet/rosa/alt
+	icon = 'icons/roguetown/misc/domotan/misc.dmi'
+	icon_state = "bouquet_rosa2"
+
+/obj/item/bouquet/rosa/blue
+	name = "blue rosa bouquet"
+	desc =  "A bouquet of artifical blue rosas, a surefire sign of wealth and lustrous appeal."
+	icon = 'icons/roguetown/misc/domotan/misc.dmi'
+	icon_state = "bouquet_bluerosa"
 
 /obj/item/bouquet/matricaria
 	name = "matricaria bouquet"
@@ -30,6 +35,11 @@
 	name = "calendula bouquet"
 	desc = "A bouquet of calendula, a flower used in herbal medicine due to its supposed healing properties."
 	icon_state = "bouquet_calendula"
+
+/obj/item/bouquet/salvia
+	name = "salvia bouquet"
+	desc = "A bouquet of sweet smelling salvia, a beautiful and royal purple flower."
+	icon_state = "bouquet_salvia"
 
 /obj/item/clothing/head/flowercrown
 	name = ""
