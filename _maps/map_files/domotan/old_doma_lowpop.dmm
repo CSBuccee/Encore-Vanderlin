@@ -13430,11 +13430,11 @@
 "gXB" = (
 /obj/effect/decal/cobbleedge{
 	dir = 10;
-	icon_state = "cobbleedge-w"
+	icon_state = "cobbleedge-e"
 	},
-/obj/structure/chair/stool,
+/obj/machinery/light/fueled/torchholder/r,
 /turf/open/floor/tile/checkeralt,
-/area/indoors/town/keep/kitchen/cellar)
+/area/indoors/town/keep/library)
 "gXE" = (
 /obj/machinery/light/fueled/torchholder/l,
 /obj/structure/fluid_drain,
@@ -20344,14 +20344,6 @@
 "lfg" = (
 /turf/open/floor/churchmarble,
 /area/indoors/town/church/chapel)
-"lfJ" = (
-/obj/effect/decal/cobbleedge{
-	dir = 10;
-	icon_state = "cobbleedge-e"
-	},
-/obj/machinery/light/fueled/torchholder/r,
-/turf/open/floor/tile/checkeralt,
-/area/indoors/town/keep/kitchen/cellar)
 "lfY" = (
 /obj/structure/fluff/walldeco/vinez/blue,
 /turf/closed/wall/mineral/stone/moss,
@@ -28958,7 +28950,6 @@
 "qgH" = (
 /obj/item/paper/scroll,
 /obj/item/natural/feather,
-/obj/machinery/light/fueled/wallfire/candle/r,
 /obj/structure/table/wood/cloth/beige,
 /turf/open/floor/carpet/red,
 /area/indoors/town/keep)
@@ -73177,7 +73168,7 @@ xqS
 vXc
 mtp
 apG
-apG
+tFw
 lIa
 wfn
 hQH
@@ -74237,8 +74228,8 @@ nAs
 miA
 cGj
 miA
+eWp
 csl
-gXB
 gXE
 wlb
 lIt
@@ -74369,7 +74360,7 @@ kxb
 eWp
 eWp
 eWp
-lfJ
+xHd
 fzn
 oqj
 cCJ
@@ -74501,7 +74492,7 @@ aGS
 bIB
 cHm
 tgS
-kvK
+gXB
 kvK
 kvK
 eWp
@@ -74633,7 +74624,7 @@ kxb
 kvK
 kvK
 kvK
-rvB
+kvK
 rvB
 exV
 eWp
