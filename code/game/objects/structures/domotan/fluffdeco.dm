@@ -5,6 +5,8 @@
 	icon = 'icons/roguetown/misc/domotan/festival.dmi'
 	icon_state = "canopy_garland_l"
 	uses_lord_coloring = FALSE
+	layer = 9
+	plane = -6
 
 /obj/structure/fluff/celebration/canopy/verdant/right
 	icon_state = "canopy_garland_r"
@@ -15,6 +17,8 @@
 	icon = 'icons/roguetown/misc/domotan/festival.dmi'
 	icon_state = "canopy_flowers_l"
 	uses_lord_coloring = FALSE
+	layer = 9
+	plane = -6
 
 /obj/structure/fluff/celebration/canopy/flowers/right
 	icon_state = "canopy_flowers_r"
@@ -24,7 +28,8 @@
 	desc = "Twine tightly bound with woven flowers and lace of vine and garland. Festive!"
 	icon = 'icons/roguetown/misc/domotan/festival.dmi'
 	icon_state  = "garland_flower"
-	layer = 4.2
+	layer = 9
+	plane = -6
 	uses_lord_coloring = FALSE
 
 /obj/structure/fluff/clutter/woodbucket_rosa

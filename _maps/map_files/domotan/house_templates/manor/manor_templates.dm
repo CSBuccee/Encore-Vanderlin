@@ -30,3 +30,27 @@
 	mappath = "_maps/map_files/domotan/house_templates/manor/hand_bedroom.dmm"
 	width = 5
 	height = 8
+
+/datum/map_template/knight_quarters
+	name = "Knight Quarters"
+	mappath = "_maps/map_files/domotan/house_templates/manor/knight_quarters_8x5.dmm"
+	width = 8
+	height = 5
+
+/datum/map_template/captain_quarters
+	name = "Captain Quarters"
+	mappath = "_maps/map_files/domotan/house_templates/manor/captain_quarters_10x6.dmm"
+	width = 10
+	height = 6
+
+/datum/map_template/servant_quarters
+	name = "Servant Quarters"
+	mappath = "_maps/map_files/domotan/house_templates/manor/servant_quarters_5x4.dmm"
+	width = 5
+	height = 4
+
+/datum/map_template/squire_quarters
+	name = "Squire Quarters"
+	mappath = "_maps/map_files/domotan/house_templates/manor/squire_quarters_4x4.dmm"
+	width = 4
+	height = 4

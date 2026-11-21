@@ -547,6 +547,20 @@ SUBSYSTEM_DEF(housing)
 	. = ..()
 	valid_jobs += typesof(/datum/job/mageapprentice)
 
+/obj/structure/sign/property_sign/claim/squire//For squires
+	name = "Squire's Instancer Crystal"
+
+/obj/structure/sign/property_sign/claim/squire/Initialize(mapload)
+	. = ..()
+	valid_jobs += typesof(/datum/job/squire)
+
+/obj/structure/sign/property_sign/claim/servant//For servants
+	name = "Servant's Instancer Crystal"
+
+/obj/structure/sign/property_sign/claim/servant/Initialize(mapload)
+	. = ..()
+	valid_jobs += typesof(/datum/job/servant)
+
 /obj/structure/sign/property_sign/claim/proc/check_job_access(mob/user)
 	if(user.job_type in valid_jobs)
 		return FALSE

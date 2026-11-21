@@ -149,7 +149,7 @@
 	max_integrity = 150
 	layer = 9
 	deconstructible = FALSE
-	density = TRUE
+	density = FALSE
 	blade_dulling = DULLING_BASH
 
 /obj/structure/fluff/road_sign/two_directions
