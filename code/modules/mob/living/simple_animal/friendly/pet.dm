@@ -3,6 +3,7 @@
 	mob_size = MOB_SIZE_SMALL
 	mob_biotypes = MOB_ORGANIC|MOB_BEAST
 	var/unique_pet = FALSE // if the mob can be renamed
+	faction = list(FACTION_NEUTRAL)//don't get dogpiled by guards
 	density = FALSE
 	//pass_flags = PASSTABLE
 	response_help_continuous = "pets"
