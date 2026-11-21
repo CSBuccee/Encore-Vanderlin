@@ -21163,7 +21163,7 @@
 /area/indoors/town/keep/throne)
 "lEF" = (
 /obj/effect/landmark/house_spot{
-	default_template = /datum/map_template/makers_quarter_2;
+	default_template = /datum/map_template/makers_quarter_1;
 	property_id = "makers_quarter_2";
 	save_id = "makers_quarter";
 	template_y = 6;
@@ -40689,6 +40689,17 @@
 	},
 /turf/open/floor/rooftop,
 /area/outdoors/town/roofs)
+"xCL" = (
+/obj/effect/landmark/house_spot{
+	default_template = /datum/map_template/makers_quarter_1;
+	property_id = "makers_quarter_1";
+	save_id = "makers_quarter";
+	template_y = 6;
+	template_x = 11;
+	template_z = 2
+	},
+/turf/open/floor/naturalstone,
+/area/indoors/town/shop)
 "xCT" = (
 /obj/effect/decal/cleanable/dirt/cobweb{
 	dir = 8;
@@ -48789,7 +48800,7 @@ fht
 fht
 fht
 fht
-lEF
+xCL
 cPa
 pAr
 kwf
