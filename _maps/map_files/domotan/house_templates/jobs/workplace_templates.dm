@@ -6,7 +6,7 @@
 	name = "Doma Medium Makers Quarter 1"
 	mappath = "_maps/map_files/domotan/house_templates/jobs/makers_quarter_1.dmm"
 	width = 11
-	height = 9
+	height = 6
 
 /datum/map_template/makers_quarter_2
 	name = "Doma Medium Makers Quarter 2"

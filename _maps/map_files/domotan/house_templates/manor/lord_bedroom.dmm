@@ -27,18 +27,10 @@
 /turf/open/floor/ruinedwood/two,
 /area/indoors/town/keep/lord_appt)
 "n" = (
+/obj/structure/fluff/walldeco/bigpainting/relic,
 /obj/structure/closet/crate/chest,
-/obj/item/weapon/sword/long/judgement,
-/obj/item/clothing/wrists/bracers/leather,
-/obj/item/clothing/gloves/angle,
 /obj/effect/mapping_helpers/access/keyset/manor/lord,
 /obj/effect/mapping_helpers/access/locker,
-/obj/item/weapon/sword/long/silver/decorated,
-/obj/structure/fluff/walldeco/bigpainting/relic,
-/obj/item/clothing/cloak/lordcloak/ladycloak,
-/obj/item/clothing/cloak/lordcloak,
-/obj/item/servant_bell/lord,
-/obj/item/clothing/armor/leather/jacket/tailcoat/lord,
 /turf/open/floor/wood,
 /area/indoors/town/keep/lord_appt)
 "o" = (
@@ -46,16 +38,10 @@
 /area/indoors/town/keep/lord_appt)
 "p" = (
 /obj/structure/mannequin/male,
-/obj/item/clothing/shoes/boots/armor,
-/obj/item/clothing/pants/platelegs,
-/obj/item/clothing/gloves/plate,
-/obj/item/clothing/armor/plate/decorated,
-/obj/item/clothing/head/helmet/heavy/decorated/hounskull,
 /turf/open/floor/ruinedwood/two,
 /area/indoors/town/keep/lord_appt)
 "u" = (
 /obj/structure/bed/inn/double,
-/obj/item/bedsheet/fabric_double,
 /obj/machinery/light/fueled/wallfire/candle/r,
 /obj/structure/carpet/purple,
 /turf/open/floor/ruinedwood/two,
@@ -78,30 +64,13 @@
 /turf/open/floor/ruinedwood/two,
 /area/indoors/town/keep/lord_appt)
 "H" = (
-/obj/structure/closet/crate/drawer/random{
-	pixel_y = 10
-	},
-/obj/item/clothing/neck/chaincoif,
-/obj/item/clothing/neck/chaincoif,
-/obj/item/clothing/armor/gambeson/hunts,
-/obj/item/clothing/armor/gambeson/hunts,
-/obj/item/gem/diamond,
-/obj/item/storage/belt/pouch/coins/veryrich,
-/obj/item/storage/belt/pouch/coins/veryrich,
-/obj/item/scomstone,
-/obj/item/scomstone,
-/obj/item/storage/belt/leather/plaquegold,
-/obj/item/storage/belt/leather/plaquegold,
-/obj/item/key/lord,
+/obj/structure/mannequin/male/female,
 /turf/open/floor/ruinedwood/two,
 /area/indoors/town/keep/lord_appt)
 "N" = (
-/obj/structure/mannequin/male,
-/obj/item/clothing/shoes/boots/armor,
-/obj/item/clothing/pants/chainlegs,
-/obj/item/clothing/gloves/chain,
-/obj/item/clothing/armor/plate/decorated,
-/obj/item/clothing/head/helmet/heavy/decorated/bascinet,
+/obj/structure/closet/crate/drawer/random{
+	pixel_y = 10
+	},
 /turf/open/floor/ruinedwood/two,
 /area/indoors/town/keep/lord_appt)
 "T" = (

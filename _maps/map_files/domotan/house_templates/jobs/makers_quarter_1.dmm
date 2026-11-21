@@ -16,6 +16,14 @@
 	},
 /turf/open/floor/tile/brick,
 /area/indoors/town/shop)
+"f" = (
+/obj/effect/mapping_helpers/access/locker,
+/obj/structure/door/bolt{
+	name = "Shop";
+	dir = 4
+	},
+/turf/open/floor/tile/brick,
+/area/indoors/town/shop)
 "j" = (
 /obj/machinery/light/fueled/torchholder/r,
 /turf/open/floor/tile/brick,
@@ -29,15 +37,11 @@
 /turf/open/floor/tile/brick,
 /area/indoors/town/shop)
 "n" = (
-/obj/structure/door/window{
-	name = "Maker's Quarter"
-	},
-/obj/effect/mapping_helpers/access/locker,
 /obj/structure/curtain/bounty/dir{
-	opacity = 1;
-	dir = 4
+	opacity = 1
 	},
-/turf/open/floor/tile/brick,
+/obj/structure/window/openclose/reinforced,
+/turf/open/floor/blocks/stonered,
 /area/indoors/town/shop)
 "p" = (
 /turf/closed/wall/mineral/stone,
@@ -71,6 +75,21 @@
 /obj/structure/fluff/walldeco/masonflag,
 /turf/closed/wall/mineral/stone,
 /area/indoors/town/shop)
+"z" = (
+/obj/effect/mapping_helpers/access/locker,
+/obj/structure/door/bolt{
+	name = "Shop";
+	dir = 1
+	},
+/turf/open/floor/tile/brick,
+/area/indoors/town/shop)
+"B" = (
+/obj/effect/mapping_helpers/access/locker,
+/obj/structure/door/bolt{
+	name = "Shop"
+	},
+/turf/open/floor/tile/brick,
+/area/indoors/town/shop)
 "C" = (
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/tile/brick,
@@ -93,14 +112,18 @@
 /turf/open/floor/tile/brick,
 /area/indoors/town/shop)
 "L" = (
-/obj/structure/door/window{
-	name = "Maker's Quarter"
-	},
-/obj/effect/mapping_helpers/access/locker,
 /obj/structure/curtain/bounty/dir{
 	opacity = 1;
 	dir = 1
 	},
+/obj/structure/window/openclose/reinforced{
+	dir = 1
+	},
+/turf/open/floor/blocks/stonered,
+/area/indoors/town/shop)
+"N" = (
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/machinery/light/fueled/torchholder/l,
 /turf/open/floor/tile/brick,
 /area/indoors/town/shop)
 "P" = (
@@ -126,22 +149,32 @@
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/tile/brick,
 /area/indoors/town/shop)
+"Z" = (
+/obj/structure/curtain/bounty/dir{
+	opacity = 1;
+	dir = 4
+	},
+/obj/structure/window/openclose/reinforced{
+	dir = 4
+	},
+/turf/open/floor/cobble/alt,
+/area/indoors/town/shop)
 
 (1,1,1) = {"
-y
-G
-n
-n
-G
-y
+a
+Z
+a
+t
+P
+a
 "}
 (2,1,1) = {"
-t
+n
 C
 J
-C
-c
-w
+N
+J
+L
 "}
 (3,1,1) = {"
 P
@@ -152,12 +185,12 @@ J
 L
 "}
 (4,1,1) = {"
-r
+a
 J
 C
 J
 J
-L
+a
 "}
 (5,1,1) = {"
 l
@@ -165,39 +198,39 @@ m
 C
 J
 J
-w
+a
 "}
 (6,1,1) = {"
-H
-J
+a
+U
 J
 C
 J
 a
 "}
 (7,1,1) = {"
-a
-U
+P
+J
 C
 C
 J
-a
+P
 "}
 (8,1,1) = {"
-p
+a
 Q
 J
 C
 J
-X
+a
 "}
 (9,1,1) = {"
-P
+a
 C
 J
 C
 C
-J
+a
 "}
 (10,1,1) = {"
 a
@@ -205,9 +238,98 @@ x
 x
 j
 C
-J
+a
 "}
 (11,1,1) = {"
+a
+a
+a
+a
+p
+a
+"}
+
+(1,1,2) = {"
+y
+G
+f
+f
+G
+y
+"}
+(2,1,2) = {"
+a
+C
+J
+C
+c
+w
+"}
+(3,1,2) = {"
+B
+J
+J
+C
+J
+z
+"}
+(4,1,2) = {"
+r
+J
+C
+J
+J
+z
+"}
+(5,1,2) = {"
+l
+m
+C
+J
+J
+w
+"}
+(6,1,2) = {"
+H
+J
+J
+C
+J
+a
+"}
+(7,1,2) = {"
+a
+U
+C
+C
+J
+a
+"}
+(8,1,2) = {"
+p
+Q
+J
+C
+J
+X
+"}
+(9,1,2) = {"
+B
+C
+J
+C
+C
+J
+"}
+(10,1,2) = {"
+a
+x
+x
+j
+C
+J
+"}
+(11,1,2) = {"
 a
 a
 e

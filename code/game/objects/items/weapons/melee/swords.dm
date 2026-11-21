@@ -101,7 +101,6 @@
 	item_weight = 700 GRAMS
 
 /obj/item/weapon/sword/short/silver
-
 	name = "silver short sword"
 	desc = "A short silver sword, for those who fight the creatures of the nite."
 	icon_state = "silverswordshort"
@@ -131,6 +130,23 @@
 /obj/item/weapon/sword/short/psy/Initialize(mapload)
 	. = ..()						//+2 force, +50 blade int, +50 int, +1 def, make silver
 	AddComponent(/datum/component/psyblessed, FALSE, 2, 50, 50, 1, TRUE)
+
+/obj/item/weapon/sword/short/silver/miserthorn
+	name = "Miserthorn"
+	desc = "An heirloom of the Shirleighs, this silver blade is renowned for often being seen at the side of Queen Alyssandrine in years since past. Maddened whispers dance upon its face. They seem so familiar."
+	icon = 'icons/roguetown/weapons/32/relic.dmi'
+	icon_state = "miserthorn"
+	force = DAMAGE_SHORTSWORD + 5
+	max_blade_int = INTEGRITY_STRONGEST
+	max_integrity = INTEGRITY_STRONGEST
+	smeltresult = /obj/item/ingot/silver
+	sellprice = 0
+	item_weight = 650 GRAMS
+
+/obj/item/weapon/sword/short/silver/miserthorn/Initialize(mapload)
+	. = ..()
+	enchant(/datum/enchantment/silver)
+	enchant(/datum/enchantment/on_hit/chaos_storm)
 
 /obj/item/weapon/sword/short/ida //Worse thrust but more damage for cutting.
 	name = "steel ida"
@@ -704,6 +720,26 @@
 /obj/item/weapon/sword/rapier/silver/Initialize(mapload)
 	. = ..()
 	enchant(/datum/enchantment/silver)
+
+//................ Sin Eater ............... //
+/obj/item/weapon/sword/rapier/dec/sin_eater
+	name = "Sin Eater"
+	desc = "A royal heirloom of the Shirleighs, forged long ago and of a foreign steel far beyond the Goblet and its lands. Inscribed writing in Old Kui tells that it once belonged to someone named Rash Dequero, and that its implacable edge was driven through the Father of Sin. It gleams with a ferocious intent."
+	icon = 'icons/roguetown/weapons/64/relic.dmi'
+	icon_state = "sin_eater"
+	force = DAMAGE_SWORD_WIELD + 10
+	wdefense = ULTMATE_PARRY + 1
+	wbalance = HARD_TO_DODGE
+	max_integrity = INTEGRITY_STRONGEST * 2
+	sellprice = 0
+	max_blade_int = INTEGRITY_STRONGEST
+	item_weight = 650 GRAMS
+
+/obj/item/weapon/sword/rapier/dec/sin_eater/Initialize(mapload)
+	. = ..()
+	enchant(/datum/enchantment/silver)
+	enchant(/datum/enchantment/on_hit/rewind)
+	enchant(/datum/enchantment/on_hit/lightning)
 
 /obj/item/weapon/sword/rapier/pomette
 	name = "The Heartstring"

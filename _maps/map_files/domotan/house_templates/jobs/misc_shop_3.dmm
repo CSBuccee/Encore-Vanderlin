@@ -94,10 +94,11 @@
 /turf/closed/wall/mineral/decowood,
 /area/indoors/town/shop)
 "v" = (
-/obj/effect/mapping_helpers/access/locker,
-/obj/structure/door/violet{
-	name = "Shop 3"
+/obj/structure/door/bolt{
+	name = "Shop";
+	dir = 1
 	},
+/obj/effect/mapping_helpers/access/locker,
 /turf/open/floor/ruinedwood/turned/alt,
 /area/indoors/town/shop)
 "w" = (
@@ -121,14 +122,11 @@
 /turf/open/floor/tile/brick,
 /area/indoors/town/shop)
 "B" = (
-/obj/structure/curtain/bounty/dir{
-	opacity = 1;
-	dir = 8
-	},
 /obj/structure/door/bolt{
-	name = "Shop 3";
+	name = "Shop";
 	dir = 8
 	},
+/obj/effect/mapping_helpers/access/locker,
 /turf/open/floor/ruinedwood/turned/alt,
 /area/indoors/town/shop)
 "C" = (
@@ -145,12 +143,9 @@
 /turf/open/floor/tile/brick,
 /area/indoors/town/shop)
 "F" = (
-/obj/structure/curtain/bounty/dir{
-	opacity = 1
-	},
 /obj/effect/mapping_helpers/access/locker,
 /obj/structure/door/bolt{
-	name = "Shop 3"
+	name = "Shop"
 	},
 /turf/open/floor/ruinedwood/turned/alt,
 /area/indoors/town/shop)
@@ -410,7 +405,7 @@ E
 x
 "}
 (7,1,2) = {"
-t
+m
 d
 f
 d

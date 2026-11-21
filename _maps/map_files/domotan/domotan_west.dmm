@@ -904,6 +904,13 @@
 /obj/structure/closet/dirthole/grave,
 /turf/open/floor/dirt/road,
 /area/outdoors/lostkeep)
+"gv" = (
+/obj/structure/fluff/walldeco/church/line{
+	dir = 1
+	},
+/obj/structure/carpet/purple,
+/turf/open/floor/churchmarble/violet,
+/area/indoors/vampire_manor)
 "gx" = (
 /obj/structure/flora/grass/water,
 /turf/open/floor/grass/mixyel,
@@ -2736,6 +2743,13 @@
 "tN" = (
 /turf/open/water/swamp,
 /area/outdoors/woods/berkleigh)
+"tP" = (
+/obj/structure/fluff/walldeco/church/line{
+	dir = 1
+	},
+/obj/machinery/light/fueled/wallfire/candle/skull/l,
+/turf/open/floor/churchmarble/violet,
+/area/indoors/vampire_manor)
 "tS" = (
 /obj/structure/flora/grass/water,
 /turf/open/floor/sand,
@@ -5316,6 +5330,13 @@
 /obj/effect/decal/cleanable/blood,
 /turf/open/floor/dirt,
 /area/indoors/vampire_manor)
+"LU" = (
+/obj/structure/fluff/walldeco/church/line{
+	dir = 1
+	},
+/obj/machinery/light/fueled/wallfire/candle/skull/r,
+/turf/open/floor/churchmarble/violet,
+/area/indoors/vampire_manor)
 "LV" = (
 /obj/structure/flora/grass/thorn_bush{
 	icon_state = "thornbush2"
@@ -6331,7 +6352,6 @@
 /turf/open/water/ocean/abyss,
 /area/outdoors/woods/west)
 "SW" = (
-/obj/machinery/light/fueled/wallfire/candle/skull,
 /obj/item/clothing/face/spectacles/golden,
 /obj/item/clothing/face/facemask/yoruku_kitsune,
 /obj/item/clothing/face/spectacles/sglasses,
@@ -6354,6 +6374,7 @@
 /obj/item/clothing/face/turqmask,
 /obj/item/clothing/face/ambermask,
 /obj/item/clothing/neck/bevor,
+/obj/machinery/light/fueled/wallfire/candle/skull/l,
 /turf/open/floor/church/purple,
 /area/indoors/vampire_manor)
 "SX" = (
@@ -6557,6 +6578,10 @@
 /obj/structure/roguetent,
 /turf/open/floor/dirt/road,
 /area/under/cavewet)
+"Uu" = (
+/obj/structure/curtain/redcurtainold,
+/turf/open/floor/churchmarble/violet,
+/area/indoors/vampire_manor)
 "Uw" = (
 /obj/structure/chair/wood,
 /turf/open/floor/wood/nosmooth,
@@ -23123,7 +23148,7 @@ Ce
 sQ
 rO
 rO
-rO
+EB
 EB
 BT
 BT
@@ -23380,8 +23405,8 @@ Ce
 sQ
 rO
 rO
-rO
 EB
+tP
 BT
 BT
 BT
@@ -23637,8 +23662,8 @@ Ce
 sQ
 rO
 rO
-rO
 EB
+gv
 By
 By
 By
@@ -23894,8 +23919,8 @@ Ce
 sQ
 rO
 rO
-rO
 EB
+gv
 By
 SW
 BT
@@ -24151,9 +24176,9 @@ Ce
 sQ
 rO
 rO
-rO
 EB
-By
+LU
+Uu
 bK
 nZ
 IL
@@ -24408,7 +24433,7 @@ Ce
 sQ
 rO
 rO
-rO
+EB
 EB
 RY
 rc
