@@ -1,0 +1,334 @@
+//MAP CONVERTED BY dmm2tgm.py THIS HEADER COMMENT PREVENTS RECONVERSION, DO NOT REMOVE
+"a" = (
+/obj/structure/fluff/railing/wood{
+	dir = 4
+	},
+/turf/open/water/bath,
+/area/indoors/town/keep)
+"b" = (
+/obj/structure/bed/inn/double,
+/obj/item/bedsheet/fabric_double,
+/turf/open/floor/carpet/red,
+/area/indoors/town/keep)
+"c" = (
+/obj/structure/window/openclose{
+	dir = 1
+	},
+/obj/structure/curtain/bluecurtain/dir{
+	dir = 1;
+	opacity = 1
+	},
+/turf/open/floor/tile/bath,
+/area/indoors/town/keep)
+"d" = (
+/obj/structure/table/wood/large_new{
+	icon_state = "alt_largetable"
+	},
+/obj/structure/carpet/blue,
+/obj/item/candle/yellow,
+/obj/item/candle/yellow{
+	pixel_x = 5
+	},
+/turf/open/floor/wood,
+/area/indoors/town/keep)
+"e" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/decal/carpet/kover_black,
+/turf/open/floor/wood,
+/area/indoors/town/keep)
+"g" = (
+/obj/structure/sign/property_sign/claim/captain,
+/turf/closed/wall/mineral/decowood,
+/area/indoors/town/keep)
+"j" = (
+/obj/machinery/light/fueled/torchholder{
+	dir = 4
+	},
+/obj/structure/table/wood/cloth/beige,
+/obj/item/perfume/random,
+/obj/item/clothing/shirt/tunic/colored/random,
+/obj/item/soap/bath,
+/obj/item/natural/cloth,
+/obj/item/reagent_containers/glass/bucket/wooden{
+	pixel_x = 3;
+	pixel_y = 12
+	},
+/turf/open/floor/tile/bath,
+/area/indoors/town/keep)
+"k" = (
+/obj/structure/fluff/walldeco/bath/wallrope{
+	dir = 4
+	},
+/turf/closed/wall/mineral/wood,
+/area/indoors/town/keep)
+"l" = (
+/obj/structure/curtain/bluecurtain/dir{
+	opacity = 1
+	},
+/obj/structure/window/openclose,
+/turf/open/floor/tile/bath,
+/area/indoors/town/keep)
+"n" = (
+/obj/structure/mirror/fancy,
+/obj/structure/well/fountain/sink,
+/turf/open/floor/tile/bath,
+/area/indoors/town/keep)
+"o" = (
+/obj/effect/mapping_helpers/access/locker,
+/obj/effect/mapping_helpers/access/keyset/garrison/captain/butler,
+/obj/structure/door/fancy{
+	name = "Captain's Apartment"
+	},
+/turf/open/floor/wood,
+/area/indoors/town/keep)
+"p" = (
+/turf/closed/wall/mineral/decowood,
+/area/indoors/town/keep)
+"r" = (
+/obj/structure/carpet/blue,
+/turf/open/floor/wood,
+/area/indoors/town/keep)
+"t" = (
+/obj/item/reagent_containers/glass/carafe/redwine{
+	pixel_y = 10;
+	pixel_x = -8
+	},
+/obj/structure/table/wood/large_new,
+/obj/item/reagent_containers/glass/cup/glassware/wineglass{
+	pixel_y = 14;
+	pixel_x = 8
+	},
+/obj/item/reagent_containers/glass/cup/glassware/wineglass{
+	pixel_y = 2;
+	pixel_x = 4
+	},
+/obj/structure/carpet/blue,
+/obj/structure/fake_machine/mail{
+	mailtag = "Captain's Quarters"
+	},
+/turf/open/floor/wood,
+/area/indoors/town/keep)
+"u" = (
+/obj/structure/fluff/walldeco/bath/wallpipes,
+/turf/open/floor/tile/bath,
+/area/indoors/town/keep)
+"w" = (
+/turf/open/floor/wood,
+/area/indoors/town/keep)
+"y" = (
+/obj/effect/decal/cleanable/dirt,
+/turf/open/floor/wood,
+/area/indoors/town/keep)
+"z" = (
+/obj/effect/mapping_helpers/access/locker,
+/obj/effect/mapping_helpers/access/keyset/garrison/captain/butler,
+/obj/structure/door/fancy{
+	name = "Captain's Apartment"
+	},
+/turf/open/floor/ruinedwood/turned,
+/area/indoors/town/keep)
+"A" = (
+/obj/machinery/light/fueled/wallfire/candle/r,
+/obj/structure/rack/shelf,
+/obj/structure/rack/shelf/big,
+/turf/open/floor/wood,
+/area/indoors/town/keep)
+"D" = (
+/obj/structure/rack/shelf,
+/turf/open/floor/wood,
+/area/indoors/town/keep)
+"E" = (
+/turf/closed/wall/mineral/wood,
+/area/indoors/town/keep)
+"F" = (
+/turf/closed/wall/mineral/stonebrick,
+/area/indoors/town/keep)
+"G" = (
+/obj/structure/fluff/walldeco/bath/wallrope{
+	dir = 9
+	},
+/turf/closed/wall/mineral/stone,
+/area/indoors/town/keep)
+"J" = (
+/obj/structure/toilet/filled,
+/obj/structure/fluff/railing/wood{
+	dir = 4
+	},
+/obj/structure/fluff/railing/wood{
+	dir = 8
+	},
+/turf/open/floor/tile/brick,
+/area/indoors/town/keep)
+"K" = (
+/obj/structure/fluff/steamvent,
+/turf/open/floor/tile/bath,
+/area/indoors/town/keep)
+"L" = (
+/obj/structure/closet/crate/drawer,
+/obj/item/paper/scroll,
+/obj/item/natural/feather,
+/obj/item/paper,
+/obj/item/paper,
+/obj/item/paper,
+/turf/open/floor/carpet/red,
+/area/indoors/town/keep)
+"M" = (
+/obj/structure/window/openclose{
+	dir = 4
+	},
+/obj/structure/curtain/bluecurtain/dir{
+	dir = 4;
+	opacity = 1
+	},
+/turf/open/floor/tile/bath,
+/area/indoors/town/keep)
+"N" = (
+/obj/machinery/light/fueled/wallfire{
+	pixel_y = 32
+	},
+/turf/open/floor/wood,
+/area/indoors/town/keep)
+"O" = (
+/obj/structure/fluff/walldeco/bath/wallrope{
+	dir = 4
+	},
+/turf/closed/wall/mineral/stone,
+/area/indoors/town/keep)
+"P" = (
+/obj/structure/window/openclose,
+/obj/structure/curtain/bluecurtain/dir{
+	opacity = 1
+	},
+/turf/open/floor/tile/bath,
+/area/indoors/town/keep)
+"Q" = (
+/obj/structure/chair/wood/alt/chair_noble/red{
+	dir = 8
+	},
+/turf/open/floor/wood,
+/area/indoors/town/keep)
+"R" = (
+/obj/structure/door/weak/bolt{
+	name = "Bath"
+	},
+/turf/open/floor/tile/bath,
+/area/indoors/town/keep)
+"T" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/machinery/light/fueled/wallfire/candle/l,
+/obj/structure/chair/stool/bar/fancyplush,
+/turf/open/floor/wood,
+/area/indoors/town/keep)
+"U" = (
+/obj/item/natural/cloth,
+/obj/item/clothing/shoes/nobleboot,
+/obj/effect/spawner/guaranteed_map_spawner/listed/clothes/fancy,
+/obj/structure/closet/crate/crafted_closet/inn,
+/turf/open/floor/wood,
+/area/indoors/town/keep)
+"V" = (
+/turf/closed/wall/mineral/stone,
+/area/indoors/town/keep)
+"W" = (
+/obj/structure/table/wood,
+/obj/machinery/light/fueled/wallfire/candle/goldcandle{
+	pixel_y = 8;
+	pixel_x = -6
+	},
+/obj/structure/carpet/purple,
+/obj/item/key/manor,
+/turf/open/floor/carpet/red,
+/area/indoors/town/keep)
+"X" = (
+/obj/structure/carpet/blue,
+/obj/structure/chair/wood/alt/chair_noble/red,
+/obj/structure/fake_machine/scomm,
+/turf/open/floor/wood,
+/area/indoors/town/keep)
+"Y" = (
+/obj/structure/fluff/walldeco/bath/wallrope{
+	dir = 9
+	},
+/turf/closed/wall/mineral/wood,
+/area/indoors/town/keep)
+
+(1,1,1) = {"
+V
+o
+F
+M
+M
+V
+"}
+(2,1,1) = {"
+P
+w
+F
+n
+j
+c
+"}
+(3,1,1) = {"
+l
+w
+R
+K
+J
+E
+"}
+(4,1,1) = {"
+Y
+D
+V
+u
+a
+c
+"}
+(5,1,1) = {"
+k
+N
+V
+V
+V
+F
+"}
+(6,1,1) = {"
+z
+r
+r
+T
+L
+c
+"}
+(7,1,1) = {"
+G
+X
+r
+y
+b
+c
+"}
+(8,1,1) = {"
+O
+t
+d
+e
+U
+F
+"}
+(9,1,1) = {"
+F
+A
+Q
+w
+W
+F
+"}
+(10,1,1) = {"
+E
+p
+E
+o
+g
+E
+"}

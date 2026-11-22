@@ -114,6 +114,11 @@
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/ruinedwood/darker,
 /area/indoors/shelter/bog/witch)
+"go" = (
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/structure/chem_separator,
+/turf/open/floor/hexstone,
+/area/indoors/shelter/bog/witch)
 "gs" = (
 /obj/machinery/essence/cauldron_alchemy,
 /turf/open/floor/hexstone,
@@ -586,6 +591,22 @@
 /obj/effect/mapping_helpers/access/keyset/other/bogwitch,
 /turf/open/floor/ruinedwood/darker,
 /area/indoors/shelter/bog/witch)
+"FN" = (
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/item/natural/bundle/stick{
+	pixel_y = 4;
+	amount = 5
+	},
+/obj/item/natural/bundle/stick{
+	pixel_y = 8;
+	amount = 5
+	},
+/obj/item/natural/bundle/stick{
+	pixel_y = 8;
+	amount = 5
+	},
+/turf/open/floor/hexstone,
+/area/indoors/shelter/bog/witch)
 "FO" = (
 /obj/structure/fluff/railing/wood{
 	dir = 1;
@@ -641,14 +662,7 @@
 /obj/structure/table/wood/counter/end{
 	dir = 1
 	},
-/obj/item/natural/bundle/stick{
-	pixel_y = 8;
-	amount = 5
-	},
-/obj/item/natural/bundle/stick{
-	pixel_y = 4;
-	amount = 5
-	},
+/obj/structure/chem_separator,
 /turf/open/floor/hexstone,
 /area/indoors/shelter/bog/witch)
 "JV" = (
@@ -1431,7 +1445,7 @@ BJ
 BJ
 BJ
 NI
-wW
+go
 Nv
 wW
 NI
@@ -1533,7 +1547,7 @@ BJ
 Me
 NI
 JH
-wW
+FN
 ZZ
 NI
 "}

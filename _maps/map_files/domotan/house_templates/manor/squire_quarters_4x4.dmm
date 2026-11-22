@@ -1,0 +1,82 @@
+//MAP CONVERTED BY dmm2tgm.py THIS HEADER COMMENT PREVENTS RECONVERSION, DO NOT REMOVE
+"a" = (
+/turf/closed/wall/mineral/decowood,
+/area/template_noop)
+"i" = (
+/turf/closed/wall/mineral/stone,
+/area/template_noop)
+"o" = (
+/obj/structure/bed/hay,
+/obj/item/bedsheet/cloth,
+/obj/effect/decal/cleanable/dirt/dust,
+/turf/open/floor/ruinedwood/spiral,
+/area/template_noop)
+"s" = (
+/obj/structure/fluff/walldeco/vinez,
+/turf/closed/wall/mineral/stone,
+/area/template_noop)
+"F" = (
+/obj/effect/decal/cleanable/dirt/dust,
+/turf/open/floor/ruinedwood/spiral,
+/area/template_noop)
+"I" = (
+/obj/machinery/light/fueled/wallfire/candle/weak,
+/obj/effect/decal/cleanable/dirt/dust,
+/turf/open/floor/ruinedwood/spiral,
+/area/template_noop)
+"L" = (
+/obj/structure/closet/crate/crafted_closet/inn/south{
+	density = 0
+	},
+/obj/effect/decal/cleanable/dirt/dust,
+/turf/open/floor/ruinedwood/spiral,
+/area/template_noop)
+"T" = (
+/obj/structure/sign/property_sign/claim/squire,
+/turf/closed/wall/mineral/wood,
+/area/template_noop)
+"U" = (
+/obj/structure/door{
+	name = "Squire's Quarters"
+	},
+/obj/effect/mapping_helpers/access/keyset/manor/general,
+/obj/effect/mapping_helpers/access/locker,
+/turf/open/floor/ruinedwood/spiral,
+/area/template_noop)
+"X" = (
+/obj/structure/window/openclose/reinforced{
+	dir = 4
+	},
+/obj/structure/curtain/bluecurtainold/dir{
+	dir = 4
+	},
+/turf/open/floor/blocks,
+/area/template_noop)
+"Z" = (
+/turf/closed/wall/mineral/wood,
+/area/template_noop)
+
+(1,1,1) = {"
+i
+X
+X
+s
+"}
+(2,1,1) = {"
+a
+L
+F
+Z
+"}
+(3,1,1) = {"
+a
+I
+o
+Z
+"}
+(4,1,1) = {"
+Z
+U
+T
+Z
+"}

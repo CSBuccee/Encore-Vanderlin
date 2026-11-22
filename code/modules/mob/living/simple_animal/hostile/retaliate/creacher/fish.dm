@@ -1,6 +1,6 @@
 /mob/living/simple_animal/hostile/retaliate/fish
 	name = "ugly fish"
-	faction = list("deepone")
+	faction = list("deepone", "Neutral")//neutral so it doesnt get chased by guards into the ocean
 
 //Sprites
 	icon = 'icons/roguetown/mob/monster/fish.dmi'

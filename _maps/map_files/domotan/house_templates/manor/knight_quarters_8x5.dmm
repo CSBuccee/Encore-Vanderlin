@@ -1,0 +1,186 @@
+//MAP CONVERTED BY dmm2tgm.py THIS HEADER COMMENT PREVENTS RECONVERSION, DO NOT REMOVE
+"a" = (
+/obj/structure/carpet/red,
+/turf/open/floor/ruinedwood/spiral,
+/area/template_noop)
+"c" = (
+/obj/structure/sign/property_sign/claim/royalknight,
+/turf/closed/wall/mineral/wood,
+/area/template_noop)
+"g" = (
+/obj/structure/chair/wood/alt/chair_noble/red{
+	dir = 1
+	},
+/obj/machinery/light/fueled/torchholder/l,
+/turf/open/floor/ruinedwood/spiral,
+/area/template_noop)
+"h" = (
+/obj/structure/fake_machine/scomm,
+/obj/item/clothing/shoes/sandals,
+/turf/open/floor/ruinedwood/spiral,
+/area/template_noop)
+"k" = (
+/obj/structure/chair/stool,
+/turf/open/floor/ruinedwood/spiral,
+/area/template_noop)
+"n" = (
+/turf/closed/wall/mineral/stone,
+/area/template_noop)
+"p" = (
+/obj/machinery/light/fueled/wallfire/big_fireplace{
+	pixel_y = 32;
+	pixel_x = -16
+	},
+/turf/open/floor/ruinedwood/spiral,
+/area/template_noop)
+"q" = (
+/obj/structure/carpet/red,
+/obj/machinery/light/fueled/torchholder/c,
+/turf/open/floor/ruinedwood/spiral,
+/area/template_noop)
+"u" = (
+/obj/structure/table/wood{
+	icon_state = "longtable"
+	},
+/obj/item/paper/scroll,
+/obj/item/paper,
+/obj/item/paper,
+/obj/item/natural/feather,
+/turf/open/floor/ruinedwood/spiral,
+/area/template_noop)
+"w" = (
+/obj/structure/rack/shelf,
+/obj/structure/rack/shelf/big,
+/turf/open/floor/ruinedwood/spiral,
+/area/template_noop)
+"z" = (
+/obj/structure/chair/wood/alt/chair_noble/red,
+/obj/machinery/light/fueled/torchholder/c,
+/turf/open/floor/ruinedwood/spiral,
+/area/template_noop)
+"B" = (
+/obj/structure/closet/crate/crafted_closet/inn/south{
+	density = 0
+	},
+/obj/structure/carpet/red,
+/turf/open/floor/ruinedwood/spiral,
+/area/template_noop)
+"E" = (
+/obj/effect/decal/carpet/kover_darkred,
+/turf/open/floor/ruinedwood/spiral,
+/area/template_noop)
+"F" = (
+/turf/open/floor/ruinedwood/spiral,
+/area/template_noop)
+"H" = (
+/obj/effect/decal/cobbleedge{
+	dir = 10;
+	icon_state = "cobbleedge-e"
+	},
+/turf/closed/wall/mineral/stone,
+/area/template_noop)
+"R" = (
+/obj/structure/window/openclose{
+	dir = 4
+	},
+/obj/structure/curtain/redcurtainold/dir{
+	dir = 4;
+	opacity = 1
+	},
+/turf/open/floor/blocks,
+/area/template_noop)
+"U" = (
+/obj/structure/table/wood{
+	dir = 1;
+	icon_state = "longtable_mid"
+	},
+/obj/item/candle/yellow{
+	pixel_x = 7
+	},
+/obj/item/candle/yellow{
+	pixel_x = 12
+	},
+/obj/machinery/light/fueled/torchholder/r,
+/obj/item/natural/cloth,
+/obj/item/reagent_containers/glass/cup/steel,
+/turf/open/floor/ruinedwood/spiral,
+/area/template_noop)
+"W" = (
+/obj/structure/door/fancy{
+	name = "Knight's Quarters"
+	},
+/obj/effect/mapping_helpers/access/locker,
+/obj/effect/mapping_helpers/access/keyset/manor/general,
+/turf/open/floor/ruinedwood/spiral,
+/area/template_noop)
+"X" = (
+/obj/structure/carpet/red,
+/obj/structure/bed/wool,
+/obj/item/bedsheet/fabric,
+/obj/machinery/light/fueled/torchholder/l,
+/turf/open/floor/ruinedwood/spiral,
+/area/template_noop)
+"Z" = (
+/obj/machinery/light/fueled/wallfire{
+	pixel_x = -32
+	},
+/obj/structure/table/wood/folding,
+/turf/open/floor/ruinedwood/spiral,
+/area/template_noop)
+
+(1,1,1) = {"
+n
+R
+n
+R
+n
+"}
+(2,1,1) = {"
+n
+z
+Z
+g
+n
+"}
+(3,1,1) = {"
+n
+w
+F
+F
+n
+"}
+(4,1,1) = {"
+n
+h
+E
+F
+u
+"}
+(5,1,1) = {"
+H
+p
+F
+k
+U
+"}
+(6,1,1) = {"
+n
+q
+a
+n
+n
+"}
+(7,1,1) = {"
+n
+B
+a
+X
+n
+"}
+(8,1,1) = {"
+n
+n
+W
+c
+n
+"}

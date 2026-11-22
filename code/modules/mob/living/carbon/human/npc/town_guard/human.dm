@@ -1,6 +1,6 @@
 /mob/living/carbon/human/species/human/northern/guardsman_npc
 	ai_controller = /datum/ai_controller/guardsman
-	faction = list(FACTION_TOWN, FACTION_NEUTRAL, SUB_FACTION_KEEP)
+	faction = list(FACTION_TOWN, FACTION_NEUTRAL, SUB_FACTION_KEEP, SUB_FACTION_VAULT, "saiga", "horse", "chickens", "cows", "goats")//dont kill horses
 	ambushable = FALSE
 	dodgetime = 30
 	flee_in_pain = TRUE

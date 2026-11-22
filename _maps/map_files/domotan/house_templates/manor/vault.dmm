@@ -41,10 +41,6 @@
 /obj/item/weapon/scabbard/sword/royal,
 /obj/item/weapon/scabbard/sword/royal,
 /obj/item/weapon/scabbard/sword/royal,
-/obj/item/weapon/scabbard/kazengun/gold{
-	pixel_x = 10;
-	pixel_y = -2
-	},
 /turf/open/floor/tile/masonic/moonbw,
 /area/indoors/town/keep)
 "g" = (
@@ -90,15 +86,6 @@
 /area/indoors/town/keep)
 "x" = (
 /turf/closed/wall/mineral/stone/moss/red,
-/area/indoors/town/keep)
-"y" = (
-/obj/item/weapon/sword/silver{
-	pixel_y = 4;
-	name = "Miserthorn";
-	desc = "An heirloom of the Shirleighs, this silver blade is renowned for often being seen at the side of Queen Alyssandrine in years since past."
-	},
-/obj/structure/table/stone_small,
-/turf/open/floor/tile/masonic/moonbw,
 /area/indoors/town/keep)
 "A" = (
 /turf/open/floor/tile/masonic/moonbw,
@@ -157,12 +144,6 @@
 /turf/open/floor/tile/masonic/moonbw,
 /area/indoors/town/keep)
 "M" = (
-/obj/item/weapon/sword/rapier/dec/lord{
-	desc = "A royal heirloom of the Shirleighs, forged long ago and of a foreign steel far beyond the Goblet and its lands. Inscribed writing in Old Kui tells that it once belonged to someone named Rash Dequero, and that its implacable edge was driven through the Father of Sin. It gleams with a ferocious intent.";
-	name = "Sin Eater";
-	pixel_x = -5;
-	pixel_y = -7
-	},
 /obj/structure/table/stone_small,
 /turf/open/floor/tile/masonic/moonbw,
 /area/indoors/town/keep)
@@ -227,7 +208,7 @@ b
 "}
 (3,1,1) = {"
 b
-y
+M
 g
 v
 t

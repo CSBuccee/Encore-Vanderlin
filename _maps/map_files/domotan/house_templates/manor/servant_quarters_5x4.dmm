@@ -1,0 +1,93 @@
+//MAP CONVERTED BY dmm2tgm.py THIS HEADER COMMENT PREVENTS RECONVERSION, DO NOT REMOVE
+"a" = (
+/turf/open/floor/ruinedwood/two,
+/area/template_noop)
+"h" = (
+/obj/effect/mapping_helpers/access/keyset/manor/servant,
+/obj/effect/mapping_helpers/access/locker,
+/obj/structure/door/fancy{
+	name = "Servant Quarter"
+	},
+/turf/open/floor/ruinedwood/two,
+/area/template_noop)
+"i" = (
+/obj/structure/window/openclose{
+	dir = 8
+	},
+/obj/structure/curtain/greencurtainold/dir{
+	dir = 8
+	},
+/turf/open/floor/ruinedwood,
+/area/template_noop)
+"t" = (
+/obj/structure/closet/crate/crafted_closet/inn/south{
+	density = 0
+	},
+/obj/effect/spawner/guaranteed_map_spawner/listed/clothes/fancy,
+/obj/item/clothing/shirt/dress/maid,
+/obj/item/clothing/shirt/dress/maid/lord,
+/obj/item/clothing/shirt/dress/maid/servant,
+/obj/item/clothing/shirt/dress/gen/colored/maid,
+/obj/item/clothing/head/maidband,
+/obj/item/clothing/cloak/apron/maid,
+/turf/open/floor/ruinedwood/two,
+/area/template_noop)
+"x" = (
+/turf/closed/wall/mineral/stonebrick,
+/area/template_noop)
+"C" = (
+/obj/machinery/light/fueled/wallfire{
+	pixel_y = 32
+	},
+/turf/open/floor/carpet/royalblack,
+/area/template_noop)
+"E" = (
+/obj/structure/door/fancy{
+	name = "Servant Quarter"
+	},
+/obj/effect/mapping_helpers/access/keyset/manor/servant,
+/obj/effect/mapping_helpers/access/locker,
+/turf/open/floor/ruinedwood/two,
+/area/template_noop)
+"H" = (
+/obj/structure/sign/property_sign/claim/servant,
+/turf/closed/wall/mineral/stonebrick,
+/area/template_noop)
+"I" = (
+/obj/machinery/light/fueled/torchholder/c,
+/obj/structure/bed/wool,
+/obj/item/bedsheet/wool,
+/obj/structure/carpet/green,
+/turf/open/floor/ruinedwood/two,
+/area/template_noop)
+
+(1,1,1) = {"
+x
+H
+h
+x
+"}
+(2,1,1) = {"
+x
+I
+a
+x
+"}
+(3,1,1) = {"
+x
+C
+a
+x
+"}
+(4,1,1) = {"
+x
+t
+a
+E
+"}
+(5,1,1) = {"
+x
+i
+x
+x
+"}
