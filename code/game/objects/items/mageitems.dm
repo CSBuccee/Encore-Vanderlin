@@ -98,7 +98,7 @@
 			return ITEM_INTERACT_SUCCESS
 
 /obj/item/chalk/attack_self(mob/living/carbon/human/user, list/modifiers)
-	if(GET_MOB_SKILL_VALUE(user, /datum/attribute/skill/magic/arcane) <= SKILL_LEVEL_NONE)//We'll set up other items for other types of rune rituals
+	if(GET_MOB_SKILL_VALUE_RAW(user, /datum/attribute/skill/magic/arcane) < SKILL_LEVEL_NOVICE)//We'll set up other items for other types of rune rituals
 		to_chat(user, span_cult("Nothing comes in mind to draw with the chalk."))
 		return
 	var/obj/effect/decal/cleanable/ritual_rune/pickrune
@@ -135,7 +135,6 @@
 		for(var/obj/structure/S in T.contents)
 			if(S.density)
 				return TRUE		//Found a structure, no need to continue
-
 		//check if turf itself is a /turf/closed subtype
 		if(istype(T,/turf/closed))
 			return TRUE
@@ -153,7 +152,7 @@
 
 /obj/item/weapon/knife/dagger/silver/arcyne/Initialize()
 	. = ..()
-	filter(type="drop_shadow", x=0, y=0, size=1, offset=2, color="#800080")
+	filter(type="drop_shadow", x=0, y=0, size=2, offset=1, color=rgb(128, 0, 128, 1))
 
 /obj/item/weapon/knife/dagger/silver/item_interaction(mob/living/user, obj/item/tool, list/modifiers)
 	if(!istype(tool, /obj/item/ore/cinnabar))
@@ -172,7 +171,7 @@
 	return ITEM_INTERACT_SUCCESS
 
 /obj/item/weapon/knife/dagger/silver/arcyne/attack_self(mob/living/carbon/human/user, list/modifiers)
-	if(GET_MOB_SKILL_VALUE(user, /datum/attribute/skill/magic/arcane) <= SKILL_LEVEL_NONE)
+	if(GET_MOB_SKILL_VALUE_RAW(user, /datum/attribute/skill/magic/arcane) < SKILL_LEVEL_NOVICE)
 		return
 	var/obj/effect/decal/cleanable/ritual_rune/pickrune
 	var/runenameinput = browser_input_list(user, "Runes", "All Runes", GLOB.t4rune_types)
@@ -215,7 +214,9 @@
 	for(var/turf/T in range(loc, rune_to_scribe.runesize))
 		//check for /sturcture subtypes in the turf's contents
 		for(var/obj/structure/S in T.contents)
-			return TRUE		//Found a structure, no need to continue
+			if(S.density)
+				return TRUE		//Found a structure, no need to continue
+
 		//check if turf itself is a /turf/closed subtype
 		if(istype(T,/turf/closed))
 			return TRUE
