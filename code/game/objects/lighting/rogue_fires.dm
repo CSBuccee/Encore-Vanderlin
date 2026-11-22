@@ -23,11 +23,7 @@
 			H.visible_message("<span class='info'>[H] warms \his hand over the fire.</span>")
 
 			if(do_after(H, 1.5 SECONDS, src))
-				// var/obj/item/bodypart/affecting = H.get_bodypart("[(user.active_hand_index % 2 == 0) ? "r" : "l" ]_arm")
-				// to_chat(H, "<span class='warning'>HOT!</span>")
-				// if(affecting && affecting.receive_damage( 0, 5 ))		// 5 burn damage
-				// 	H.update_damage_overlays()
-				H.adjust_bodytemperature(10)
+				H.apply_status_effect(/datum/status_effect/buff/warmth/normal, 5 MINUTES)
 		return TRUE //fires that are on always have this interaction with lmb unless its a torch
 
 	else
@@ -512,7 +508,7 @@
 			if(istype(H))
 				H.visible_message("<span class='info'>[H] warms \his hand over the embers.</span>")
 				if(do_after(H, 5 SECONDS, src))
-					H.adjust_bodytemperature(10)
+					H.apply_status_effect(/datum/status_effect/buff/warmth/normal, 5 MINUTES)
 			return TRUE
 
 
@@ -542,7 +538,6 @@
 	base_state = "badfire"
 	density = FALSE
 	layer = 2.8
-	brightness = 5
 	on = FALSE
 	fueluse = 15 MINUTES
 	bulb_colour = "#da5e21"
@@ -576,12 +571,8 @@
 		if(istype(H))
 			H.visible_message("<span class='info'>[H] warms \his hand near the fire.</span>")
 
-			if(do_after(H, 10 SECONDS, src))
-				// var/obj/item/bodypart/affecting = H.get_bodypart("[(user.active_hand_index % 2 == 0) ? "r" : "l" ]_arm")
-				// to_chat(H, "<span class='warning'>HOT!</span>")
-				// if(affecting && affecting.receive_damage( 0, 5 ))		// 5 burn damage
-				// 	H.update_damage_overlays()
-				H.adjust_bodytemperature(10)
+			if(do_after(H, 5 SECONDS, src))
+				H.apply_status_effect(/datum/status_effect/buff/warmth/normal, 5 MINUTES)
 		return TRUE //fires that are on always have this interaction with lmb unless its a torch
 
 /obj/machinery/light/fueled/campfire/densefire
@@ -589,7 +580,7 @@
 	base_state = "densefire"
 	density = TRUE
 	layer = 2.8
-	brightness = 5
+	brightness = 10
 	climbable = TRUE
 	on = FALSE
 	fueluse = 30 MINUTES

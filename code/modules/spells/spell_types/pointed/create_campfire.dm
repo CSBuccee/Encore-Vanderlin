@@ -45,7 +45,7 @@
 	name = "magical campfire"
 	icon_state = "densefire1"
 	base_state = "densefire"
-	density = FALSE
+	density = TRUE
 	layer = 2.8
 	brightness = 7
 	fueluse = 10 MINUTES

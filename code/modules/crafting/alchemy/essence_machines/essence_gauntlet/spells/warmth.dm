@@ -11,17 +11,25 @@
 	if(!istype(target))
 		target = owner
 	owner.visible_message(span_notice("[target] radiates gentle warmth."))
-	target.apply_status_effect(/datum/status_effect/buff/warmth, 120 SECONDS)
+	target.apply_status_effect(/datum/status_effect/buff/warmth, 20 MINUTES)
 
 /atom/movable/screen/alert/status_effect/warmth
 	name = "Warmth"
 	desc = "Magical warmth protects you from cold."
 	icon_state = "buff"
 
+/atom/movable/screen/alert/status_effect/warmth/normal
+	desc = "Lingering warmth protects you from cold."
+
 /datum/status_effect/buff/warmth
 	id = "warmth"
 	alert_type = /atom/movable/screen/alert/status_effect/warmth
-	duration = 120 SECONDS
+	duration =  20 MINUTES
+
+/datum/status_effect/buff/warmth/normal
+	id = "warmth"
+	alert_type = /atom/movable/screen/alert/status_effect/warmth/normal
+	duration =  20 MINUTES
 
 /datum/status_effect/buff/warmth/on_apply()
 	. = ..()
@@ -32,7 +40,7 @@
 /datum/status_effect/buff/warmth/on_remove()
 	. = ..()
 	REMOVE_TRAIT(owner, TRAIT_RESISTCOLD, TRAIT_STATUS_EFFECT(id))
-	to_chat(owner, span_notice("The magical warmth fades away."))
+	to_chat(owner, span_notice("The lingering warmth fades away."))
 
 /datum/action/cooldown/spell/essence/warmth/spell
 	name = "Lesser Warmth"
