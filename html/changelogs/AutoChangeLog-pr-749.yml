@@ -1,0 +1,8 @@
+author: "Minomato"
+delete-after: True
+changes:
+  - balance: "Sledgehammer MAUL_STRIKE and MAUL_HVYSTRIKE clickcd decreased from 22 to 16; swing delay from 6 to 4; miss cost reduced from 12 to 11 for one-handed MAUL_STRIKE (still 16 for two-handed MAUL_HVYSTRIKE)."
+  - balance: "Sledgehammer MAUL_SMASH and MAUL_HVYSMASH clickcd decreased from 30 to 22."
+  - balance: "Goler Kanh Sledgehammer (Forgefiend) INTEGRITY_STRONGEST multiplier increased from 1.4 to 1.5."
+  - balance: "Ground Slam special attack now applies Exposed debuff for 5 seconds, up from 2.5."
+  - balance: "Polearms, maces and axes no longer apply a slowdown on the user while equipped/sheathed."
