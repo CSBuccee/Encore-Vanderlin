@@ -247,9 +247,6 @@
 	uses_lord_coloring = pick(LORD_PRIMARY, LORD_SECONDARY)
 	. = ..()
 
-// Yeoman Bell
-// TODO - add a loadout bell that you can imprint to yourself and only you can pick up
-
 /datum/status_effect/signal_horn/servant_bell
 	id = "servant bell indicator"
 	duration = 25 SECONDS

@@ -712,6 +712,35 @@
 	supports_directions = TRUE
 	place_on_wall = TRUE
 
+/datum/blueprint_recipe/structure/hanging_bell_wall
+	name = "Hanging Wall Bell"
+	desc = "A ringable bell that hangs on a chain and can sync to the mind."
+	result_type = /obj/structure/yeoman_bell/hanging_bell
+	required_materials = list(
+		/obj/item/ingot/iron = 2,
+	)
+	construct_tool = /obj/item/weapon/hammer
+	category = "Wall Fixtures"
+	floor_object = FALSE
+	skillcraft = /datum/attribute/skill/craft/crafting
+	craftdiff = 2
+	check_adjacent_wall = TRUE
+	supports_directions = TRUE
+	place_on_wall = TRUE
+
+/datum/blueprint_recipe/structure/hanging_bell_ceiling
+	name = "Hanging Ceiling Bell"
+	desc = "A ringable bell that hangs on a chain and can sync to the mind."
+	result_type = /obj/structure/yeoman_bell/hanging_bell
+	required_materials = list(
+		/obj/item/ingot/iron = 2,
+	)
+	construct_tool = /obj/item/weapon/hammer
+	category = "Wall Fixtures"
+	floor_object = FALSE
+	skillcraft = /datum/attribute/skill/craft/crafting
+	craftdiff = 2
+
 /datum/blueprint_recipe/structure/bearpelt
 	name = "bear pelt rug"
 	desc = "A pelt of a direbear, now used as a floor decoration."

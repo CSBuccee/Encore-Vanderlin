@@ -54,6 +54,12 @@
 
 	triumph_cost_permanent = 15
 
+/datum/loadout_item/desk_bell
+	name = "Unbound Desk Bell"
+	item_path = /obj/item/yeoman_bell/desk_bell
+	ui_category = "Miscellaneous"
+	triumph_cost_permanent = 15
+
 /datum/loadout_item/royal_sleeves
 	name = "Royal Sleeves"
 	item_path = /obj/item/clothing/wrists/royalsleeves

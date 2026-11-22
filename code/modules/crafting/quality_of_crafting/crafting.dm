@@ -957,3 +957,17 @@
 
 	attacked_atom = /obj/item/paper/scroll
 	starting_atom = /obj/item/weapon/knife
+
+/datum/repeatable_crafting_recipe/crafting/desk_bell
+	name = "Desk Bell"
+	output = /obj/item/yeoman_bell/desk_bell
+	requirements = list(
+		/obj/item/natural/wood/plank = 1,
+		/obj/item/ingot/iron = 1
+	)
+	tool_usage = list(
+		/obj/item/weapon/hammer = list(span_notice("starts to hammer iron into shape"), span_notice("start to hammer iron into shape"), 'sound/items/smithdist1.ogg'),
+	)
+	craftdiff = 2
+	attacked_atom = /obj/item/ingot/iron
+	starting_atom = /obj/item/weapon/hammer

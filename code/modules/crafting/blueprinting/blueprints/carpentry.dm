@@ -951,6 +951,16 @@
 	)
 	craftdiff = 2
 
+/datum/blueprint_recipe/carpentry/bell_stand
+	name = "bell stand"
+	desc = "A ringable bell on a wooden stand that can be synced with the mind."
+	result_type = /obj/structure/yeoman_bell/bell_stand
+	required_materials = list(
+		/obj/item/natural/wood/plank = 1,
+		/obj/item/ingot/iron = 1
+	)
+	craftdiff = 2
+
 /datum/blueprint_recipe/carpentry/banner_aelondan
 	name = "aelonda standard"
 	desc = "The purple standard of the good kingdom, Aelonda, without much decorum."
