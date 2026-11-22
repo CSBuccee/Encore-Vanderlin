@@ -29,7 +29,8 @@
 
 /datum/action/cooldown/spell/augment_buff/before_cast(atom/cast_on)
 	empowering_self = (cast_on == owner)
-	return ..()
+	//Return from before cast signals to prevent the spell from going on cooldown before aftercast.
+	return ..() | SPELL_NO_IMMEDIATE_COOLDOWN
 
 /datum/action/cooldown/spell/augment_buff/after_cast(atom/cast_on)
 	. = ..()
