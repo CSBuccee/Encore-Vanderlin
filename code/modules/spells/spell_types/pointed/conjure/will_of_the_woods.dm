@@ -1,6 +1,6 @@
 /datum/action/cooldown/spell/conjure/will_of_woods
 	name = "Will of the Woods"
-	desc = "Summon the aid of the woods."
+	desc = "Summon the aid of the woods against your target. Allies under the Call To Hunt blessing shall also be spared their wrath."
 	button_icon_state = "tamebeast"
 	sound = 'sound/magic/timestop.ogg'
 	self_cast_possible = FALSE
@@ -31,6 +31,7 @@
 
 /datum/action/cooldown/spell/conjure/will_of_woods/post_summon(atom/summoned_object, atom/cast_on)
 	var/mob/living/spawned_mob = summoned_object
+	spawned_mob.befriend(owner)
 	for(var/mob/living/carbon/target in viewers(7, get_turf(cast_on)))
 		if(target.has_status_effect(/datum/status_effect/buff/call_to_hunt))
 			spawned_mob.befriend(target)

@@ -510,7 +510,7 @@
 	id = "call_to_hunt"
 	alert_type = /atom/movable/screen/alert/status_effect/buff/call_to_hunt
 	duration = 2.5 MINUTES
-	effectedstats = list(STATKEY_END = 1, STATKEY_CON = 1)
+	effectedstats = list(STAT_ENDURANCE = 2, STAT_CONSTITUTION = 2, STAT_SPEED = 3)
 	tick_interval = STATUS_EFFECT_NO_TICK
 
 /atom/movable/screen/alert/status_effect/buff/call_to_hunt
