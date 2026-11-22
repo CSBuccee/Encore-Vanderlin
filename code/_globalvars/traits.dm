@@ -222,6 +222,7 @@ GLOBAL_LIST_INIT(traits_by_type, list(
 		"Sorcerer" = TRAIT_SORCERER,
 		"Chest Bust Overridden" = TRAIT_TOGGLEBUST,
 		"Ingredient Insight" = TRAIT_INGREDIENT_INSIGHT,
+		"Demon" = TRAIT_DEMON,
 	),
 	/obj/item/bodypart = list(
 		"TRAIT_PARALYSIS" = TRAIT_PARALYSIS
@@ -232,6 +233,7 @@ GLOBAL_LIST_INIT(traits_by_type, list(
 		"TRAIT_WIELDED" = TRAIT_WIELDED,
 		"TRAIT_NEEDS_TWO_HANDS" = TRAIT_NEEDS_TWO_HANDS,
 		"TRAIT_HARD_TO_STEAL" = TRAIT_HARD_TO_STEAL,
+		"TRAIT_UNSAVEABLE" = TRAIT_UNSAVEABLE,
 	),
 	/turf = list(
 		"TRAIT_AI_AVOID_TURF" = TRAIT_AI_AVOID_TURF,

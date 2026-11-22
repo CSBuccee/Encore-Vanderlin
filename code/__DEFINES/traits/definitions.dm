@@ -627,6 +627,10 @@ Remember to update _globalvars/traits.dm if you're adding/removing/renaming trai
 #define TRAIT_NEEDS_TWO_HANDS "needstwohands"
 /// This item can't be pickpocketed
 #define TRAIT_HARD_TO_STEAL "hard_to_steal"
+/// Item can not be saved through persistent housing
+/// This is different from the things marked as blacklisted in map_export.dm
+/// This is meant to allow blacklisted items to be saved, but not unique lore things which will have the unsaveable trait
+#define TRAIT_UNSAVEABLE "unsaveable"
 
 // **** turf traits
 ///Turf slowdown will be ignored when this trait is added to a turf.

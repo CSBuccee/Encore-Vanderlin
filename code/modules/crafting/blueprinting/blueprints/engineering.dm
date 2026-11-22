@@ -238,3 +238,15 @@
 		/obj/item/gear/metal = 5,
 	)
 	craftdiff = 4
+
+/datum/blueprint_recipe/engineering/persistent_storage
+	name = "instanced vessel"
+	desc = "A vessel which allows you to save particularly intricate valuables in an instancer crystal."
+	result_type = /obj/structure/persistent_storage
+	required_materials = list(
+		/obj/item/alch/airdust = 4,
+		/obj/item/alch/magicdust = 2,
+		/obj/item/ingot/iron = 2,
+		/obj/item/gear/metal = 1,
+	)
+	craftdiff = 3
