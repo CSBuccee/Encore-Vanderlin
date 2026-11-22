@@ -154,6 +154,9 @@
 	foodtype = SUGAR | JUNKFOOD
 	item_weight = 70 GRAMS
 
+/obj/item/reagent_containers/food/snacks/chocolate/chunk/Initialize(mapload)
+	. = ..()
+	AddElement(/datum/element/food_topping, "chocolate", /datum/ingredient_buff_modifier/chocolate, 4, topping_name = "melted chocolate")
 
 // -------------- SALUMOI (dwarven smoked sausage) -----------------
 /obj/item/reagent_containers/food/snacks/meat/salami
@@ -204,6 +207,10 @@
 	faretype = FARE_NEUTRAL
 	foodtype = MEAT
 	item_weight = 55 GRAMS
+
+/obj/item/reagent_containers/food/snacks/meat/salami/slice/Initialize(mapload)
+	. = ..()
+	AddElement(/datum/element/food_topping, "salumoid", null, 10, topping_name = "a slice of salumoi")
 
 // -------------- COPPIETTE (dried meat) -----------------
 /obj/item/reagent_containers/food/snacks/cooked/coppiette
@@ -284,6 +291,10 @@
 	foodtype = MEAT
 	item_weight = 30 GRAMS
 
+/obj/item/reagent_containers/food/snacks/fat/salo/slice/Initialize(mapload)
+	. = ..()
+	AddElement(/datum/element/food_topping, "salod", null, 10, topping_name = "a slice of salo")
+
 /*------------\
 | Dried Fruit |
 \------------*/
@@ -302,6 +313,10 @@
 	foodtype = FRUIT
 	faretype = FARE_POOR
 	item_weight = 5 GRAMS
+
+/obj/item/reagent_containers/food/snacks/raisins/Initialize(mapload)
+	. = ..()
+	AddElement(/datum/element/food_topping, "raisins", null, 10, topping_name = "raisins")
 
 /obj/item/reagent_containers/food/snacks/raisins/CheckParts(list/parts_list)
 	..()
@@ -329,6 +344,10 @@
 	nutrition = DRIEDFRUIT_NUTRITION
 	item_weight = 6 GRAMS
 
+/obj/item/reagent_containers/food/snacks/strawberry_dried/Initialize(mapload)
+	. = ..()
+	AddElement(/datum/element/food_topping, "driedstrawberry", null, 3, topping_name = "dried strawberry")
+
 // -------------- TANGERINE -----------------
 
 /obj/item/reagent_containers/food/snacks/tangerine_dried
@@ -342,6 +361,10 @@
 	faretype = FARE_NEUTRAL
 	nutrition = DRIEDFRUIT_NUTRITION
 	item_weight = 44 GRAMS
+
+/obj/item/reagent_containers/food/snacks/tangerine_dried/Initialize(mapload)
+	. = ..()
+	AddElement(/datum/element/food_topping, "driedtangerine", null, 3, topping_name = "dried tangerine")
 
 // -------------- PLUM -----------------
 
@@ -371,6 +394,10 @@
 	nutrition = DRIEDFRUIT_NUTRITION
 	item_weight = 91 GRAMS
 
+/obj/item/reagent_containers/food/snacks/apple_dried/Initialize(mapload)
+	. = ..()
+	AddElement(/datum/element/food_topping, "driedapple", null, 3, topping_name = "dried apple")
+
 // -------------- PEAR -----------------
 
 /obj/item/reagent_containers/food/snacks/pear_dried
@@ -384,6 +411,10 @@
 	faretype = FARE_NEUTRAL
 	nutrition = DRIEDFRUIT_NUTRITION
 	item_weight = 86 GRAMS
+
+/obj/item/reagent_containers/food/snacks/pear_dried/Initialize(mapload)
+	. = ..()
+	AddElement(/datum/element/food_topping, "driedpear", null, 3, topping_name = "dried pear")
 
 /***************** Mushrooms *****************/
 
@@ -517,6 +548,10 @@
 	bitesize = 1
 	faretype = FARE_IMPOVERISHED
 	item_weight = 25 GRAMS
+
+/obj/item/reagent_containers/food/snacks/butterslice/Initialize(mapload)
+	. = ..()
+	AddElement(/datum/element/food_topping, "liquidbutter", /datum/ingredient_buff_modifier/butterslice, 5, topping_name = "a slice of butter")
 
 /*	............   Erdite Stick   ................ */
 
@@ -715,6 +750,10 @@
 					/obj/item/reagent_containers/food/snacks/fish/shrimp = 3)
 	faretype = FARE_FINE
 	item_weight = 155 GRAMS
+
+/obj/item/reagent_containers/food/snacks/cheddarslice/Initialize(mapload)
+	. = ..()
+	AddElement(/datum/element/food_topping, "cheesed", null, 10, topping_name = "a slice of cheese")
 
 /obj/item/reagent_containers/food/snacks/cheddarslice/aged
 	name = "slice of aged cheese"

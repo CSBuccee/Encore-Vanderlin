@@ -59,7 +59,8 @@
 	attribute_sheet = /datum/attribute_holder/sheet/job/butler
 
 	mind_traits = list(
-		TRAIT_ROYALSERVANT
+		TRAIT_ROYALSERVANT,
+		TRAIT_INGREDIENT_INSIGHT,
 	)
 	traits = list(
 		TRAIT_CAREFUL_CHAIRS
