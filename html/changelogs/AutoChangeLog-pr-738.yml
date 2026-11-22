@@ -1,0 +1,7 @@
+author: "crimsonFig"
+delete-after: True
+changes:
+  - qol: "gives players a 5 minute warmth buff when warming their hands"
+  - qol: "makes the warmth spell to last for 20 minutes instead of 2"
+  - qol: "campfires are properly brighter than a lamptern"
+  - qol: "magical fire stops allowing people to sacrifice themselves to it carelessly"
