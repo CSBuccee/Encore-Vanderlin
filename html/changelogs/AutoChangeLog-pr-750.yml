@@ -1,0 +1,5 @@
+author: "kyres1"
+delete-after: True
+changes:
+  - bugfix: "Fixed royal knights being in the vault subfaction and protecting them from the warden's wrath."
+  - bugfix: "Fixed guardsmen NPCs for events murdering your horse."
