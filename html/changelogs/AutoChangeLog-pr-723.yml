@@ -1,0 +1,7 @@
+author: "crimsonFig"
+delete-after: True
+changes:
+  - rscadd: "adds a legendary tier for the temporal hourglass mage trinket \"ancient temporal houglass\""
+  - balance: "hourglasses have cooldowns now after use to reduce exploitation from spamming them"
+  - qol: "adds examination and mechanic text to the hourglasses as well as more visual messages"
+  - rscadd: "infusion recipes to exchange mage monster drops within it's tier"
