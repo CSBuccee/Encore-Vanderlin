@@ -79,14 +79,7 @@
 		user.changeNext_move(CLICK_CD_MELEE)
 
 		playsound(interacting_with,'sound/items/dig_shovel.ogg', 100, TRUE)
-
-		var/turf/target_turf = get_turf(interacting_with)
 		qdel(interacting_with)
-		target_turf.snow = null //ffs
-
-		for(var/turf/turf as anything in get_adjacent_open_turfs(interacting_with))
-			var/obj/structure/snow/snow = locate() in turf
-			snow?.update_corners()
 
 		return ITEM_INTERACT_SUCCESS
 

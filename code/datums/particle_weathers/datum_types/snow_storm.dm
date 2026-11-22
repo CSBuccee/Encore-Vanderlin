@@ -109,15 +109,13 @@
 	var/progression = 0
 	var/turf/snowed_turf
 	var/list/snows_connections = list(list("0", "0", "0", "0"), list("0", "0", "0", "0"), list("0", "0", "0", "0"))
-	var/list/diged = list("2" = 0, "1" = 0, "8" = 0, "4" = 0)
+	var/list/diged = list("1" = 0, "2" = 0, "4" = 0, "8" = 0)
 
 /obj/structure/snow/Initialize(mapload, bleed_layers)
 	. = ..()
 	bleed_layer = bleed_layers
 	if(!bleed_layer)
 		bleed_layer = rand(1, 3)
-
-	//RegisterSignal(src, COMSIG_ATOM_TURF_CHANGE, PROC_REF(update_visuals_effects))
 
 	START_PROCESSING(SSslowobj, src)
 
@@ -127,8 +125,8 @@
 	update_visuals_effects(first = TRUE)
 
 /obj/structure/snow/Destroy(force)
-	update_visuals_effects(src, FALSE)
-
+	update_visuals_effects(bleed_layer, replace = FALSE)
+	RemoveElement(/datum/element/mob_overlay_effect, 1 * 2.4, -6 + (1 * 3.5), 100)
 	for(var/atom/movable/movable in get_turf(src))
 		if(movable.get_filter("mob_moving_effect_mask"))
 			animate(movable.get_filter("mob_moving_effect_mask"), y = -32, time = 0)
@@ -158,8 +156,7 @@
 /obj/structure/snow/proc/get_slowdown()
 	return 1.5 * bleed_layer
 
-/obj/structure/snow/proc/update_visuals_effects(datum/source, replace = TRUE, first = FALSE)
-	SIGNAL_HANDLER
+/obj/structure/snow/proc/update_visuals_effects(old_BL = 0, replace = TRUE, first = FALSE)
 
 	var/list/contained_mobs = list()
 	var/turf/turf = get_turf(src)
@@ -201,7 +198,8 @@
 			contained_mobs += contained_machinery
 			SEND_SIGNAL(src, COMSIG_MOB_OVERLAY_FORCE_REMOVE, contained_machinery)
 
-	RemoveElement(/datum/element/mob_overlay_effect)
+	// this element has the "BESPOKE" flag, meaning to remove it, we have to pass the same args from when it was added
+	RemoveElement(/datum/element/mob_overlay_effect, old_BL * 2.4, -6 + (old_BL * 3.5), 100)
 	if(replace)
 		AddElement(/datum/element/mob_overlay_effect, bleed_layer * 2.4, -6 + (bleed_layer * 3.5), 100)
 		for(var/mob/living/contained_mob as anything in contained_mobs)
@@ -298,7 +296,7 @@
 /obj/structure/snow/proc/changing_layer(new_layer)
 	if(isnull(new_layer) || new_layer == bleed_layer)
 		return
-
+	var/old_BL = bleed_layer
 	bleed_layer = max(0, new_layer)
 
 	if(!bleed_layer)
@@ -308,7 +306,7 @@
 	update_corners(TRUE)
 	update_appearance(UPDATE_OVERLAYS)
 
-	update_visuals_effects()
+	update_visuals_effects(old_BL)
 
 /obj/structure/snow/ex_act(severity)
 	damage_act(severity)

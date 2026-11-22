@@ -29,6 +29,8 @@
 	UnregisterSignal(get_turf(source), list(
 		COMSIG_ATOM_EXITED,
 		COMSIG_TURF_ENTERED,
+	))
+	UnregisterSignal(source, list(
 		COMSIG_MOB_OVERLAY_FORCE_REMOVE,
 		COMSIG_MOB_OVERLAY_FORCE_UPDATE,
 		COMSIG_QDELETING,
