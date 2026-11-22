@@ -116,7 +116,7 @@
 		return
 	var/crafttime = (10 SECONDS - ((GET_MOB_SKILL_VALUE_OLD(user, /datum/attribute/skill/magic/arcane)) * 5))
 
-	user.visible_message(span_warning("[user] begins to scribe something [user.p_their()] [src]!"), \
+	user.visible_message(span_warning("[user] begins to scribe something with [user.p_their()] [src]!"), \
 		span_notice("I start to drag the [src] in the shape of symbols and sigils"))
 	playsound(src, 'sound/magic/chalkdraw.ogg', 100, TRUE)
 	if(do_after(user, crafttime, target = src))
@@ -294,22 +294,79 @@
 	icon_state = "hourglass_idle"
 	item_weight = 300 GRAMS
 	var/turf/target
-	var/mob/living/victim
+	var/datum/weakref/victim_ref
+	var/cooldown = 30 SECONDS
+	COOLDOWN_DECLARE(thourglass)
+
+/obj/item/hourglass/temporal/examine(mob/user)
+	. = ..()
+	var/mob/living/victim = victim_ref?.resolve()
+	if(victim && GET_MOB_SKILL_VALUE(user, /datum/attribute/skill/magic/arcane) >= SKILL_LEVEL_JOURNEYMAN)
+		if(victim == user)
+			. += span_info("I can tell that I am currently linked to it.")
+		else if(!iscarbon(victim) || (user.mind?.do_i_know(name = victim.real_name)))
+			. += span_info("I can tell that [victim.real_name ? victim.real_name : "somebody"] is currently linked to it.")
+
+/obj/item/hourglass/temporal/get_mechanics_examine(mob/user)
+	. = list()
+	. += span_notice("Activate in hand to flip hourglass, become linked, and store current location.")
+	. += span_notice("Activate on another entity to link them instead.")
+	. += span_notice("If flipped again or the sands fully fall, the one linked to it will return back.")
+	. += span_notice("After use, it will need time to recharge before it can be used again.")
+
+/obj/item/hourglass/temporal/attack_self(mob/user, list/modifiers)
+	if(!COOLDOWN_FINISHED(src, thourglass))
+		to_chat(user, span_notice("The sand in the [src] does not seem to fall despite being flipped, it will need time to recharge."))
+		return
+	..()
+
+/obj/item/hourglass/temporal/interact_with_atom(atom/interacting_with, mob/living/user, list/modifiers)
+	if(!COOLDOWN_FINISHED(src, thourglass))
+		user.visible_message(
+			span_notice("[user] hit \the [interacting_with] with the [src], but sand inside remained undisturbed."),
+			span_notice("I tried to flip the [src] against \the [interacting_with], but it remains inert.")
+		)
+		return NONE
+	. = ..()
+	return NONE
 
 /obj/item/hourglass/temporal/toggle(mob/user)
 	if(!timing_id)
-		to_chat(user,span_notice("I flip the [src]."))
+		user.visible_message(
+			span_notice("[user] flipped the [src]!"),
+			span_notice("The [src] was flipped and I feel my time linked to it!")
+		)
 		start()
 		flick("hourglass_flip",src)
 		target = get_turf(src)
-		victim = user
+		victim_ref = WEAKREF(user)
 	else
 		to_chat(user,span_notice("I stop the [src].")) //Sand magically flows back because that's more convinient to use.
 		stop()
 
 /obj/item/hourglass/temporal/stop()
 	..()
-	do_teleport(victim, target, channel = TELEPORT_CHANNEL_QUANTUM)
+	var/mob/living/victim = victim_ref?.resolve()
+	if(victim)
+		do_teleport(victim, target, channel = TELEPORT_CHANNEL_QUANTUM)
+		victim.visible_message(
+			span_warning("[victim] disappears in a blink, leaving behind a small puff of dust where [victim.p_they()] once stood."),
+			span_warning("I suddenly blink to somewhere else after feeling time warp around me!"),
+		)
+	victim_ref = null
+	target = null
+	COOLDOWN_START(src, thourglass, cooldown)
+
+/obj/item/hourglass/temporal/ancient
+	name = "ancient temporal hourglass"
+	time = 60 MINUTES
+	cooldown = 10 MINUTES
+
+/obj/item/hourglass/temporal/ancient/stop()
+	// the ancient version makes a noticeable sound. not as sneaky/spammy as the temporal minuteglass
+	if(!QDELETED(target))
+		playsound(target, 'sound/items/blackmirror_active.ogg', 80, TRUE)
+	..()
 
 /obj/item/natural/feather/infernal
 	name = "infernal feather"

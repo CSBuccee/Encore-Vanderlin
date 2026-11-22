@@ -61,6 +61,77 @@
 	result_type = /obj/item/essence_vial/combat
 	required_essences = list(/datum/thaumaturgical_essence/magic = 20, /datum/thaumaturgical_essence/earth = 10)
 
+// ---- SUMMON DROP TRANSFORMATION RECIPES ---
+// there are three drops per tier, we can rotate within the tier for ones we're missing
+
+// TIER 1
+/datum/infusion_recipe/t1_fire
+	name = "Infernal Shift"
+	target_type = /obj/item/natural/fairydust
+	result_type = /obj/item/natural/infernalash
+	required_essences = list(/datum/thaumaturgical_essence/fire = 10)
+/datum/infusion_recipe/t1_fae
+	name = "Fae Shift"
+	target_type = /obj/item/natural/elementalmote
+	result_type = /obj/item/natural/fairydust
+	required_essences = list(/datum/thaumaturgical_essence/air = 10)
+/datum/infusion_recipe/t1_stone
+	name = "Elemental Shift"
+	target_type = /obj/item/natural/infernalash
+	result_type = /obj/item/natural/elementalmote
+	required_essences = list(/datum/thaumaturgical_essence/earth = 10)
+
+// TIER 2
+/datum/infusion_recipe/t2_fire
+	name = "Infernal Shift"
+	target_type = /obj/item/natural/iridescentscale
+	result_type = /obj/item/natural/hellhoundfang
+	required_essences = list(/datum/thaumaturgical_essence/fire = 20, /datum/thaumaturgical_essence/chaos = 20)
+/datum/infusion_recipe/t2_fae
+	name = "Fae Shift"
+	target_type = /obj/item/natural/elementalshard
+	result_type = /obj/item/natural/iridescentscale
+	required_essences = list(/datum/thaumaturgical_essence/air = 20, /datum/thaumaturgical_essence/water = 20)
+/datum/infusion_recipe/t2_stone
+	name = "Elemental Shift"
+	target_type = /obj/item/natural/hellhoundfang
+	result_type = /obj/item/natural/elementalshard
+	required_essences = list(/datum/thaumaturgical_essence/earth = 20, /datum/thaumaturgical_essence/order = 20)
+
+// TIER 3
+/datum/infusion_recipe/t3_fire
+	name = "Infernal Shift"
+	target_type = /obj/item/natural/heartwoodcore
+	result_type = /obj/item/natural/moltencore
+	required_essences = list(/datum/thaumaturgical_essence/fire = 20, /datum/thaumaturgical_essence/energia = 20)
+/datum/infusion_recipe/t3_fae
+	name = "Fae Shift"
+	target_type = /obj/item/natural/elementalfragment
+	result_type = /obj/item/natural/heartwoodcore
+	required_essences = list(/datum/thaumaturgical_essence/air = 20, /datum/thaumaturgical_essence/light = 20)
+/datum/infusion_recipe/t3_stone
+	name = "Elemental Shift"
+	target_type = /obj/item/natural/moltencore
+	result_type = /obj/item/natural/elementalfragment
+	required_essences = list(/datum/thaumaturgical_essence/earth = 20, /datum/thaumaturgical_essence/life = 20)
+
+// TIER 4
+/datum/infusion_recipe/t4_fire
+	name = "Infernal Shift"
+	target_type = /obj/item/natural/sylvanessence
+	result_type = /obj/item/natural/abyssalflame
+	required_essences = list(/datum/thaumaturgical_essence/fire = 20, /datum/thaumaturgical_essence/magic = 20)
+/datum/infusion_recipe/t4_fae
+	name = "Fae Shift"
+	target_type = /obj/item/natural/elementalrelic
+	result_type = /obj/item/natural/sylvanessence
+	required_essences = list(/datum/thaumaturgical_essence/air = 20, /datum/thaumaturgical_essence/magic = 20)
+/datum/infusion_recipe/t4_stone
+	name = "Elemental Shift"
+	target_type = /obj/item/natural/abyssalflame
+	result_type = /obj/item/natural/elementalrelic
+	required_essences = list(/datum/thaumaturgical_essence/earth = 20, /datum/thaumaturgical_essence/magic = 20)
+
 // ---- ORE TRANSFORMATION RECIPES ----
 // slow and tiered process to upgrade raw ore, starting at stone up to gold
 // essence is cheapish as you can't jump steps, sell prices are low, and it's a tedious one at a time process

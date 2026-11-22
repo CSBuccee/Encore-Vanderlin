@@ -76,6 +76,19 @@
 	output = /obj/item/hourglass/temporal
 	required_skill = SKILL_LEVEL_JOURNEYMAN
 
+/datum/arcyne_crafting_recipe/temporal_hourglass_ancient
+	name = "ancient temporal hourglass"
+	ingredients = list(
+		/obj/item/natural/wood/plank,
+		/obj/item/natural/wood/plank,
+		/obj/item/natural/melded/t4,
+		/obj/item/natural/glass,
+		/obj/item/alch/golddust,
+		/obj/item/alch/magicdust,
+	)
+	output = /obj/item/hourglass/temporal/ancient
+	required_skill = SKILL_LEVEL_JOURNEYMAN
+
 /datum/arcyne_crafting_recipe/shimmering_lens
 	name = "shimmering lens"
 	ingredients = list(

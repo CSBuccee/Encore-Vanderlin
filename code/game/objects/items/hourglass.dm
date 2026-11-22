@@ -4,6 +4,8 @@
 	name = "hourglass"
 	desc = ""
 	item_weight = 300 GRAMS
+	grid_height = 64
+	grid_width = 32
 	var/obj/effect/countdown/hourglass/countdown
 	var/time = 1 MINUTES
 	var/finish_time //So countdown doesn't need to fiddle with timers
@@ -16,10 +18,27 @@
 	. = ..()
 	countdown = new(src)
 
+/obj/item/hourglass/examine()
+	. = ..()
+	if(countdown?.started)
+		var/seconds_left = countdown.get_value()
+		var/minutes_left = ""
+		if (seconds_left > 60)
+			minutes_left = "[floor(seconds_left / 60)] minutes and "
+			seconds_left %= 60
+		. += span_info("It has about [minutes_left][seconds_left] seconds of sand remaining.")
+
 /obj/item/hourglass/attack_self(mob/user, list/modifiers)
 	. = ..()
 	if(hand_activated)
 		toggle(user)
+
+/obj/item/hourglass/interact_with_atom(atom/interacting_with, mob/living/user, list/modifiers)
+	. = ..()
+	if(hand_activated && isliving(interacting_with))
+		toggle(interacting_with)
+		return ITEM_INTERACT_SUCCESS
+	return NONE
 
 /obj/item/hourglass/proc/toggle(mob/user)
 	if(!countdown)
@@ -58,7 +77,7 @@
 	update_appearance(UPDATE_ICON_STATE)
 
 /obj/item/hourglass/proc/finish()
-	visible_message("<span class='notice'>[src] stops.</span>")
+	visible_message("<span class='notice'>The [src] stops.</span>")
 	stop()
 
 /obj/item/hourglass/Destroy()
