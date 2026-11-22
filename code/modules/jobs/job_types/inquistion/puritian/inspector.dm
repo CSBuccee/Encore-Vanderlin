@@ -73,6 +73,7 @@
 		"Daybreak (Whip)",
 		"Sanctum (Halberd)",
 		"Remembrance (Long Sword)",
+		"Martyrdom (Spear)"
 	)
 	var/weapon_choice = browser_input_list(spawned, "CHOOSE YOUR RELIQUARY PIECE.", "WIELD THEM IN HIS NAME.", gear)
 	switch(weapon_choice)
@@ -87,6 +88,10 @@
 
 		if("Sanctum (Halberd)")
 			spawned.put_in_hands(new /obj/item/weapon/polearm/halberd/angros/relic(spawned), TRUE)
+			spawned.attributes?.add_sheet(/datum/attribute_holder/sheet/job/sanctum)
+
+		if("Martyrdom (Spear)")
+			spawned.put_in_hands(new /obj/item/weapon/polearm/spear/angros/relic(spawned), TRUE)
 			spawned.attributes?.add_sheet(/datum/attribute_holder/sheet/job/sanctum)
 
 		if("Remembrance (Long Sword)")

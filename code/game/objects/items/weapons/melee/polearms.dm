@@ -251,7 +251,7 @@
 //................ Angrosian Spear ............... //
 /obj/item/weapon/polearm/spear/angros
 	name = "katholikon spear"
-	desc = "A polearm with a twisting trident head perfect for mangling the bodies of the impure."
+	desc = "A polearm of antiquated design with a twisting trident head perfect for mangling the bodies of the impure."
 	icon = 'icons/roguetown/weapons/64/psydonite.dmi'
 	icon_state = "psyspear"
 	drop_sound = 'sound/foley/dropsound/blade_drop.ogg'
@@ -274,6 +274,14 @@
 			if("wielded")
 				return list("shrink" = 0.6,"sx" = 5,"sy" = -3,"nx" = -5,"ny" = -2,"wx" = -5,"wy" = -1,"ex" = 3,"ey" = -2,"northabove" = 0,"southabove" = 1,"eastabove" = 1,"westabove" = 0,"nturn" = 7,"sturn" = -7,"wturn" = 16,"eturn" = -22,"nflip" = 8,"sflip" = 0,"wflip" = 8,"eflip" = 0)
 
+/obj/item/weapon/polearm/spear/angros/relic
+	name = "Martyrdom"
+	desc = "A barbed, twisted tri-headed spear that embodies the cold, cruel hunt of the Katholikon's Inquisition. It can be used to run down the wicked and impure alike, or be thrown to pierce a corrupt heart."
+	icon_state = "psyspear"
+
+/obj/item/weapon/polearm/spear/angros/relic/Initialize(mapload)
+	. = ..()
+	AddComponent(/datum/component/psyblessed, FALSE, 3, FALSE, 50, 1, TRUE)
 
 //................ Billhook ............... //
 /obj/item/weapon/polearm/spear/billhook
