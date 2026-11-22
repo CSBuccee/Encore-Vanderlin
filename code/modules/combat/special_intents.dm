@@ -151,7 +151,7 @@
 		victim.safe_throw_at(turf_target, rand(1, 3), 1, user, force = MOVE_FORCE_STRONG)
 
 		victim.Slowdown(5)
-		victim.apply_status_effect(/datum/status_effect/debuff/exposed, 2.5 SECONDS)
+		victim.apply_status_effect(/datum/status_effect/debuff/exposed, 5 SECONDS)
 
 		if(victim.IsOffBalanced())
 			victim.CombatKnockdown(2 SECONDS)

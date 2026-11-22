@@ -330,7 +330,7 @@
 	force_wielded = DAMAGE_HAMMER_WIELD + 5
 	wdefense = GOOD_PARRY
 	wbalance = EASY_TO_DODGE
-	max_integrity = INTEGRITY_STRONGEST * 1.4
+	max_integrity = INTEGRITY_STRONGEST * 1.5
 	minstr = 10
 	item_weight = 8 KILOGRAMS
 

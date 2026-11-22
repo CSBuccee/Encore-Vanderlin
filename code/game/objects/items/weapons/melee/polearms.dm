@@ -518,7 +518,6 @@
 	force = DAMAGE_SPEAR
 	force_wielded = DAMAGE_HALBERD_WIELD
 	wbalance = EASY_TO_DODGE
-	slowdown = 1
 	possible_item_intents = list(POLEARM_THRUST, POLEARM_BASH) //bash is for nonlethal takedowns, only targets limbs
 	gripped_intents = list(POLEARM_THRUST, SPEAR_CUT, POLEARM_CHOP, POLEARM_BASH)
 	max_blade_int = 300
@@ -830,7 +829,6 @@
 	force_wielded = DAMAGE_HALBERD_WIELD
 	wdefense = GOOD_PARRY
 	wbalance = EASY_TO_DODGE
-	slowdown = 1
 	possible_item_intents = list(POLEARM_BASH, POLEARM_CHOP) //bash is for nonlethal takedowns, only targets limbs
 	gripped_intents = list(POLEHAMMER_STRIKE, POLEARM_THRUST, MACE_HVYSMASH, DAZE_BASH)
 	max_blade_int = 300
