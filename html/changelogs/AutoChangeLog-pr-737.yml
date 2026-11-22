@@ -1,0 +1,5 @@
+author: "crimsonFig"
+delete-after: True
+changes:
+  - bugfix: "removing snow with shovel correctly removes the leg hiding filter from turf"
+  - bugfix: "fixes snow to properly make a trail when walked through"
