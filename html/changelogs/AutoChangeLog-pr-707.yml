@@ -1,0 +1,6 @@
+author: "kyres1"
+delete-after: True
+changes:
+  - rscadd: "Adds new persistent saving options. Instancer vessels can be crafted through engineering and allow players to save most otherwise blacklisted items such as steel weapons and armor on a single-item basis per vessel."
+  - rscadd: "Added test plots to the roguetest map so testing instancers is mildly less insufferable."
+  - bugfix: "Adds the demon trait to the admin trait assignment tool."
