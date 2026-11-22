@@ -1,0 +1,4 @@
+author: "crimsonFig"
+delete-after: True
+changes:
+  - bugfix: "fixes mimicry to properly return you to normal on dispel"
