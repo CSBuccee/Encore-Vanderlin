@@ -61,8 +61,10 @@
 		COMSIG_ATOM_WAS_ATTACKED,
 	))
 	user.name = old_name
+	user.real_name = old_name
 	user.cut_overlays()
 	user.regenerate_icons()
+	user.update_body_parts(TRUE)
 	user.alpha = 255
 	user.update_appearance()
 	user.honorary = old_prefix

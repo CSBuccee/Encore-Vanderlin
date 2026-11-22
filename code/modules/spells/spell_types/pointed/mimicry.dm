@@ -1,9 +1,8 @@
 /datum/action/cooldown/spell/mimicry
 	name = "Mimicry"
-	desc = "Take on the appearance of your target."
+	desc = "Take on the appearance of your target. Recast on self to dispel."
 	button_icon_state = "invisibility"
 	sound = 'sound/misc/stings/generic.ogg'
-	self_cast_possible = FALSE
 
 	required_technique = TECHNIQUE_ILLUSION
 	required_form = FORM_ARCANE
@@ -18,9 +17,16 @@
 	if(!.)
 		return FALSE
 	var/mob/living/carbon/human/user = owner
-	if(user.GetComponent(/datum/component/disguise))
-		return TRUE
+	if(cast_on == user && !user.GetComponent(/datum/component/disguise))
+		return FALSE // only allow self-cast if we're disguised
 	return ishuman(cast_on)
+
+/datum/action/cooldown/spell/mimicry/before_cast(atom/cast_on)
+	. = ..()
+	// don't go on cooldown or cost a use if you're returning to normal
+	var/mob/living/carbon/human/user = owner
+	if(user.GetComponent(/datum/component/disguise))
+		return . | SPELL_NO_IMMEDIATE_COOLDOWN | SPELL_NO_IMMEDIATE_COST
 
 /datum/action/cooldown/spell/mimicry/cast(mob/living/carbon/human/cast_on)
 	. = ..()
