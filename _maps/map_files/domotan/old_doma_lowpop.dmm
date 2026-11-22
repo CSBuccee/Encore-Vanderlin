@@ -27896,8 +27896,7 @@
 /area/indoors/town/keep/throne)
 "pGq" = (
 /obj/structure/healing_spring,
-/obj/structure/hotspring,
-/turf/open/floor/dirt/road,
+/turf/open/water/hotspring,
 /area/outdoors/exposed)
 "pGs" = (
 /obj/structure/fluff/walldeco/church/line{
