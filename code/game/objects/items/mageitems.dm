@@ -9,7 +9,7 @@
 	resistance_flags = NONE
 	max_integrity = 300
 	item_weight = 150 GRAMS
-	component_type = /datum/component/storage/concrete/grid/magebag
+	component_type = /datum/component/storage/concrete/grid/sack/magebag
 
 /obj/item/storage/magebag/examine(mob/user)
 	. = ..()
@@ -135,7 +135,6 @@
 		for(var/obj/structure/S in T.contents)
 			if(S.density)
 				return TRUE		//Found a structure, no need to continue
-
 		//check if turf itself is a /turf/closed subtype
 		if(istype(T,/turf/closed))
 			return TRUE

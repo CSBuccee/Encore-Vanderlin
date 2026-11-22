@@ -2204,3 +2204,57 @@
 	)
 	craftdiff = 3
 	output = /obj/item/pillow/medium/orange/regal
+
+/datum/repeatable_crafting_recipe/sewing/bear
+	name = "bear doll"
+	output = /obj/item/child_toy/soft_toy/bear
+	requirements = list(
+		/obj/item/natural/cloth = 2,
+		/obj/item/natural/fibers = 2
+	)
+	craftdiff = 2
+	category = "Toy"
+
+/datum/repeatable_crafting_recipe/sewing/doll
+	name = "doll"
+	output = /obj/item/child_toy/soft_toy/doll
+	requirements = list(
+		/obj/item/natural/cloth = 2,
+		/obj/item/natural/fibers = 2
+	)
+	craftdiff = 2
+	category = "toy"
+
+/datum/repeatable_crafting_recipe/sewing/kobold
+	abstract_type = /datum/repeatable_crafting_recipe/sewing/kobold
+	requirements = list(
+		/obj/item/natural/cloth = 2,
+		/obj/item/natural/fibers = 2
+	)
+	craftdiff = 2
+	category = "toy"
+
+/datum/repeatable_crafting_recipe/sewing/kobold/amber
+	name = "amberhide knoblit doll"
+	output = /obj/item/child_toy/soft_toy/kobold/amber
+
+/datum/repeatable_crafting_recipe/sewing/kobold/moon
+	name = "moonshade knoblit doll"
+	output = /obj/item/child_toy/soft_toy/kobold/moon
+
+/datum/repeatable_crafting_recipe/sewing/kobold/stone
+	name = "stonepaw knoblit doll"
+	output = /obj/item/child_toy/soft_toy/kobold/stone
+
+/datum/repeatable_crafting_recipe/sewing/kobold/sun
+	name = "sunstreak knoblit doll"
+	output = /obj/item/child_toy/soft_toy/kobold/sun
+
+/datum/repeatable_crafting_recipe/sewing/kobold/sand
+	name = "sandswept knoblit doll"
+	output = /obj/item/child_toy/soft_toy/kobold/sand
+
+/datum/repeatable_crafting_recipe/sewing/kobold/ice
+	name = "icepack knoblit doll"
+	output = /obj/item/child_toy/soft_toy/kobold/ice
+
