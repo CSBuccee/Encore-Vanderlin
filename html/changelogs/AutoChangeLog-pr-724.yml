@@ -1,0 +1,4 @@
+author: "crimsonFig"
+delete-after: True
+changes:
+  - balance: "reduced rituos cooldown to 13 minutes."
