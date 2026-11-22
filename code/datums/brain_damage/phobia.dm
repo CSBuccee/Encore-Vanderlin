@@ -2,8 +2,8 @@
 	name = "Phobia"
 	desc = ""
 	scan_desc = ""
-	gain_text = span_warning("I start finding default values very unnerving...")
-	lose_text = span_notice("I no longer feel afraid of default values.")
+	gain_text = null
+	lose_text = null
 	var/phobia_type
 	/// Cooldown for proximity checks so we don't spam a range 7 view every two seconds.
 	COOLDOWN_DECLARE(check_cooldown)
@@ -26,8 +26,8 @@
 	if(!phobia_type)
 		phobia_type = pick(GLOB.phobia_types)
 
-	gain_text = span_warning("I start finding [phobia_type] very unnerving...")
-	lose_text = span_notice("I no longer feel afraid of [phobia_type].")
+	gain_text = null
+	lose_text = null
 
 	trigger_regex = GLOB.phobia_regexes[phobia_type]
 	trigger_mobs = GLOB.phobia_mobs[phobia_type]

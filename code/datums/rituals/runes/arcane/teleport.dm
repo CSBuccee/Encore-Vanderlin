@@ -40,7 +40,7 @@
 
 /// Fully replaces the base mana_siphon click handler - this rune doesn't loop-process, it opens the warp sigil view once per activation.
 /obj/effect/decal/cleanable/ritual_rune/arcyne/mana_siphon/teleport/attack_hand(mob/living/user)
-	if(GET_MOB_SKILL_VALUE(user, /datum/attribute/skill/magic/arcane) <= SKILL_LEVEL_NONE)
+	if(GET_MOB_SKILL_VALUE_RAW(user, magictype) < SKILL_LEVEL_NOVICE)
 		to_chat(user, span_warning("You aren't able to invoke these symbols."))
 		return
 
@@ -305,9 +305,7 @@
 	if(!QDELETED(warping))
 		to_chat(warping, span_cult("Your vision clears - you've stepped out of the sigil!"))
 		warping.visible_message(span_danger("[warping] steps out of a shimmering sigil."))
-		warping.alpha = 255
-
-	animate(traveler, alpha = 255, time = 0.5 SECONDS, flags = ANIMATION_RELATIVE|ANIMATION_PARALLEL)
+		animate(warping, alpha = 255, time = 0.5 SECONDS, flags = ANIMATION_RELATIVE|ANIMATION_PARALLEL)
 
 	if(!QDELETED(sigil))
 		sigil.finish_warp(warping, final_turf, pending_followers)

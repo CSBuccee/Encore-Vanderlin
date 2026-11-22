@@ -1,5 +1,5 @@
 /datum/round_event_control/pomette_compassion
-	name = "Beggar Compassion"
+	name = "Spreading Compassion"
 	track = EVENT_TRACK_PERSONAL
 	typepath = /datum/round_event/pomette_compassion
 	weight = 10
@@ -17,18 +17,18 @@
 	if(!.)
 		return FALSE
 
-	var/beggar_count = 0
+	var/player_count = 0
 	for(var/mob/living/carbon/human/H in GLOB.player_list)
 		if(!istype(H) || H.stat == DEAD || !H.client)
 			continue
-		if(H.job == JOB_BEGGAR || istype(H.mind?.assigned_role, /datum/job/vagrant))
-			beggar_count++
-			if(beggar_count >= 2)
-				break
+		player_count++
+		if(player_count >= 5)
+			break
 
-	if(beggar_count < 2)
+	if(player_count < 5)
 		return FALSE
 
+	// make sure there is a pomette player to recieve this quest
 	for(var/mob/living/carbon/human/H in GLOB.player_list)
 		if(!istype(H) || H.stat == DEAD || !H.client)
 			continue
@@ -55,7 +55,7 @@
 
 	bordered_message(chosen_one, list(
 		span_userdanger("YOU ARE POMETTE'S CHOSEN!"),
-		span_notice("Pomette wishes to see compassion! Show kindness to the less fortunate by hugging a beggar to earn Pomette's favor!"),
+		span_notice("Pomette wishes to see compassion! Spread kindness and love to others by hugging people to earn Pomette's favor!"),
 	))
 	chosen_one.playsound_local(chosen_one, 'sound/vo/female/gen/giggle (1).ogg', 100)
 

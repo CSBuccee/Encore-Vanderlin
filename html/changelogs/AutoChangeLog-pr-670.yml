@@ -1,0 +1,5 @@
+author: "crimsonFig"
+delete-after: True
+changes:
+  - bugfix: "makes spells for the miracle casters use devotion and holy stat for the spells"
+  - bugfix: "erdl leech spell actually works for erdl devoted characters"

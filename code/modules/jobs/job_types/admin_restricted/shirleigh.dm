@@ -248,7 +248,7 @@
 	belt = /obj/item/storage/belt/leather/plaquesilver
 	cloak = /obj/item/clothing/cloak/half/duelcape
 	gloves = /obj/item/clothing/gloves/angle/masterwork
-	beltl = /obj/item/weapon/scabbard/kazengun
+	beltl = /obj/item/weapon/scabbard/cudese
 	beltr = /obj/item/weapon/scabbard/sword/royal
 	backl = /obj/item/gun/ballistic/powder/wheellock/blunderbuss
 	backr = /obj/item/gun/ballistic/powder/musket

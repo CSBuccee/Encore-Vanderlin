@@ -188,9 +188,9 @@
 	desc = "A pair of white pants decorated with red stripes and traditional patterning."
 	icon_state = "shepherdpants"
 
-/obj/item/clothing/pants/trou/leather/kazengun //no, not 'eastpants3', silly!
-	name = "gambeson trousers"
-	desc = "A form of Blackmeadow peasant's trousers. The fabric used in their manufacture is strong, and could probably turn away a few blows."
+/obj/item/clothing/pants/trou/leather/cudese
+	name = "cudese trousers"
+	desc = "Thick-woven gambeson pants, suitable for light protection in combat."
 	icon_state = "baggypants"
 	item_state = "baggypants"
 	max_integrity = ARMOR_INT_LEG_HARDLEATHER - 50

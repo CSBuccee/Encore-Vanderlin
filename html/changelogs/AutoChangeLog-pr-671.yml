@@ -1,0 +1,4 @@
+author: "crimsonFig"
+delete-after: True
+changes:
+  - bugfix: "fixes there being only 1 job slot for bogwitches and their apprentices on doma"

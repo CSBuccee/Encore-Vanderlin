@@ -1,6 +1,6 @@
 /obj/item/reagent_containers/food/snacks/crow
-	name = "zad"
-	desc = "A pesky bird, beloved by Necrites. They cluster around graveyards and are said to carry the souls of the dead on their wings."
+	name = "crow"
+	desc = "A pesky bird, beloved by Valdalans. They cluster around graveyards and are said to carry the souls of the dead on their wings."
 	icon_state = "crow"
 	icon = 'icons/roguetown/mob/monster/crow.dmi'
 	nutrition = MINCE_NUTRITION
@@ -15,12 +15,12 @@
 	blade_dulling = DULLING_CUT
 	rotprocess = null
 
-/obj/item/reagent_containers/food/snacks/atom_deconstruct(disassembled)
+/obj/item/reagent_containers/food/snacks/crow/atom_deconstruct(disassembled)
 	new /obj/item/natural/feather(drop_location())
 
 /obj/item/reagent_containers/food/snacks/friedcrow
-	name = "fried zad"
-	desc = "A pesky, fried bird. The Aelondans say one 'eats zad' if they are mistaken or outdone."
+	name = "fried crow"
+	desc = "A pesky, fried bird."
 	icon_state = "fcrow"
 	bitesize = 2
 	nutrition = MINCE_NUTRITION * COOK_MOD

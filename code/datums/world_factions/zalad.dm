@@ -143,6 +143,7 @@
 		/datum/supply_pack/armor/steel/beastmask,
 		/datum/supply_pack/armor/steel/slamellar,
 		/datum/supply_pack/armor/steel/zplatehelm,
+		/datum/supply_pack/armor/steel/zhelmlight,
 		/datum/supply_pack/armor/steel/zsallet,
 		/datum/supply_pack/armor/steel/zplatearmor,
 		/datum/supply_pack/armor/steel/zplategloves,

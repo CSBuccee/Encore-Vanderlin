@@ -190,3 +190,58 @@
 	density = TRUE
 	deconstructible = FALSE
 	SET_BASE_PIXEL(-16, 0)
+
+/obj/structure/fluff/banner
+	name = "aelondan standard"
+	desc = "The purple standard of the good kingdom, Aelonda. It lacks much decorum."
+	icon = 'icons/roguetown/misc/domotan/banners.dmi'
+	icon_state = "aelonda"
+	layer = ABOVE_OBJ_LAYER
+	anchored = TRUE
+	density = TRUE
+	deconstructible = FALSE
+
+/obj/structure/fluff/banner/regal
+	desc = "The purple standard of the good kingdom, Aelonda. It is an especially gilded flag, likely indicating the presence of someone or something important."
+	icon_state = "aelonda_regal"
+
+/obj/structure/fluff/banner/cudao
+	name = "cudese standard"
+	desc = "The cloud-white standard of the eastern nation of Cudao. It lacks much decorum."
+	icon_state = "cudao"
+
+/obj/structure/fluff/banner/cudao/regal
+	desc = "The cloud-white standard of the eastern nation of Cudao. It is an especially gilded flag, likely indicating the presence of someone or something important."
+	icon_state = "cudao_regal"
+
+/obj/structure/fluff/banner/geramor
+	name = "gernish standard"
+	desc = "The orange standard of the broken kingdom of Cudao. It lacks much decorum."
+	icon_state = "geramor"
+
+/obj/structure/fluff/banner/geramor/regal
+	desc = "The orange standard of the broken kingdom of Cudao. It is an especially gilded flag, likely indicating the presence of someone or something important."
+	icon_state = "geramor_regal"
+
+/obj/structure/fluff/banner/noma
+	name = "noman standard"
+	desc = "The green standard of the traveling country of Noma. It lacks much decorum."
+	icon_state = "noma"
+
+/obj/structure/fluff/banner/noma/regal
+	desc = "The green standard of the traveling country of Noma. It is an especially gilded flag, likely indicating the presence of someone or something important."
+	icon_state = "noma_regal"
+
+/obj/structure/fluff/banner/qadirid
+	name = "burning banner"
+	desc = "The Burning Banner itself. Somehow, this example lacks much decorum."
+	icon_state = "qadirid"
+
+/obj/structure/fluff/banner/qadirid/regal
+	desc = "The Burning Banner itself. It is an especially gilded flag, likely indicating the presence of someone or something important."
+	icon_state = "qadirid_regal"
+
+/obj/structure/fluff/banner/nortmidst
+	name = "nortic standard"
+	desc = "The standard of the unified tribes of the Nortics, representing at least some sort of union of interests between them nearby."
+	icon_state = "nortmidst"

@@ -25,7 +25,7 @@
 	if(ishuman(target))
 		var/mob/living/carbon/human/h_mob = target
 		if(h_mob.can_inject())
-			h_mob.adjust_stamina(-40)
+			h_mob.adjust_stamina(40)
 	return ..()
 
 /obj/effect/temp_visual/impact_effect/neurotoxin

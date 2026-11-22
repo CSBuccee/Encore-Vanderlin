@@ -62,7 +62,7 @@
 
 	//promote to pre_arcyne.
 	playsound(src, 'sound/items/book_open.ogg', 100, TRUE)
-	if(GET_MOB_SKILL_VALUE(user, /datum/attribute/skill/magic/arcane) > SKILL_LEVEL_NONE)
+	if(GET_MOB_SKILL_VALUE_RAW(user, /datum/attribute/skill/magic/arcane) >= SKILL_LEVEL_NOVICE)
 		to_chat(user, span_notice("The book is bound. I must find a catalyst to channel the arcyne into it now."))
 	else
 		to_chat(user, span_notice("I've made an empty book of thick, useless scroll paper. I can't even thumb through it!"))

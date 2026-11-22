@@ -20,22 +20,39 @@
 	. = ..()
 	L.add_chem_effect(CE_BLOODRESTORE, 3, "[type]")
 	L.add_chem_effect(CE_STABLE, 1, "[type]")
+	L.add_chem_effect(CE_BRAIN_REGEN, 1, "[type]")
 
 /datum/reagent/medicine/healthpot/on_mob_end_metabolize(mob/living/L)
 	. = ..()
 	L.remove_chem_effect(CE_BLOODRESTORE, "[type]")
 	L.remove_chem_effect(CE_STABLE, "[type]")
+	L.remove_chem_effect(CE_BRAIN_REGEN, "[type]")
 
 /datum/reagent/medicine/healthpot/on_mob_life(mob/living/carbon/M, efficiency)
 	if(volume >= 60)
 		M.remove_reagent(/datum/reagent/medicine/healthpot, 2) //No overhealing.
-	M.adjust_blood_volume(6 * efficiency, maximum = BLOOD_VOLUME_NORMAL)
+	M.adjust_blood_volume(10 * efficiency, maximum = BLOOD_VOLUME_OKAY)
+	// this basically heals stuff like fractures, gut spills, bleeding stumps, and dislocations
 	M.heal_wounds(3 * efficiency) //at a motabalism of .5 U a tick this translates to 120WHP healing with 20 U Most wounds are unsewn 15-100. This is powerful on single wounds but rapidly weakens at multi wounds.
 	if(volume > 0.99)
 		M.adjustOxyLoss(-1.25 * efficiency, FALSE)
 		M.adjustCloneLoss(-1.25 * REM * efficiency, FALSE)
-		M.adjustBruteLoss(-1.75*REM * efficiency, FALSE, required_status = BODYPART_ORGANIC)
-		M.adjustFireLoss(-1.75*REM * efficiency, TRUE, required_status = BODYPART_ORGANIC)
+		// focus on healing arterials cuz those are really bad bleedouts
+		for(var/obj/item/organ/artery/A in M.getorganslotlist(ORGAN_SLOT_ARTERY))
+			if (A.is_bruised())
+				A.applyOrganDamage(-2 * REM * efficiency)
+		// then focus on bleeding injuries until they're below the bleeding threshold
+		for(var/datum/injury/owchie in M.all_injuries)
+			// don't insta-close surgical wounds for poor feldshers trying to operate, and ignore wounds that won't be bleeding out
+			if (owchie.is_surgical() || !owchie.is_bleeding(ignore_nonfinal_stopbleeds = TRUE))
+				continue
+			if (!owchie.can_heal()) //dont heal wounds that aren't supposed to be healable
+				continue
+			owchie.heal_damage(1.75 * REM * efficiency)
+
+		// double dip on healing speed when limb is in critical damage
+		// then cap on generalized bodypart injury healing until they've reached the limit, healed down to 50% damage max per limb
+		M.heal_overall_damage(1.75*REM * efficiency, 1.75*REM * efficiency, BODYPART_ORGANIC, TRUE,  bp_limit = 0.5)
 	. = ..()
 
 /datum/reagent/medicine/stronghealth
@@ -68,13 +85,27 @@
 /datum/reagent/medicine/stronghealth/on_mob_life(mob/living/carbon/M, efficiency)
 	if(volume >= 60)
 		M.remove_reagent(/datum/reagent/medicine/stronghealth, 2) //No overhealing.
-	M.adjust_blood_volume(10 * efficiency, maximum = BLOOD_VOLUME_NORMAL)
+	M.adjust_blood_volume(12 * efficiency, maximum = BLOOD_VOLUME_SAFE)
 	M.heal_wounds(6 * efficiency) //at a motabalism of .5 U a tick this translates to 240WHP healing with 20 U Most wounds are unsewn 15-100.
 	if(volume > 0.99)
 		M.adjustOxyLoss(-5 * efficiency, FALSE)
 		M.adjustCloneLoss(-5 * REM * efficiency, FALSE)
-		M.adjustBruteLoss(-7*REM * efficiency, FALSE, required_status = BODYPART_ORGANIC)
-		M.adjustFireLoss(-7*REM * efficiency, TRUE, required_status = BODYPART_ORGANIC)
+		// focus on healing arterials cuz those are really bad bleedouts
+		for(var/obj/item/organ/artery/A in M.getorganslotlist(ORGAN_SLOT_ARTERY))
+			if (A.is_bruised())
+				A.applyOrganDamage(-3 * REM * efficiency)
+		// then focus on bleeding injuries until they're below the bleeding threshold
+		for(var/datum/injury/owchie in M.all_injuries)
+			// don't insta-close surgical wounds for poor feldshers trying to operate, and ignore wounds that won't be bleeding out
+			if (owchie.is_surgical() || !owchie.is_bleeding(ignore_nonfinal_stopbleeds = TRUE))
+				continue
+			if (!owchie.can_heal()) //dont heal wounds that aren't supposed to be healable
+				continue
+			owchie.heal_damage(3.5 * REM * efficiency)
+
+		// double dip on healing speed when limb is in critical damage
+		// then cap on generalized bodypart injury healing until they've reached the limit, healed down to 40% damage max per limb
+		M.heal_overall_damage(4*REM * efficiency, 4*REM * efficiency, BODYPART_ORGANIC, TRUE,  bp_limit = 0.4)
 	. = ..()
 
 /datum/reagent/medicine/rosawater
@@ -85,7 +116,7 @@
 	random_reagent_color = FALSE
 	taste_description = "floral"
 	scent_description = "rosa"
-	metabolization_rate = REAGENTS_METABOLISM
+	metabolization_rate = REAGENTS_DOMA_METABOLISM
 	alpha = 173
 
 /datum/reagent/medicine/rosawater/on_mob_life(mob/living/carbon/M, efficiency)
@@ -182,7 +213,8 @@
 
 /datum/reagent/medicine/stampot/on_mob_life(mob/living/carbon/M, efficiency)
 	if(!HAS_TRAIT(M,TRAIT_NOSTAMINA))
-		M.adjust_stamina(-1.5 * efficiency, internal_regen = FALSE)
+		M.adjust_energy(3 * REM * efficiency)
+		M.adjust_stamina(-1.5 * REM * efficiency, internal_regen = FALSE)
 	..()
 
 /datum/reagent/medicine/strongstam
@@ -191,12 +223,13 @@
 	color = "#13df00"
 	taste_description = "sparkly static"
 	scent_description = "grass"
-	metabolization_rate = REAGENTS_METABOLISM * 3
+	metabolization_rate = REAGENTS_METABOLISM * 2
 	price_per_unit = 3
 
 /datum/reagent/medicine/strongstam/on_mob_life(mob/living/carbon/M, efficiency)
 	if(!HAS_TRAIT(M,TRAIT_NOSTAMINA))
-		M.adjust_stamina(-6 * efficiency, internal_regen = FALSE)
+		M.adjust_energy(12 * REM * efficiency)
+		M.adjust_stamina(-6 * REM * efficiency, internal_regen = FALSE)
 	..()
 
 /datum/reagent/medicine/antidote
@@ -221,7 +254,7 @@
 	color = "#004200"
 	taste_description = "dirt"
 	scent_description = "saiga droppings"
-	metabolization_rate = REAGENTS_METABOLISM * 3
+	metabolization_rate = REAGENTS_DOMA_METABOLISM
 
 /datum/reagent/medicine/diseasecure/on_bodypart_absorb(mob/living/carbon/affected_mob, obj/item/bodypart/affected_bodypart, amount_to_transfer)
 	affected_bodypart.disinfect_limb(20 MINUTES)
@@ -249,7 +282,7 @@
 	description = ""
 	random_reagent_color = TRUE
 	reagent_state = LIQUID
-	metabolization_rate = REAGENTS_METABOLISM
+	metabolization_rate = REAGENTS_SLOW_METABOLISM
 
 /datum/reagent/buff/strength
 	name = "Strength"
@@ -502,7 +535,7 @@ If you want to expand on poisons theres tons of fun effects TG chemistry has tha
 	random_reagent_color = TRUE
 	taste_description = "frozen air"
 	scent_description = "freezing dust"
-	metabolization_rate = REAGENTS_SLOW_METABOLISM * 9
+	metabolization_rate = REAGENTS_SLOW_METABOLISM * 3
 
 /datum/reagent/poison/stamina_strong/on_mob_life(mob/living/carbon/M, efficiency)
 	if(!HAS_TRAIT(M,TRAIT_NOSTAMINA))

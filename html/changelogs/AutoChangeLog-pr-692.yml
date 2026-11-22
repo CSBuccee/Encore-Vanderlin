@@ -1,0 +1,8 @@
+author: "Minomato"
+delete-after: True
+changes:
+  - rscadd: "UPDATE 10/27: Cudese sashimono banner added, sewing crafting recipe 2 cloth, 1 fiber, 1 stick"
+  - rscadd: "Cudese scaleplate, half-scaleplate, gorget, gauntlets, armored sandals, trousers, kabuto helm, kettle helm, half-mask, ogre-mask, katana variants and short katana are now craftable under steel and blacksteel templates."
+  - balance: "lowered weight of Cudese scaleplate to 14kg from 17kg to reflect slightly lighter protection than other heavy plates (has -50 baseline durability than steel standard 500)"
+  - bugfix: "adjusted some Cudese item names and descriptions to be lore appropriate"
+  - image: "added side-frames for bronze greaves, Cudese armored sandals and gauntlets"

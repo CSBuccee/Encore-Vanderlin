@@ -1,0 +1,4 @@
+author: "crimsonFig"
+delete-after: True
+changes:
+  - bugfix: "fixes the bugged behavior of stamina related code"

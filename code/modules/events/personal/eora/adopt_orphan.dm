@@ -4,7 +4,7 @@
 	typepath = /datum/round_event/adoption_call
 	weight = 7
 	earliest_start = 10 MINUTES
-	max_occurrences = 0//Encore edit- disabled because no playable children here please.
+	max_occurrences = 0//Encore edit- disabled because no playable children here please. // TODO: marked for deletion
 	min_players = 35
 
 	tags = list(

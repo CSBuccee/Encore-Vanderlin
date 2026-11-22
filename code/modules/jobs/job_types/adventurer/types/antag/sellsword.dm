@@ -55,7 +55,7 @@
 	switch(weapon_choice)
 		if("Spear & Crossbow")
 			spawned.equip_to_slot_or_del(new /obj/item/ammo_holder/quiver/bolts, ITEM_SLOT_BELT_R, TRUE)
-			spawned.equip_to_slot_or_del(new /obj/item/clothing/head/helmet/kettle, ITEM_SLOT_HEAD, TRUE)
+			spawned.equip_to_slot_or_del(new /obj/item/clothing/head/helmet/kettle/qadirid, ITEM_SLOT_HEAD, TRUE)
 		if("Sword & Buckler")
 			spawned.equip_to_slot_or_del(new /obj/item/clothing/head/helmet/sallet, ITEM_SLOT_HEAD, TRUE)
 		if("Footman War Axe")

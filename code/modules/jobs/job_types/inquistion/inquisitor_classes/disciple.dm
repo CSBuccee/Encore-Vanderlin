@@ -21,7 +21,7 @@
 		STAT_INTELLIGENCE = 1,
 	)
 	clamped_adjustment = list(
-		/datum/attribute/skill/combat/polearms = list(30, 30)
+		/datum/attribute/skill/combat/polearms = list(40, 40)
 	)
 
 /datum/job/advclass/sacrestant/disciple
@@ -75,8 +75,10 @@
 			spawned.add_spell(/datum/action/innate/clench_fists, TRUE)
 			ADD_TRAIT(spawned, TRAIT_CLOSECOMBAT, JOB_TRAIT)
 		if("Katar")
+			spawned.clamped_adjust_skill_level(/datum/attribute/skill/combat/unarmed, 10, 40)
 			ADD_TRAIT(spawned, TRAIT_CRITICAL_RESISTANCE, JOB_TRAIT)
 		if("Knuckledusters")
+			spawned.clamped_adjust_skill_level(/datum/attribute/skill/combat/unarmed, 10, 40)
 			ADD_TRAIT(spawned, TRAIT_CRITICAL_RESISTANCE, JOB_TRAIT)
 		if("Quarterstaff")
 			spawned.attributes?.add_sheet(/datum/attribute_holder/sheet/job/disciple/quarterstaff)

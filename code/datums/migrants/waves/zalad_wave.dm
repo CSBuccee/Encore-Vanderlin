@@ -303,7 +303,7 @@
 /datum/outfit/qadirid_migration/qadirid_guard
 	name = "Qadirid Soldier (Migrant Wave)"
 	shoes = /obj/item/clothing/shoes/shalal
-	head = /obj/item/clothing/head/helmet/sallet/qadirid
+	head = /obj/item/clothing/head/helmet/kettle/qadirid
 	gloves = /obj/item/clothing/gloves/angle
 	belt = /obj/item/storage/belt/leather/shalal
 	armor = /obj/item/clothing/armor/brigandine/coatplates

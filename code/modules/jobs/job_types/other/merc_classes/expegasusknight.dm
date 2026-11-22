@@ -40,7 +40,7 @@
 	name = "Ex-Pegasus Knight (Mercenary)"
 	shoes = /obj/item/clothing/shoes/ridingboots
 	cloak = /obj/item/clothing/cloak/pegasusknight
-	head = /obj/item/clothing/head/helmet/pegasusknight
+	head = /obj/item/clothing/head/helmet/heavy/necked/aelondan
 	gloves = /obj/item/clothing/gloves/angle
 	wrists = /obj/item/clothing/wrists/bracers/leather
 	belt = /obj/item/storage/belt/leather/mercenary/black

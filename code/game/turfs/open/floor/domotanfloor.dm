@@ -5,3 +5,6 @@
 
 /turf/open/floor/metal/red/alt
 	icon_state = "plating_red2"
+
+/turf/open/floor/metal/cogs
+	icon_state = "cog"

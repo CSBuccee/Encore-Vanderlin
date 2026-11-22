@@ -239,6 +239,8 @@
 
 	if(skeletonized)
 		status += "<span class='dead'>SKELETON</span>"
+		if (germ_level > INFECTION_LEVEL_ONE)
+			status += span_infection("Excessively Filthy")
 	else if(HAS_TRAIT(src, TRAIT_ROTTEN))
 		status += "<span class='necrosis'>NECROSIS</span>"
 	else

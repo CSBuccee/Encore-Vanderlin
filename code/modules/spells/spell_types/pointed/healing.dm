@@ -4,7 +4,7 @@
 
 /datum/action/cooldown/spell/healing
 	name = "Lesser Miracle"
-	desc = "Call upon your patron to heal the wounds of yourself or others."
+	desc = "Call upon your patron to heal the wounds of yourself or others, dependant on the bodypart you are aiming."
 	button_icon_state = "lesserheal"
 	sound = 'sound/magic/heal.ogg'
 	charge_sound = 'sound/magic/holycharging.ogg'
@@ -304,7 +304,7 @@
 
 	charge_required = TRUE
 	charge_time = 1 SECONDS
-	cooldown_time = 20 SECONDS
+	cooldown_time = 12 SECONDS
 	spell_cost = 45
 
 	base_healing = 25

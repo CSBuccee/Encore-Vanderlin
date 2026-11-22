@@ -362,6 +362,7 @@
 //distinct areas for domotan island
 /area/outdoors/town/docksmortimer
 	first_time_text = "DOCKS MORTIMER"
+	background_track = 'sound/ambience/harbor.ogg'
 
 /area/outdoors/town/plaza
 	first_time_text = "CENTRAL PLAZA"

@@ -1,0 +1,4 @@
+author: "crimsonFig"
+delete-after: True
+changes:
+  - bugfix: "fixes conduit circles not bringing followers and becoming inoperable after one use"

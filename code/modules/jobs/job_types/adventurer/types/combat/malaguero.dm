@@ -39,7 +39,7 @@
 	gloves = /obj/item/clothing/gloves/angle/sterkenstadten
 	belt = /obj/item/storage/belt/leather
 	shirt = /obj/item/clothing/armor/gambeson
-	head = /obj/item/clothing/head/helmet/visored/sallet/iron
+	head = /obj/item/clothing/head/helmet/kettle/qadirid
 	armor = /obj/item/clothing/armor/cuirass/iron
 	beltr = /obj/item/weapon/mace/spiked
 	backl = /obj/item/weapon/shield/tower/buckleriron

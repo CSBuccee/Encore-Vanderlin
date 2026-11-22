@@ -37,7 +37,7 @@
 	if(target.has_status_effect(/datum/status_effect/incapacitating/off_balanced))
 		target.remove_status_effect(/datum/status_effect/incapacitating/off_balanced)
 	target.set_resting(FALSE)
-	target.adjust_stamina(10)
+	target.adjust_stamina(-10, internal_regen=FALSE)
 
 	target.balloon_alert_to_viewers("<font color='[spell_color]'>surge!</font>")
 	target.visible_message(span_warning("[target] surges back up, wreathed in energy!"), span_notice("Arcyne energy floods my body - I rise!"))

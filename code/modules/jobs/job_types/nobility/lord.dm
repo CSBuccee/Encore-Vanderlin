@@ -182,6 +182,7 @@ GLOBAL_LIST_EMPTY(lord_titles)
 
 	backpack_contents = list(
 		/obj/item/storage/keyring/monarch = 1,
+		/obj/item/servant_bell/lord = 1,
 	)
 
 /datum/outfit/lord/map_override(mob/living/carbon/human/H)

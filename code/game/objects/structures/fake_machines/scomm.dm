@@ -170,7 +170,7 @@
 
 /obj/item/scomstone
 	name = "scomstone ring"
-	desc = "Gold and glittering green."
+	desc = "Gold and glittering green. Middle click to adjust between three passive modes. Right click to actively send a message to scomms"
 	icon = 'icons/roguetown/clothing/rings.dmi'
 	icon_state = "ring_emerald"
 	gripped_intents = null
@@ -182,6 +182,7 @@
 
 	w_class = WEIGHT_CLASS_SMALL
 	muteinmouth = TRUE
+	var/mode = 0
 	var/listening = TRUE
 	var/speaking = TRUE
 	sellprice = 35
@@ -213,9 +214,23 @@
 		return
 	user.changeNext_move(CLICK_CD_MELEE)
 	playsound(src, 'sound/misc/beep.ogg', 100, FALSE, -1)
-	listening = !listening
-	speaking = !speaking
-	to_chat(user, "<span class='info'>I [speaking ? "unmute" : "mute"] the scomstone.</span>")
+	switch(mode)
+		if (0)
+			speaking = TRUE
+			listening = FALSE
+			mode++
+			to_chat(user, "<span class='info'>I set the scomstone to <span class='alert'>Recieve Mode</span>; it will not auto-transmit, but will still receive.</span>")
+		if (1)
+			speaking = FALSE
+			listening = FALSE
+			mode++
+			to_chat(user, "<span class='info'>I set the scomstone to <span class='alert'>Mute Mode</span>; it will not auto-transmit or receive.</span>")
+		else
+			speaking = TRUE
+			listening = TRUE
+			mode = 0
+			to_chat(user, "<span class='info'>I set the scomstone to <span class='alert'>Full Mode</span>; it will both auto-transmit and receive.</span>")
+
 
 /obj/item/scomstone/Destroy()
 	SSroguemachine.scomm_machines -= src
@@ -273,9 +288,19 @@
 
 /obj/item/scomstone/bad
 	name = "serfstone"
+	desc = "Gold and glittering green. For serfs that should listen and not speak."
 	icon_state = "ring_emerald"
 	listening = FALSE
 	sellprice = 2
+
+/obj/item/scomstone/bad/attack_hand_secondary(mob/user, list/modifiers)
+	return SECONDARY_ATTACK_CANCEL_ATTACK_CHAIN
+
+/obj/item/scomstone/bad/MiddleClick(mob/user, list/modifiers)
+	user.changeNext_move(CLICK_CD_MELEE)
+	playsound(src, 'sound/misc/beep.ogg', 100, FALSE, -1)
+	speaking = !speaking
+	to_chat(user, "<span class='info'>I [speaking ? "unmute" : "mute"] the scomstone.</span>")
 
 /obj/item/scomstone/bad/Hear()
 	return

@@ -142,9 +142,9 @@
 	ui_category = "Cloaks"
 	triumph_cost_permanent = 3
 
-/datum/loadout_item/kazengun_coat
+/datum/loadout_item/cudese_coat
 	name = "Jinbaori"
-	item_path = /obj/item/clothing/cloak/kazengun
+	item_path = /obj/item/clothing/cloak/cudese
 	ui_category = "Cloaks"
 	triumph_cost_permanent = 2
 

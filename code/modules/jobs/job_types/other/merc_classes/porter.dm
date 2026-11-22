@@ -51,6 +51,7 @@
 		TRAIT_SEEDKNOW,
 		TRAIT_SEEPRICES,
 		TRAIT_DODGEEXPERT,
+		TRAIT_INGREDIENT_INSIGHT,
 	)
 
 /datum/job/advclass/mercenary/porter/after_spawn(mob/living/carbon/human/spawned, client/player_client)

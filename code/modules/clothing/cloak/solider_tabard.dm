@@ -164,7 +164,7 @@
 	item_state = "tabard_necra_alt"
 
 /obj/item/clothing/cloak/stabard/templar/gani
-	name = "surcoat of the dendorian order"
+	name = "surcoat of the earthen order"
 	icon_state = "tabard_dendor"
 	item_state = "tabard_dendor"
 

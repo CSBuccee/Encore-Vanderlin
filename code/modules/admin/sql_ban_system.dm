@@ -839,7 +839,7 @@
 				return
 		qdel(query_check_adminban_count)
 
-	if (!(interval in list("SECOND", "MINUTE", "HOUR", DAY, "WEEK", "MONTH", "YEAR")))
+	if (!(interval in list("SECOND", "MINUTE", "HOUR", "DAY", "WEEK", "MONTH", "YEAR")))
 		interval = "MINUTE"
 
 	var/list/changes_text = list()

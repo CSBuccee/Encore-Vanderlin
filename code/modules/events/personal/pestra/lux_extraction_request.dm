@@ -4,7 +4,7 @@
 	typepath = /datum/round_event/erdl_lux
 	weight = 7
 	earliest_start = 15 MINUTES
-	max_occurrences = 1
+	max_occurrences = 0 // TODO: no, this is heretical for erdl, but could be good if reworked for bog witches or something
 	min_players = LOWPOP_THRESHOLD
 
 	tags = list(

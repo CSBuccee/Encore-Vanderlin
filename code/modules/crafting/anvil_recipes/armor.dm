@@ -330,6 +330,17 @@
 	created_item = /obj/item/clothing/head/helmet/pegasusknight
 	craftdiff = 2
 
+/datum/anvil_recipe/armor/steel/aelondanhelm
+	name = "Aelondan Corsair Helmet (+Cloth)"
+	additional_items = list(/obj/item/natural/cloth)
+	created_item = /obj/item/clothing/head/helmet/heavy/necked/aelondan
+	craftdiff = 3
+
+/datum/anvil_recipe/armor/steel/phoenixhelm
+	name = "Phoenix Helmet"
+	created_item = /obj/item/clothing/head/helmet/phoenix
+	craftdiff = 3
+
 /datum/anvil_recipe/armor/steel/crusader_helm
 	name = "Crusader helm (+Bar X2)"
 	additional_items = list(/obj/item/ingot/steel, /obj/item/ingot/steel)
@@ -1115,6 +1126,47 @@
 	name = "Aelondan Cuirass (+Steel Bar)"
 	additional_items = list(/obj/item/ingot/steel)
 	created_item = /obj/item/clothing/armor/cuirass/sterkenstadten
+
+/datum/anvil_recipe/armor/blacksteel/cudese_scaleplate
+	name = "Cudese Scaleplate (+Steel Bar x2)"
+	additional_items = list(/obj/item/ingot/steel, /obj/item/ingot/steel)
+	created_item = /obj/item/clothing/armor/plate/full/cudese
+
+/datum/anvil_recipe/armor/blacksteel/cudese_halfscaleplate
+	name = "Cudese Half Scaleplate (+Steel Bar)"
+	additional_items = list(/obj/item/ingot/steel)
+	created_item = /obj/item/clothing/armor/brigandine/cudese
+
+/datum/anvil_recipe/armor/blacksteel/cudese_halfmask
+	name = "Cudese Half-Mask"
+	created_item = /obj/item/clothing/face/facemask/cudese
+
+/datum/anvil_recipe/armor/blacksteel/cudese_ogremask
+	name = "Cudese Ogre-Mask"
+	created_item = /obj/item/clothing/face/facemask/cudese/ogre
+
+/datum/anvil_recipe/armor/blacksteel/cudese_gorget
+	name = "Cudese Gorget"
+	created_item = /obj/item/clothing/neck/gorget/cudese
+
+/datum/anvil_recipe/armor/blacksteel/cudese_sandals
+	name = "Cudese Armored Sandals (+1 Cured Leather)"
+	additional_items = list(/obj/item/natural/hide/cured)
+	created_item = /obj/item/clothing/shoes/boots/leather/cudese
+
+/datum/anvil_recipe/armor/blacksteel/cudese_kabuto
+	name = "Cudese Kabuto (+Steel Bar)"
+	additional_items = list(/obj/item/ingot/steel)
+	created_item = /obj/item/clothing/head/helmet/heavy/cudese
+
+/datum/anvil_recipe/armor/blacksteel/cudese_helm
+	name = "Cudese Kettle Helm (+Steel Bar)"
+	additional_items = list(/obj/item/ingot/steel)
+	created_item = /obj/item/clothing/head/helmet/kettle/cudese
+
+/datum/anvil_recipe/armor/blacksteel/cudese_gloves
+	name = "Cudese Gauntlets"
+	created_item = /obj/item/clothing/gloves/plate/cudese
 
 /datum/anvil_recipe/armor/blacksteel/platechest
 	name = "Blacksteel Plate Armor (+Bar x3)"

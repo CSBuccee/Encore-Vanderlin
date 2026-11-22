@@ -29,7 +29,7 @@
 	. = ..()
 	if(isliving(owner))
 		var/mob/living/L = owner
-		L.adjust_stamina(50)
+		L.adjust_stamina(-50, internal_regen=FALSE)
 		ADD_TRAIT(owner, TRAIT_STRONG_GRABBER, TRAIT_STATUS_EFFECT(id))
 		to_chat(owner, span_notice("You feel invigorated with supernatural strength."))
 

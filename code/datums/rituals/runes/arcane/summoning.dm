@@ -15,7 +15,7 @@
 	.=..()
 
 /obj/effect/decal/cleanable/ritual_rune/arcyne/summoning/attack_hand(mob/living/user)
-	if(summoning && GET_MOB_SKILL_VALUE(user, /datum/attribute/skill/magic/arcane) > SKILL_LEVEL_NONE)
+	if(summoning && GET_MOB_SKILL_VALUE_RAW(user, magictype) >= SKILL_LEVEL_NOVICE)
 		to_chat(user, span_warning("You release the summon from its containment!"))
 		playsound(usr, 'sound/magic/teleport_diss.ogg', 75, TRUE)
 		do_invoke_glow()

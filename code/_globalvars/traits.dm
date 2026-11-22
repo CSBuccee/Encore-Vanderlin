@@ -221,6 +221,7 @@ GLOBAL_LIST_INIT(traits_by_type, list(
 		"Steel Hearted" = TRAIT_STEELHEARTED,
 		"Sorcerer" = TRAIT_SORCERER,
 		"Chest Bust Overridden" = TRAIT_TOGGLEBUST,
+		"Ingredient Insight" = TRAIT_INGREDIENT_INSIGHT,
 		"Demon" = TRAIT_DEMON,
 	),
 	/obj/item/bodypart = list(

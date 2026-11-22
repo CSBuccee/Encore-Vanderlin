@@ -752,6 +752,8 @@
 	additional_items = list(/obj/item/weapon/scabbard/knife)
 	created_item = /obj/item/weapon/scabbard/knife/noble
 
+//-------------------gold----------------------------
+
 /datum/anvil_recipe/weapons/gold
 	abstract_type = /datum/anvil_recipe/weapons/gold
 	required_material = /obj/item/ingot/gold
@@ -763,8 +765,29 @@
 	additional_items = list(/obj/item/weapon/scabbard/sword)
 	created_item = /obj/item/weapon/scabbard/sword/royal
 
+/datum/anvil_recipe/weapons/gold/cudese_scabbard
+	name = "Simple Cudese Scabbard (+Scabbard)"
+	appro_skill = /datum/attribute/skill/craft/weaponsmithing
+	additional_items = list(/obj/item/weapon/scabbard/sword)
+	created_item = /obj/item/weapon/scabbard/cudese
+	craftdiff = 4
+
+/datum/anvil_recipe/weapons/gold/cudese_gold_scabbard
+	name = "Cudese Gold Scabbard (+Scabbard)"
+	appro_skill = /datum/attribute/skill/craft/weaponsmithing
+	additional_items = list(/obj/item/weapon/scabbard/sword)
+	created_item = /obj/item/weapon/scabbard/cudese/gold
+
+/datum/anvil_recipe/weapons/steel/cudese_steel_scabbard
+	name = "Cudese Steel Scabbard (+Scabbard)"
+	appro_skill = /datum/attribute/skill/craft/weaponsmithing
+	additional_items = list(/obj/item/weapon/scabbard/sword)
+	created_item = /obj/item/weapon/scabbard/cudese/steel
+	craftdiff = 5
+
 /datum/anvil_recipe/weapons/gold/noble_knife_sheath
 	name = "Decorated Golden Knife Sheath (+Sheath)"
+	appro_skill = /datum/attribute/skill/craft/weaponsmithing
 	additional_items = list(/obj/item/weapon/scabbard/knife)
 	created_item = /obj/item/weapon/scabbard/knife/royal
 
@@ -869,6 +892,11 @@
 	appro_skill = /datum/attribute/skill/craft/weaponsmithing
 	additional_items = list(/obj/item/ingot/steel)
 	created_item = /obj/item/weapon/mace/elvenclub/steel
+
+/datum/anvil_recipe/weapons/steel/short_katana
+	name = "Cudese Short Katana"
+	appro_skill = /datum/attribute/skill/craft/weaponsmithing
+	created_item = /obj/item/weapon/sword/short/katana
 
 // --------- SILVER ------------  Harder to craft, does less damage and has less durability than steel, but banes undead.
 
@@ -1106,3 +1134,28 @@
 	craftdiff = 3
 	additional_items = list(/obj/item/ingot/gold, /obj/item/grown/log/tree)
 	created_item = /obj/item/weapon/mace/cane/noble
+
+// ------------------ Blacksteel ------------------
+
+/datum/anvil_recipe/weapons/blacksteel
+	abstract_type = /datum/anvil_recipe/weapons/blacksteel
+	required_material = /obj/item/ingot/blacksteel
+	craftdiff = 4
+
+/datum/anvil_recipe/weapons/blacksteel/sword/katana
+	name = "Cudese Katana (+Steel Bar)"
+	appro_skill = /datum/attribute/skill/craft/weaponsmithing
+	additional_items = list(/obj/item/ingot/steel)
+	created_item = /obj/item/weapon/sword/katana
+
+/datum/anvil_recipe/weapons/blacksteel/sword/katana/cloud
+	name = "Cudese Cloud Katana (+Steel Bar)"
+	appro_skill = /datum/attribute/skill/craft/weaponsmithing
+	additional_items = list(/obj/item/ingot/steel)
+	created_item = /obj/item/weapon/sword/katana/mulyeog/rumahench
+
+/datum/anvil_recipe/weapons/blacksteel/sword/katana/gold
+	name = "Cudese Gold Katana (+Gold Bar)"
+	appro_skill = /datum/attribute/skill/craft/weaponsmithing
+	additional_items = list(/obj/item/ingot/gold)
+	created_item = /obj/item/weapon/sword/katana/mulyeog/rumacaptain

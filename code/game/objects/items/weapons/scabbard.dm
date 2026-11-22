@@ -208,8 +208,8 @@
 
 
 
-/obj/item/weapon/scabbard/kazengun
-	name = "simple eastern scabbard"
+/obj/item/weapon/scabbard/cudese
+	name = "simple cudese scabbard"
 	desc = "A piece of steel lined with wood. Great for batting away blows."
 	icon_state = "kazscab"
 	item_state = "kazscab"
@@ -224,20 +224,20 @@
 	sellprice = 10
 	item_weight = 400 GRAMS
 
-/obj/item/weapon/scabbard/kazengun/apply_components()
+/obj/item/weapon/scabbard/cudese/apply_components()
 	. = ..()
-	AddComponent(/datum/component/storage/concrete/scabbard/kazengun)
+	AddComponent(/datum/component/storage/concrete/scabbard/cudese)
 
-/obj/item/weapon/scabbard/kazengun/steel
-	name = "hwang scabbard"
+/obj/item/weapon/scabbard/cudese/steel
+	name = "cudese steel scabbard"
 	desc = "A cloud-patterned scabbard with a cloth sash. Used for blocking."
 	icon_state = "kazscab_steel"
 	item_state = "kazscab_steel"
 	max_integrity = INTEGRITY_STRONG
 	item_weight = 450 GRAMS
 
-/obj/item/weapon/scabbard/kazengun/gold
-	name = "gold-stained scabbard"
+/obj/item/weapon/scabbard/cudese/gold
+	name = "cudese gold scabbard"
 	desc = "An ornate, wooden scabbard with a sash. Great for parrying."
 	icon_state = "kazscab_gold"
 	item_state = "kazscab_gold"

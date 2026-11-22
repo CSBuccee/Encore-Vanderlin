@@ -55,7 +55,7 @@ SUBSYSTEM_DEF(ParticleWeather)
 		if("Rosewood")
 			selected_forecast = new /datum/forecast/rosewood()
 		if("Domotan")
-			selected_forecast = new /datum/forecast/domotan_fall()
+			selected_forecast = new /datum/forecast/domotan_winter()
 		else
 			selected_forecast = new /datum/forecast/vanderlin()
 	selected_forecast.set_ambient_temperature(SSnightshift.current_tod ? SSnightshift.current_tod : settod())

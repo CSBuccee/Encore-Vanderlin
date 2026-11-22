@@ -4,7 +4,7 @@
 	typepath = /datum/round_event/visires_nobility
 	weight = 7
 	earliest_start = 5 MINUTES
-	max_occurrences = 1
+	max_occurrences = 0 // TODO: marked for deletion, it's a really shitty objective for visires players
 	min_players = LOWPOP_THRESHOLD
 
 	tags = list(

@@ -65,7 +65,7 @@
 	description = "An unstable alchemical suspension infused with volatile air-aspected essence. It fills the body with kinetic potential, causing the imbiber to rebound and spring with unnatural force. Excess causes chaotic motion, uncontrolled spasms, and degradation of the mind and body."
 	reagent_state = LIQUID
 	color = "#7FE0FF"
-	metabolization_rate = 0.75 * REAGENTS_METABOLISM
+	metabolization_rate = REAGENTS_SLOW_METABOLISM
 	price_per_unit = 7
 
 /datum/reagent/drug/phlogiston_elasticum/on_mob_metabolize(mob/living/L)
@@ -81,7 +81,7 @@
 	description = "A heavy alchemical distillate that saturates the body with excess essence of Earth. The imbiber swells in size and mass, movements becoming slower but more forceful. Prolonged exposure causes uncontrolled growth, sluggish reflexes, and structural stress as the body struggles to support its own weight."
 	reagent_state = LIQUID
 	color = "#5FA8FF"
-	metabolization_rate = 0.75 * REAGENTS_METABOLISM
+	metabolization_rate = REAGENTS_SLOW_METABOLISM
 	price_per_unit = 7
 
 /datum/reagent/drug/gravitum_elixir/on_mob_metabolize(mob/living/L)
@@ -99,7 +99,7 @@
 	description = "A rare alchemical tincture that refines and compresses the body’s physical essence. The imbiber shrinks in size, becoming light and agile but physically fragile. Excess causes severe instability, dizziness, and progressive loss of bodily cohesion."
 	reagent_state = LIQUID
 	color = "#BFEFFF"
-	metabolization_rate = 0.75 * REAGENTS_METABOLISM
+	metabolization_rate = REAGENTS_SLOW_METABOLISM
 	price_per_unit = 7
 
 /datum/reagent/drug/subtilum_tincture/on_mob_metabolize(mob/living/L)
@@ -135,7 +135,7 @@
 
 /datum/reagent/cryzaline_suspension
 	name = "Crysaline Suspension"
-	description = "A supercooled alchemical suspension that rapidly crystallizes moisture on contact. Each exposure deepens the frost, layering rime upon the body until it violently ruptures."
+	description = "A supercooled alchemical suspension that rapidly crystallizes moisture on contact. Each exposure deepens the frost, layering rime upon the body until it violently ruptures. Splash just 15 ligulae on the person or feed it three times to someone for best effect."
 	reagent_state = LIQUID
 	color = "#88BFFF"
 	metabolization_rate = 0.5 * REAGENTS_METABOLISM
@@ -143,7 +143,7 @@
 	price_per_unit = 7
 
 	/// Minimum volume before frost begins to take hold
-	var/min_volume_to_affect = 5
+	var/min_volume_to_affect = 3
 	/// How much reagent volume converts into frost stacks
 	var/reagent_to_stack_conversion = 0.2
 

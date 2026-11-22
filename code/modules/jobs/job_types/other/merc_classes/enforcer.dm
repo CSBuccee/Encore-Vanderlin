@@ -67,10 +67,10 @@
 		is_leader = TRUE
 		var/obj/item/weapon/sword/katana/mulyeog/rumacaptain/P = new(get_turf(src))
 		H.equip_to_appropriate_slot(P)
-		var/obj/item/weapon/scabbard/kazengun/gold/L = new(get_turf(src))
+		var/obj/item/weapon/scabbard/cudese/gold/L = new(get_turf(src))
 		H.equip_to_appropriate_slot(L)
 	else
 		var/obj/item/weapon/sword/katana/mulyeog/rumahench/P = new(get_turf(src))
 		H.equip_to_appropriate_slot(P)
-		var/obj/item/weapon/scabbard/kazengun/steel/L = new(get_turf(src))
+		var/obj/item/weapon/scabbard/cudese/steel/L = new(get_turf(src))
 		H.equip_to_appropriate_slot(L)

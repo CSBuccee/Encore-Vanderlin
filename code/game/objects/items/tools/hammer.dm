@@ -12,6 +12,7 @@
 	wlength = 10
 	slot_flags = ITEM_SLOT_HIP
 	w_class = WEIGHT_CLASS_NORMAL
+	wdefense = AVERAGE_PARRY
 	associated_skill = /datum/attribute/skill/combat/axesmaces
 	melting_material = /datum/material/iron
 	melt_amount = 75
@@ -259,7 +260,7 @@
 	force = DAMAGE_HAMMER - 4
 	max_integrity = INTEGRITY_POOR
 	melting_material = /obj/item/natural/stone
-	toolspeed = 1
+	toolspeed = 1.3
 	no_spark = TRUE
 	item_weight = 1.1 KILOGRAMS
 
@@ -269,7 +270,7 @@
 	icon_state = "hammerstone"
 	force = DAMAGE_HAMMER - 6
 	max_integrity = INTEGRITY_WORST
-	toolspeed = 0.8
+	toolspeed = 1.5
 	item_weight = 0.8 KILOGRAMS
 
 /obj/item/weapon/hammer/sledgehammer
@@ -277,18 +278,23 @@
 	desc = "It's almost asking to be put to work."
 	icon = 'icons/roguetown/weapons/32/clubs.dmi'
 	icon_state = "sledgehammer"
-	force_wielded = DAMAGE_HAMMER_WIELD + 5
-	possible_item_intents = list(MACE_STRIKE)
-	gripped_intents = list(MACE_HVYSTRIKE, MACE_HVYSMASH)
-	wbalance = EASY_TO_DODGE // Heavy
+	force = DAMAGE_HAMMER + 4
+	force_wielded = DAMAGE_HAMMER_WIELD + 4
+	possible_item_intents = list(MAUL_STRIKE)
+	gripped_intents = list(MAUL_HVYSTRIKE, MAUL_HVYSMASH)
+	wdefense = AVERAGE_PARRY
+	wbalance = VERY_EASY_TO_DODGE // heavier than higher-quality hammers
 	minstr = 8
+	toolspeed = 1
 
 	gripsprite = TRUE
 	slot_flags = ITEM_SLOT_HIP|ITEM_SLOT_BACK
 	melt_amount = 100
 	grid_width = null
 	grid_height = null
-	item_weight = 7.4 KILOGRAMS
+	item_weight = 8.4 KILOGRAMS
+
+	weapon_special = /datum/special_intent/ground_smash
 
 /obj/item/weapon/hammer/sledgehammer/getonmobprop(tag)
 	. = ..()
@@ -303,27 +309,30 @@
 
 /obj/item/weapon/hammer/sledgehammer/war
 	name = "steel sledgehammer"
-	desc = "A heavy steel sledgehammer, a weapon designed to make knights run in fear, the best option for a common soldier against a knight."
+	desc = "A steel sledgehammer, a weapon designed to make knights run in fear, the best option for a common soldier against a knight. Lighter than a working sledgehammer."
 	icon = 'icons/roguetown/weapons/32/clubs.dmi'
 	icon_state = "warbonker"
 	force = DAMAGE_HAMMER + 5
-	force_wielded = DAMAGE_HAMMER_WIELD + 10
+	force_wielded = DAMAGE_HAMMER_WIELD + 5
 	max_integrity = INTEGRITY_STRONGEST
 	melting_material = /datum/material/steel
-	toolspeed = 1.5 //it's for crushing skulls not nails
-	item_weight = 8.4 KILOGRAMS
+	wdefense = GOOD_PARRY
+	wbalance = EASY_TO_DODGE
+	toolspeed = 1
+	item_weight = 6 KILOGRAMS
 
 /obj/item/weapon/hammer/sledgehammer/war/golerkanh
 	name = "forgefiend"
 	desc = "This hammer's creation took a riddle in its own making. A great sacrifice for perfect quality"
 	icon = 'icons/roguetown/weapons/64/patron.dmi'
 	icon_state = "malumhammer"
-	force = DAMAGE_MACE
-	force_wielded = DAMAGE_HEAVYCLUB_WIELD
+	force = DAMAGE_HAMMER + 5
+	force_wielded = DAMAGE_HAMMER_WIELD + 5
 	wdefense = GOOD_PARRY
-	wbalance = DODGE_CHANCE_NORMAL
-	max_integrity = INTEGRITY_STRONGEST * 1.2
+	wbalance = EASY_TO_DODGE
+	max_integrity = INTEGRITY_STRONGEST * 1.4
 	minstr = 10
+	item_weight = 8 KILOGRAMS
 
 	pixel_y = -16
 	pixel_x = -16

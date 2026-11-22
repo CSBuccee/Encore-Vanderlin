@@ -241,6 +241,12 @@
 #define WARHM_THRUST		/datum/intent/mace/warhammer/stab
 #define WARHM_IMPALE		/datum/intent/mace/warhammer/impale
 
+#define MAUL_SMASH			/datum/intent/maul/smash
+#define MAUL_HVYSMASH		/datum/intent/maul/smash/heavy
+
+#define MAUL_STRIKE			/datum/intent/maul/strike
+#define MAUL_HVYSTRIKE		/datum/intent/maul/strike/heavy
+
 #define FLAIL_STRIKE		/datum/intent/flail/strike
 #define FLAIL_LNGSTRIKE		/datum/intent/flail/strike/long
 #define FLAIL_SMASH			/datum/intent/flail/strike/smash

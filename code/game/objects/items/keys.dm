@@ -303,7 +303,7 @@
 	name = "keep master key"
 	desc = "This key will open almost all Keep doors."
 	icon_state = "royalkey"
-	lockids = list(ACCESS_MANOR, ACCESS_BUTLER, ACCESS_SERVANT)
+	lockids = list(ACCESS_MANOR, ACCESS_BUTLER, ACCESS_SERVANT, ACCESS_ARCHIVIST, ACCESS_LIBRARY)
 
 /obj/item/key/servant
 	name = "keep servants key"
@@ -390,7 +390,7 @@
 	name = "keep garrison key"
 	desc = "A key given to the Monarch's men-at-arms."
 	icon_state = "spikekey"
-	lockids = list(ACCESS_AT_ARMS)
+	lockids = list(ACCESS_AT_ARMS, ACCESS_GARRISON)
 
 /obj/item/key/guest
 	name = "guest room master key"

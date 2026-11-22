@@ -8,7 +8,7 @@
 	antimagic_flags = MAGIC_RESISTANCE_HOLY
 	associated_skill = /datum/attribute/skill/magic/holy
 
-	invocation = "Beast-Lord, lend me the eyes of the zad, the nose of the volf."
+	invocation = "Beast-Lord, lend me the eyes of the crow, the nose of the wolf."
 	invocation_type = INVOCATION_WHISPER
 
 	charge_required = FALSE

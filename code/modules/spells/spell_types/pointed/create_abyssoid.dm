@@ -36,8 +36,8 @@
 		return
 
 	follower.visible_message(
-		span_warning("[follower] begins stragely murmuring over [target]..."),
-		span_notice("You begin the transformation ritual, offering your blood to Mjallidhorn."),
+		span_warning("[follower] begins strangely murmuring over [target]..."),
+		span_notice("You begin the transformation ritual, offering your blood to the leech in honor of Erdl."),
 	)
 
 	if(!do_after(follower, 10 SECONDS, target))

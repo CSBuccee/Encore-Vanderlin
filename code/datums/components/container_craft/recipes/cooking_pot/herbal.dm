@@ -315,7 +315,7 @@
 	name = "Purification Draught"
 	created_reagent = /datum/reagent/medicine/herbal/purification_draught
 	requirements = list(
-		/obj/item/alch/herb/rosa = 1,
+		/obj/item/alch/herb/matricaria = 1,
 		/obj/item/alch/herb/calendula = 1,
 		/obj/item/alch/herb/hypericum = 1
 	)
@@ -328,7 +328,7 @@
 	finished_smell = /datum/pollutant/food/flower
 	complete_message = "The draught radiates purity and cleansing!"
 
-/datum/container_craft/cooking/herbal_tea/purification_draught
+/datum/container_craft/cooking/herbal_tea/gender_potion
 	name = "Transis Potion"
 	created_reagent = /datum/reagent/medicine/gender_potion
 	water_conversion = 0.5

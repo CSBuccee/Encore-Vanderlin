@@ -1,0 +1,6 @@
+author: "kyres1"
+delete-after: True
+changes:
+  - rscadd: "Added seagulls around Old Doma."
+  - rscadd: "Added ambience for a harbor that occurs in the docks mortimer around Old Doma during day hours."
+  - bugfix: "Changed the name of zads to crows ingame."

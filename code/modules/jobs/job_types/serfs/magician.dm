@@ -145,6 +145,7 @@
 	cloak = /obj/item/clothing/cloak/black_cloak
 	belt = /obj/item/storage/belt/leather
 	beltr = /obj/item/storage/magebag/apprentice
+	beltl = /obj/item/storage/belt/pouch/coins/rich
 	backl = /obj/item/weapon/polearm/woodstaff
 	pants = /obj/item/clothing/pants/tights/colored/random
 	shoes = /obj/item/clothing/shoes/shortboots

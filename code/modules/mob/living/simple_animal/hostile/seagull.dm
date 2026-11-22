@@ -1,0 +1,114 @@
+//This basically directly mimics the behavior of crow.dm
+/obj/item/reagent_containers/food/snacks/seagull
+	name = "seagull"
+	desc = "A pesky sea-faring bird which congregates on coastlines and island chains."
+	icon_state = "seagull"
+	icon = 'icons/roguetown/mob/monster/seagull.dmi'
+	nutrition = MINCE_NUTRITION
+	foodtype = RAW | MEAT
+	verb_say = "squeaks"
+	verb_yell = "squeaks"
+	obj_flags = CAN_BE_HIT
+	var/dead = FALSE
+	eat_effect = /datum/status_effect/debuff/uncookedfood
+	max_integrity = 10
+	sellprice = 0
+	blade_dulling = DULLING_CUT
+	rotprocess = null
+
+/obj/item/reagent_containers/food/snacks/seagull/atom_deconstruct(disassembled)
+	new /obj/item/natural/feather(drop_location())
+
+/obj/item/reagent_containers/food/snacks/friedseagull
+	name = "fried seagull"
+	desc = "A pesky, loud and fortunately deep fried bird."
+	icon_state = "fcrow"
+	bitesize = 2
+	nutrition = MINCE_NUTRITION * COOK_MOD
+	w_class = WEIGHT_CLASS_TINY
+	foodtype = MEAT
+	tastes = list("burnt flesh" = 1)
+	eat_effect = null
+	rotprocess = SHELFLIFE_SHORT
+	sellprice = 0
+
+/obj/item/reagent_containers/food/snacks/seagull/burning(input as num)
+	. = ..()
+	if(!dead)
+		if(burning >= burntime)
+			dead = TRUE
+			playsound(src, 'sound/vo/mobs/rat/rat_death.ogg', 100, FALSE, -1)
+			icon_state = "[icon_state]1"
+
+/obj/item/reagent_containers/food/snacks/seagull/dead
+	dead = TRUE
+	rotprocess = SHELFLIFE_SHORT
+
+/obj/item/reagent_containers/food/snacks/seagull/Initialize()
+	. = ..()
+	START_PROCESSING(SSobj, src)
+	if(dead)
+		icon_state = "[icon_state]l"
+
+/obj/item/reagent_containers/food/snacks/seagull/attack_hand(mob/user)
+	if(isliving(user))
+		var/mob/living/L = user
+		if(!(L.mobility_flags & MOBILITY_PICKUP))
+			return
+	user.changeNext_move(CLICK_CD_MELEE)
+	if(dead)
+		..()
+	else
+		if(isliving(user))
+			var/mob/living/L = user
+			if(prob(GET_MOB_ATTRIBUTE_VALUE(L, STAT_SPEED) * 2))
+				..()
+			else
+				if(isturf(loc))
+					to_chat(user, "<span class='warning'>I fail to snatch [src]!</span>")
+					playsound(src, 'sound/vo/mobs/bird/birdfly.ogg', 100, TRUE, -1)
+					qdel(src)
+					return
+	..()
+
+/obj/item/reagent_containers/food/snacks/seagull/process()
+	..()
+	if(dead)
+		return
+	if(!isturf(loc)) //no floating out of bags
+		return
+	if(prob(8))
+		playsound(src, pick('sound/vo/mobs/bird/seagull_01.ogg','sound/vo/mobs/bird/seagull_02.ogg','sound/vo/mobs/bird/seagull_03.ogg'), 100, TRUE, -1)
+
+/obj/item/reagent_containers/food/snacks/seagull/atom_destruction(damage_flag)
+	if(!dead)
+		dead = TRUE
+		playsound(src, 'sound/vo/mobs/rat/rat_death.ogg', 100, FALSE, -1)
+		icon_state = "[icon_state]1"
+		rotprocess = SHELFLIFE_SHORT
+		return 1
+	return ..()
+
+/obj/item/reagent_containers/food/snacks/seagull/Crossed(mob/living/L)
+	. = ..()
+	if(!dead)
+		playsound(src, 'sound/vo/mobs/bird/birdfly.ogg', 100, TRUE, -1)
+		qdel(src)
+
+
+/obj/item/reagent_containers/food/snacks/seagull/attackby(obj/item/I, mob/user, list/modifiers)
+	if(dead)
+		return ..()
+
+	if(!isliving(user))
+		return
+
+	var/mob/living/L = user
+	if(prob(GET_MOB_ATTRIBUTE_VALUE(L, STAT_SPEED) * 2))
+		return ..()
+
+	if(isturf(loc))
+		dir = pick(GLOB.cardinals)
+		step(src, dir)
+		to_chat(user, "<span class='warning'>[src] gets away!</span>")
+		playsound(src, 'sound/vo/mobs/bird/birdfly.ogg', 100, TRUE, -1)

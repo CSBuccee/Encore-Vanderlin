@@ -737,7 +737,7 @@
 	landsound = 'sound/foley/jumpland/stoneland.ogg'
 	smoothing_flags = SMOOTH_EDGE
 	smoothing_groups = SMOOTH_GROUP_OPEN_FLOOR + SMOOTH_GROUP_FLOOR_STONE
-	smoothing_list = SMOOTH_GROUP_FLOOR_DIRT_ROAD + SMOOTH_GROUP_FLOOR_GRASS
+	smoothing_list = SMOOTH_GROUP_FLOOR_DIRT_ROAD + SMOOTH_GROUP_FLOOR_GRASS + SMOOTH_GROUP_FLOOR_STONE
 	neighborlay = "cobbleedge"
 	max_integrity = 1200
 
@@ -867,6 +867,21 @@
 
 /turf/open/floor/tile/masonic/moonbw
 	icon_state = "moontile_bw"
+
+/turf/open/floor/tile/masonic/suntile
+	icon_state = "suntile"
+
+/turf/open/floor/tile/masonic/full
+	icon_state = "masonicfull_white"
+
+/turf/open/floor/tile/masonic/full/inverted
+	icon_state = "masonicfull_black"
+
+/turf/open/floor/tile/masonic/arrow
+	icon_state = "masonicarrow"
+
+/turf/open/floor/tile/masonic/arrow/inverted
+	icon_state = "masonicarrow_invert"
 
 /turf/open/floor/tile/brick
 	icon_state = "bricktile"

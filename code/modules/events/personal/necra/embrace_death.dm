@@ -4,7 +4,7 @@
 	typepath = /datum/round_event/valdala_embrace
 	weight = 5
 	earliest_start = 35 MINUTES
-	max_occurrences = 1
+	max_occurrences = 0 // TODO: this is super hilarious in a macabre way, but let's not have people ending themselves. marked for removal
 	min_players = MIDPOP_THRESHOLD
 
 	tags = list(

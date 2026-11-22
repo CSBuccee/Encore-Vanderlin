@@ -559,6 +559,89 @@
 	supports_directions = TRUE
 	craftdiff = 0
 
+/datum/blueprint_recipe/carpentry/wooden_table/round
+	name = "round wooden table"
+	desc = "A sturdy, round wooden table."
+	result_type = /obj/structure/table/wood/round
+	required_materials = list(
+		/obj/item/grown/log/tree/stick = 2,
+		/obj/item/natural/wood/plank = 1
+	)
+	supports_directions = TRUE
+	craftdiff = 0
+
+/datum/blueprint_recipe/carpentry/wooden_table/cloth
+	name = "brown draped table"
+	desc = "A sturdy wooden table draped in cloth."
+	result_type = /obj/structure/table/wood/cloth/brown
+	required_materials = list(
+		/obj/item/grown/log/tree/stick = 2,
+		/obj/item/natural/wood/plank = 1,
+		/obj/item/natural/cloth = 2
+	)
+	supports_directions = TRUE
+	craftdiff = 0
+
+/datum/blueprint_recipe/carpentry/wooden_table/cloth/beige
+	name = "beige draped table"
+	desc = "A sturdy wooden table draped in cloth."
+	result_type = /obj/structure/table/wood/cloth/beige
+	required_materials = list(
+		/obj/item/grown/log/tree/stick = 2,
+		/obj/item/natural/wood/plank = 1,
+		/obj/item/natural/cloth = 2
+	)
+	supports_directions = TRUE
+	craftdiff = 0
+
+/datum/blueprint_recipe/carpentry/wooden_table/cloth/red
+	name = "red draped table"
+	desc = "A sturdy wooden table draped in cloth."
+	result_type = /obj/structure/table/wood/cloth/red
+	required_materials = list(
+		/obj/item/grown/log/tree/stick = 2,
+		/obj/item/natural/wood/plank = 1,
+		/obj/item/natural/cloth = 2
+	)
+	supports_directions = TRUE
+	craftdiff = 0
+
+/datum/blueprint_recipe/carpentry/wooden_table/cloth/blue
+	name = "blue draped table"
+	desc = "A sturdy wooden table draped in cloth."
+	result_type = /obj/structure/table/wood/cloth/blue
+	required_materials = list(
+		/obj/item/grown/log/tree/stick = 2,
+		/obj/item/natural/wood/plank = 1,
+		/obj/item/natural/cloth = 2
+	)
+	supports_directions = TRUE
+	craftdiff = 0
+
+/datum/blueprint_recipe/carpentry/wooden_table/cloth/green
+	name = "green draped table"
+	desc = "A sturdy wooden table draped in cloth."
+	result_type = /obj/structure/table/wood/cloth/green
+	required_materials = list(
+		/obj/item/grown/log/tree/stick = 2,
+		/obj/item/natural/wood/plank = 1,
+		/obj/item/natural/cloth = 2
+	)
+	supports_directions = TRUE
+	craftdiff = 0
+
+/datum/blueprint_recipe/carpentry/wooden_table/cloth/purple
+	name = "purple draped table"
+	desc = "A sturdy wooden table draped in cloth."
+	result_type = /obj/structure/table/wood/cloth/purple
+	required_materials = list(
+		/obj/item/grown/log/tree/stick = 2,
+		/obj/item/natural/wood/plank = 1,
+		/obj/item/natural/cloth = 2
+	)
+	supports_directions = TRUE
+	craftdiff = 0
+
 /datum/blueprint_recipe/carpentry/pillory
 	name = "pillory"
 	desc = "A restraining device for punishment."
@@ -866,4 +949,86 @@
 	required_materials = list(
 		/obj/item/natural/wood/plank = 1
 	)
+	craftdiff = 2
+
+/datum/blueprint_recipe/carpentry/bell_stand
+	name = "bell stand"
+	desc = "A ringable bell on a wooden stand that can be synced with the mind."
+	result_type = /obj/structure/yeoman_bell/bell_stand
+	required_materials = list(
+		/obj/item/natural/wood/plank = 1,
+		/obj/item/ingot/iron = 1
+	)
+	craftdiff = 2
+
+/datum/blueprint_recipe/carpentry/banner_aelondan
+	name = "aelonda standard"
+	desc = "The purple standard of the good kingdom, Aelonda, without much decorum."
+	result_type = /obj/structure/fluff/banner
+	required_materials = list(
+		/obj/item/grown/log/tree/small = 1,
+		/obj/item/natural/silk = 2,
+		/obj/item/natural/cloth = 1,
+	)
+	supports_directions = TRUE
+	craftdiff = 2
+
+/datum/blueprint_recipe/carpentry/banner_cudao
+	name = "cudao standard"
+	desc = "The cloud-white standard of the eastern nation of Cudao, without much decorum."
+	result_type = /obj/structure/fluff/banner/cudao
+	required_materials = list(
+		/obj/item/grown/log/tree/small = 1,
+		/obj/item/natural/silk = 2,
+		/obj/item/natural/cloth = 1,
+	)
+	supports_directions = TRUE
+	craftdiff = 2
+
+/datum/blueprint_recipe/carpentry/banner_geramor
+	name = "geramor standard"
+	desc = "The standard of the nation of Geramor, without much decorum."
+	result_type = /obj/structure/fluff/banner/geramor
+	required_materials = list(
+		/obj/item/grown/log/tree/small = 1,
+		/obj/item/natural/silk = 2,
+		/obj/item/natural/cloth = 1,
+	)
+	supports_directions = TRUE
+	craftdiff = 2
+
+/datum/blueprint_recipe/carpentry/banner_noma
+	name = "noma standard"
+	desc = "The standard of the nation of Noma, without much decorum."
+	result_type = /obj/structure/fluff/banner/noma
+	required_materials = list(
+		/obj/item/grown/log/tree/small = 1,
+		/obj/item/natural/silk = 2,
+		/obj/item/natural/cloth = 1,
+	)
+	supports_directions = TRUE
+	craftdiff = 2
+
+/datum/blueprint_recipe/carpentry/banner_qadirid
+	name = "qadirid standard"
+	desc = "The standard of the nation of Qadirid, without much decorum."
+	result_type = /obj/structure/fluff/banner/qadirid
+	required_materials = list(
+		/obj/item/grown/log/tree/small = 1,
+		/obj/item/natural/silk = 2,
+		/obj/item/natural/cloth = 1,
+	)
+	supports_directions = TRUE
+	craftdiff = 2
+
+/datum/blueprint_recipe/carpentry/banner_nortmidst
+	name = "nortmidst standard"
+	desc = "The standard of the nation of Nortmidst, without much decorum."
+	result_type = /obj/structure/fluff/banner/nortmidst
+	required_materials = list(
+		/obj/item/grown/log/tree/small = 1,
+		/obj/item/natural/silk = 2,
+		/obj/item/natural/cloth = 1,
+	)
+	supports_directions = TRUE
 	craftdiff = 2

@@ -1,0 +1,6 @@
+author: "crimsonFig"
+delete-after: True
+changes:
+  - rscadd: "adds a bit of starting coin to the tower graduates"
+  - bugfix: "fixed arcane gatekeeping checks"
+  - qol: "makes the tome chaining more intuitive and less violent"

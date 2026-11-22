@@ -104,7 +104,7 @@
 
 /obj/item/organ/artery/applyOrganDamage(amount, maximum = maxHealth)
 	. = ..()
-	if(. > 0 && damage <= 0)
+	if(. > 0 && !is_bruised())
 		mend()
 
 /obj/item/organ/artery/proc/squirt(amount = 1, force = FALSE)

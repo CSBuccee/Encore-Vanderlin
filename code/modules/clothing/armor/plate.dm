@@ -82,18 +82,19 @@
 	item_weight = 17 KILOGRAMS
 
 
-/obj/item/clothing/armor/plate/full/samsibsa
-	name = "samsibsa scaleplate"
-	desc = "A heavy set of armour worn by the kouken of distant Blackmeadow. As opposed to the plate armour utilized by most of Psydonia and the West, samsiba-cheolpan is made of thirty-four rows of composite scales, each an ultra-thin sheet of blacksteel gilded over steel. </br> It is an extremely common practice to engrave characters onto individual plates - such as LUCK, HONOR, or HEAVEN."
+/obj/item/clothing/armor/plate/full/cudese
+	name = "cudese scaleplate"
+	desc = "A heavy set of armour worn by Cudese mainland warriors. Of slightly-lighter build than equivalents elsewhere in the Goblet, it is favored by elite Yinshi guards of the skyward capital."
 	icon_state = "kazengunheavy"
 	item_state = "kazengunheavy"
 	detail_tag = "_detail"
-	color = null
 	detail_color = CLOTHING_WHITE
 	max_integrity = ARMOR_INT_CHEST_PLATE_STEEL - 50 //slightly worse
-	detail_tag = "_detail"
+	item_weight = 14 KILOGRAMS
+	melt_amount = 75
+	melting_material = /datum/material/blacksteel
 
-/obj/item/clothing/armor/plate/full/samsibsa/attack_hand_secondary(mob/user, list/modifiers)
+/obj/item/clothing/armor/plate/full/cudese/attack_hand_secondary(mob/user, list/modifiers)
 	. = ..()
 	var/choice = tgui_input_list(user, "Choose a color.", "Uniform colors", GLOB.noble_dyes)
 	if(!choice)

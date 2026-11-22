@@ -147,17 +147,17 @@ abstract types are automatically excluded.
 		/obj/item/clothing/shoes/boots/armor/evil,
 
 		///all blackmeadow are pending blackmeadow features
-		/obj/item/clothing/cloak/kazengun,
-		/obj/item/clothing/neck/gorget/kazengun,
-		/obj/item/clothing/shoes/boots/leather/kazengun,
-		/obj/item/clothing/pants/trou/leather/kazengun,
-		/obj/item/clothing/face/facemask/steel/kazengun,
-		/obj/item/clothing/face/facemask/steel/kazengun/full,
-		/obj/item/clothing/head/helmet/heavy/kabuto,
-		/obj/item/clothing/armor/plate/full/samsibsa,
-		/obj/item/clothing/gloves/plate/kote,
-		/obj/item/clothing/head/helmet/kettle/jingasa,
-		/obj/item/clothing/armor/brigandine/haraate,
+		/obj/item/clothing/cloak/cudese,
+		/obj/item/clothing/neck/gorget/cudese,
+		/obj/item/clothing/shoes/boots/leather/cudese,
+		/obj/item/clothing/pants/trou/leather/cudese,
+		/obj/item/clothing/face/facemask/cudese,
+		/obj/item/clothing/face/facemask/cudese/ogre,
+		/obj/item/clothing/head/helmet/heavy/cudese,
+		/obj/item/clothing/armor/plate/full/cudese,
+		/obj/item/clothing/gloves/plate/cudese,
+		/obj/item/clothing/head/helmet/kettle/cudese,
+		/obj/item/clothing/armor/brigandine/cudese,
 
 		/obj/item/clothing/wrists/bracers/naledi, //Inqstuff
 		/obj/item/clothing/pants/trou/leather/pontifex,

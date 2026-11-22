@@ -146,6 +146,10 @@
 	armor_type = /datum/armor/cursedrosa
 	attacked_sound = list('sound/combat/hits/armor/chain_slashed (1).ogg', 'sound/combat/hits/armor/chain_slashed (2).ogg', 'sound/combat/hits/armor/chain_slashed (3).ogg')
 
+/obj/item/ore/cursedrosa/Initialize(mapload)
+	. = ..()
+	AddElement(/datum/element/food_topping, "cursedrosa", null, 3, topping_name = "black briar rosa")
+
 /obj/item/ore/cursedrosa/equipped(mob/living/carbon/human/user, slot)
 	. = ..()
 	if(slot & ITEM_SLOT_MOUTH)

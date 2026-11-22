@@ -83,7 +83,7 @@
 		merge_spellcraft_multipliers(technique_cast_speed_multipliers, contribution.technique_cast_speed_multipliers, amplifier)
 		merge_spellcraft_additions(technique_magnitude_modifications, contribution.technique_magnitude_modifications)
 	var/book_type = meld_data["book_type"]
-	var/skilled = GET_MOB_SKILL_VALUE(user, /datum/attribute/skill/magic/arcane) > SKILL_LEVEL_NONE
+	var/skilled = GET_MOB_SKILL_VALUE_RAW(user, /datum/attribute/skill/magic/arcane) >= SKILL_LEVEL_APPRENTICE
 
 	if(!skilled)
 		switch(meld_data["unskilled_behavior"])

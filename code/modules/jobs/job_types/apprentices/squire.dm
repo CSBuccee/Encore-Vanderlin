@@ -47,8 +47,6 @@
 
 /datum/attribute_holder/sheet/job/squire/lancer
 	raw_attribute_list = list(
-		STAT_SPEED = -1,
-
 		/datum/attribute/skill/combat/axesmaces = 10,
 		/datum/attribute/skill/combat/crossbows = 10,
 		/datum/attribute/skill/combat/wrestling = 20,
@@ -66,10 +64,7 @@
 
 /datum/attribute_holder/sheet/job/squire/lancer/adult
 	raw_attribute_list = list(
-		STAT_SPEED = -1,
-		STAT_STRENGTH = -1,
-		STAT_CONSTITUTION = -1,
-
+		STAT_ENDURANCE = 1,
 		/datum/attribute/skill/combat/axesmaces = 10,
 		/datum/attribute/skill/combat/crossbows = 10,
 		/datum/attribute/skill/combat/wrestling = 20,
@@ -120,8 +115,6 @@
 
 /datum/attribute_holder/sheet/job/squire/footman
 	raw_attribute_list = list(
-		STAT_SPEED = -1,
-
 		/datum/attribute/skill/combat/axesmaces = 20,
 		/datum/attribute/skill/combat/crossbows = 20,
 		/datum/attribute/skill/combat/wrestling = 20,
@@ -138,10 +131,7 @@
 
 /datum/attribute_holder/sheet/job/squire/footman/adult
 	raw_attribute_list = list(
-		STAT_SPEED = -1,
-		STAT_STRENGTH = -1,
-		STAT_CONSTITUTION = -1,
-
+		STAT_CONSTITUTION = 1,
 		/datum/attribute/skill/combat/axesmaces = 20,
 		/datum/attribute/skill/combat/crossbows = 20,
 		/datum/attribute/skill/combat/wrestling = 20,
@@ -190,9 +180,6 @@
 
 /datum/attribute_holder/sheet/job/squire/skirmisher
 	raw_attribute_list = list(
-		STAT_STRENGTH = -1,
-		STAT_CONSTITUTION = -1,
-
 		/datum/attribute/skill/combat/bows = 20,
 		/datum/attribute/skill/combat/crossbows = 10,
 		/datum/attribute/skill/combat/wrestling = 10,
@@ -210,10 +197,7 @@
 
 /datum/attribute_holder/sheet/job/squire/skirmisher/adult
 	raw_attribute_list = list(
-		STAT_STRENGTH = -1,
-		STAT_CONSTITUTION = -1,
-		STAT_SPEED = -1,
-
+		STAT_PERCEPTION = 1,
 		/datum/attribute/skill/combat/bows = 20,
 		/datum/attribute/skill/combat/crossbows = 10,
 		/datum/attribute/skill/combat/wrestling = 10,

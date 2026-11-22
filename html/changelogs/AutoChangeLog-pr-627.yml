@@ -1,0 +1,6 @@
+author: "crimsonFig"
+delete-after: True
+changes:
+  - qol: "made pomette's hug quest count on hugging anyone"
+  - spellcheck: "fixed some text on a few patron objectives"
+  - config: "disabled several bothersome patron objective events from occurring"

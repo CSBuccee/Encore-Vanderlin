@@ -25,10 +25,10 @@
 
 	COOLDOWN_DECLARE(ring_bell)
 	var/cooldown = 3 MINUTES
-	var/noble_cooldown = 1 MINUTES
+	var/noble_cd_reduction = 2.5 MINUTES //nobles can summon again after half a minute as the summon buff is 25 seconds
 	COOLDOWN_DECLARE(nearby_ring_bell)
 	var/nearby_cooldown = 5 SECONDS
-	var/hear_distance = 40 // just a little shorter than Vanderlin's manor
+	var/hear_distance = 80 // domotan edit cuz these maps are huge
 
 /obj/item/servant_bell/Initialize(mapload)
 	. = ..()
@@ -52,6 +52,10 @@
 		. += span_info("It has [len] servant[len == 1 ? "" : "s"] bound to it.")
 		. += span_notice("Use on a commoner to bind their mind to the bell.")
 		. += span_notice("Right click with an open hand to relinquish servants.")
+		if (len)
+			. += span_notice("Servant[len == 1 ? "" : "s"] bound:")
+			for (var/s_name in get_servants())
+				. += span_notice("- [s_name]")
 
 /obj/item/servant_bell/interact_with_atom(atom/interacting_with, mob/living/user, list/modifiers)
 	if(!is_bell_proficient(user))
@@ -101,26 +105,7 @@
 	if(!user.client)
 		return
 	. = SECONDARY_ATTACK_CANCEL_ATTACK_CHAIN
-	if(!is_bell_proficient(user))
-		to_chat(user, span_warning("I lack the noble blood to modify [src]."))
-		return
-	if(!length(bound_servants))
-		to_chat(user, span_warning("There are no servants bound to [src]."))
-		return
-	var/list/servants = get_servants()
-	var/list/all_servants = length(servants) > 1 ? list("Relinquish all" = null) + servants : servants
-	var/remove = browser_input_list(user, "Who will be relinquished of service?","Service Bell", all_servants)
-	if(remove)
-		if(remove == "Relinquish all")
-			var/choice = tgui_alert(user, "Are you sure you want to clear the servant list?", "Service Bell", list("Yes", "No"))
-			if(choice != "Yes")
-				return
-			for(var/s_name in servants)
-				remove_servant(servant = s_name)
-			to_chat(user, span_smallnotice("All servants have been relinquished."))
-		else
-			remove_servant(servant = remove)
-			to_chat(user, span_smallnotice("[remove] has been relinquished."))
+	handle_servant_removal(user)
 
 /obj/item/servant_bell/attack_self(mob/living/user, list/modifiers)
 	. = ..()
@@ -128,25 +113,27 @@
 		return
 	if(COOLDOWN_FINISHED(src, nearby_ring_bell))
 		COOLDOWN_START(src, nearby_ring_bell, nearby_cooldown)
-		var/end_time = is_bell_proficient(user) ? cooldown - noble_cooldown : 0
+		var/end_time = is_bell_proficient(user) ? cooldown - noble_cd_reduction : 0
 		if(COOLDOWN_TIMELEFT(src, ring_bell) <= end_time)
 			ring_bell(user)
 			COOLDOWN_START(src, ring_bell, cooldown)
 		else
 			playsound(src, 'sound/items/servant_bell.ogg', 80, TRUE)
 
+/obj/item/servant_bell/attack_self_secondary(mob/living/user, list/modifiers)
+	. = ..()
+	handle_servant_removal(user)
+
 /obj/item/servant_bell/proc/ring_bell(mob/living/user)
 	user.visible_message("[user] rings [src].")
 	playsound(src, 'sound/items/servant_bell.ogg', 100, TRUE)
 	var/turf/origin_turf = get_turf(src)
-	for(var/servant in get_servants())
-		var/datum/weakref/wr = bound_servants[servant]
-		if(!istype(wr))
+	var/list/servants = get_servants()
+	for(var/s_name in servants)
+		var/datum/mind/M = servants[s_name]
+		if(!M || !M.current)
 			continue
-		var/obj/item/organ/brain/B = wr.resolve()
-		if(!B || !B.owner)
-			continue
-		var/mob/living/carbon/player = B.owner
+		var/mob/living/player = M.current
 		if(!player.client)
 			continue
 		if(player.stat >= DEAD)
@@ -155,10 +142,13 @@
 			continue
 		if(player.can_block_magic(MAGIC_RESISTANCE_MIND, 0))
 			continue
+		// add a little way for master and servant to find eachother if they're alive <3
 		if(!is_in_zweb(player.z, origin_turf.z))
+			to_chat(user, span_warning("I can feel that [s_name] is too far to have heard my ringing."))
 			continue
 		var/distance = get_dist(player, origin_turf)
 		if(distance > hear_distance)
+			to_chat(user, span_warning("I can feel that [s_name] is too far to have heard my ringing."))
 			continue
 		player.apply_status_effect(/datum/status_effect/signal_horn/servant_bell, null, origin_turf)
 		var/dirText = ""
@@ -182,10 +172,10 @@
 /obj/item/servant_bell/proc/add_servant(mob/living/carbon/human/H)
 	if(length(bound_servants) >= max_servants)
 		return
-	var/obj/item/organ/brain/B = H.getorgan(/obj/item/organ/brain)
-	if(!istype(B))
+	var/datum/mind/M = H.mind
+	if(!istype(M))
 		return
-	bound_servants[H.real_name] = WEAKREF(B)
+	bound_servants[H.real_name] = WEAKREF(M)
 
 /// used as both a signal register and a general proc. ambiguous servant arg, takes mob/living/carbon/human or text
 /obj/item/servant_bell/proc/remove_servant(datum/source, servant)
@@ -201,18 +191,42 @@
 		bound_servants[s_name] = null
 	bound_servants -= s_name
 
-/// cleans up weakrefs, returns brains instead
+/obj/item/servant_bell/proc/handle_servant_removal(mob/user)
+	if(!is_bell_proficient(user))
+		to_chat(user, span_warning("I lack the noble blood to modify [src]."))
+		return
+	if(!length(bound_servants))
+		to_chat(user, span_warning("There are no servants bound to [src]."))
+		return
+	var/list/servants = get_servants()
+	var/list/all_servants = length(servants) > 1 ? list("Relinquish all" = null) + servants : servants
+	var/remove = browser_input_list(user, "Who will be relinquished of service?","Service Bell", all_servants)
+	if(remove)
+		if(remove == "Relinquish all")
+			var/choice = tgui_alert(user, "Are you sure you want to clear the servant list?", "Service Bell", list("Yes", "No"))
+			if(choice != "Yes")
+				return
+			for(var/s_name in servants)
+				remove_servant(servant = s_name)
+			to_chat(user, span_smallnotice("All servants have been relinquished."))
+		else
+			remove_servant(servant = remove)
+			to_chat(user, span_smallnotice("[remove] has been relinquished."))
+
+/// cleans up weakrefs, returns minds instead
 /obj/item/servant_bell/proc/get_servants()
 	var/list/servants = list()
-	for(var/servant in bound_servants)
-		var/obj/item/organ/brain/B
-		if(bound_servants[servant])
-			var/datum/weakref/brain_ref = bound_servants[servant]
-			B = brain_ref.resolve()
-			if(!B)
-				//we're not gonna remove the name, it'd tell them that they died
-				bound_servants[servant] = null
-		servants[servant] = B
+	for(var/servant_i = length(bound_servants), servant_i >= 1, servant_i--)
+		var/datum/mind/M
+		var/s_name = bound_servants[servant_i]
+		if(s_name)
+			var/datum/weakref/mind_ref = bound_servants[s_name]
+			M = mind_ref.resolve()
+		// if no resolved mind or nulled entry, player left round. remove em from our list
+		if(!M)
+			bound_servants.Cut(servant_i, servant_i + 1)
+			continue
+		servants[s_name] = M
 	return servants
 
 /obj/item/servant_bell/proc/on_new_jobber(source, datum/job/job, mob/living/spawned, client/player_client)
@@ -232,7 +246,6 @@
 /obj/item/servant_bell/lord/Initialize(mapload)
 	uses_lord_coloring = pick(LORD_PRIMARY, LORD_SECONDARY)
 	. = ..()
-
 
 /datum/status_effect/signal_horn/servant_bell
 	id = "servant bell indicator"

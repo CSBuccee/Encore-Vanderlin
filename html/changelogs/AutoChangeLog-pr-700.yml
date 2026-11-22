@@ -1,0 +1,4 @@
+author: "crimsonFig"
+delete-after: True
+changes:
+  - rscadd: "Added new receive only mode to scommstones"

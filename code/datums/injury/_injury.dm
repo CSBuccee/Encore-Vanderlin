@@ -373,7 +373,7 @@
 	injury_flags &= ~INJURY_BANDAGED
 	return TRUE
 
-/datum/injury/proc/is_bleeding()
+/datum/injury/proc/is_bleeding(ignore_nonfinal_stopbleeds = FALSE)
 	if(!CAN_HAVE_BLOOD(parent_mob))
 		return
 
@@ -381,7 +381,7 @@
 		if(item.w_class >= WEIGHT_CLASS_SMALL)
 			return FALSE
 
-	if(is_bandaged() || is_sutured())
+	if((!ignore_nonfinal_stopbleeds && is_bandaged()) || is_sutured())
 		return FALSE
 
 	if(required_status & BODYPART_ROBOTIC)

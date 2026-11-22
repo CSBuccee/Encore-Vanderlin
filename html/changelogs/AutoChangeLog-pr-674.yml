@@ -1,0 +1,4 @@
+author: "kyres1"
+delete-after: True
+changes:
+  - bugfix: "Fixed even more out of place lore from base Roguetown."

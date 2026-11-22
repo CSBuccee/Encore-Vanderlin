@@ -161,17 +161,19 @@
 /mob/living/adjust_stamina(added as num, emote_override, force_emote = TRUE, internal_regen = TRUE) //call update_stamina here and set last_fatigued, return false when not enough fatigue left
 	if(HAS_TRAIT(src, TRAIT_NOSTAMINA))
 		return TRUE
-	var/energetic = get_chem_effect(CE_ENERGETIC) * 0.1
-	if(added <= 0)
-		energetic *= max(0.1, 1 - energetic)
-	else
-		energetic *= max(0.1, 1 + energetic)
-	added += energetic
+	// CE_ENERGETIC is typically given from brews and stimulants, intended to bolster stamina regeneration. usually ranges from 2-5 in strength
+	var/energetic = get_chem_effect(CE_ENERGETIC)
+	if(added >= 0)
+		energetic *= 0.1 // if we're doing stuff that spends stamina, we wanna avoid cheap light stam spams that would double dip on the stam boost
+	added -= energetic // we're either enhancing stamina gain or lightening stamina spend
 
-	stamina = CLAMP(stamina+added, 0, maximum_stamina)
-	SEND_SIGNAL(src, COMSIG_LIVING_ADJUSTED, -added, STAMINA)
-	if(internal_regen && added < 0)
-		adjust_energy(added)
+	// staminaDelta is basically just whatever 'added' was but with the lower and upper clamps applied so we adjust energy/signals accurately and not overshoot
+	var/staminaToSet = CLAMP(stamina+added, 0, maximum_stamina)
+	var/staminaDelta = staminaToSet - stamina
+	stamina = staminaToSet
+	SEND_SIGNAL(src, COMSIG_LIVING_ADJUSTED, -staminaDelta, STAMINA)
+	if(internal_regen && staminaDelta < 0)
+		adjust_energy(staminaDelta)
 	if(added >= 5)
 		if(energy <= 0)
 			if(iscarbon(src))

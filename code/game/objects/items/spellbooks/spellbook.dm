@@ -216,8 +216,8 @@
 		return
 
 	target.visible_message(
-		span_danger("[user] beats [target] over the head with [src]!"),
-		span_danger("[user] beats [target] over the head with [src]!")
+		span_notice("[user] connects [target] to the [src] as it gives an approving arcyne chime!"),
+		span_notice("[user] connects [target] to the [src] as it gives an approving arcyne chime!")
 	)
 
 	if(length(allowed_readers) > 2 || (target in allowed_readers))
@@ -226,7 +226,7 @@
 
 	allowed_readers += target
 
-	playsound(src, "punch", 25, TRUE, -1)
+	playsound(src, "sound/magic/crystal.ogg", 25, TRUE, -1)
 
 /obj/item/spellbook/proc/recoil(mob/user)
 	user.visible_message(span_warning("[src] shoots out a spark of angry, arcyne energy at [user]!"))

@@ -373,6 +373,90 @@
 	category = "Structures"
 	skillcraft = /datum/attribute/skill/misc/sewing
 
+/datum/blueprint_recipe/structure/curtain/browncurtainold
+	name = "Old Brown Curtain"
+	desc = "Old brown curtains, moth-eaten and dusty."
+	result_type = /obj/structure/curtain/browncurtainold
+	required_materials = list(
+		/obj/item/grown/log/tree/stick = 1,
+		/obj/item/natural/cloth = 2
+	)
+	construct_tool = /obj/item/needle
+	category = "Structures"
+	skillcraft = /datum/attribute/skill/misc/sewing
+
+/datum/blueprint_recipe/structure/curtain/redcurtainold
+	name = "Old Red Curtain"
+	desc = "Old red curtains, moth-eaten and dusty."
+	result_type = /obj/structure/curtain/redcurtainold
+	required_materials = list(
+		/obj/item/grown/log/tree/stick = 1,
+		/obj/item/natural/cloth = 2
+	)
+	construct_tool = /obj/item/needle
+	category = "Structures"
+	skillcraft = /datum/attribute/skill/misc/sewing
+
+/datum/blueprint_recipe/structure/curtain/bluecurtainold
+	name = "Old Blue Curtain"
+	desc = "Old blue curtains, moth-eaten and dusty."
+	result_type = /obj/structure/curtain/bluecurtainold
+	required_materials = list(
+		/obj/item/grown/log/tree/stick = 1,
+		/obj/item/natural/cloth = 2
+	)
+	construct_tool = /obj/item/needle
+	category = "Structures"
+	skillcraft = /datum/attribute/skill/misc/sewing
+
+/datum/blueprint_recipe/structure/curtain/greencurtainold
+	name = "Old Green Curtain"
+	desc = "Old green curtains, moth-eaten and dusty."
+	result_type = /obj/structure/curtain/greencurtainold
+	required_materials = list(
+		/obj/item/grown/log/tree/stick = 1,
+		/obj/item/natural/cloth = 2
+	)
+	construct_tool = /obj/item/needle
+	category = "Structures"
+	skillcraft = /datum/attribute/skill/misc/sewing
+
+/datum/blueprint_recipe/structure/curtain/beigecurtainold
+	name = "Old Beige Curtain"
+	desc = "Old beige curtains, moth-eaten and dusty."
+	result_type = /obj/structure/curtain/beigecurtainold
+	required_materials = list(
+		/obj/item/grown/log/tree/stick = 1,
+		/obj/item/natural/cloth = 2
+	)
+	construct_tool = /obj/item/needle
+	category = "Structures"
+	skillcraft = /datum/attribute/skill/misc/sewing
+
+/datum/blueprint_recipe/structure/curtain/purplecurtainold
+	name = "Old Purple Curtain"
+	desc = "Old purple curtains, moth-eaten and dusty."
+	result_type = /obj/structure/curtain/purplecurtainold
+	required_materials = list(
+		/obj/item/grown/log/tree/stick = 1,
+		/obj/item/natural/cloth = 2
+	)
+	construct_tool = /obj/item/needle
+	category = "Structures"
+	skillcraft = /datum/attribute/skill/misc/sewing
+
+/datum/blueprint_recipe/structure/curtain/suncurtain
+	name = "Sun Curtain"
+	desc = "Curtains woven with warm hues to keep the cold out."
+	result_type = /obj/structure/curtain/suncurtain
+	required_materials = list(
+		/obj/item/grown/log/tree/stick = 1,
+		/obj/item/natural/cloth = 2
+	)
+	construct_tool = /obj/item/needle
+	category = "Structures"
+	skillcraft = /datum/attribute/skill/misc/sewing
+
 /datum/blueprint_recipe/structure/bed
 	name = "Bed"
 	desc = "A simple wooden bed with fiber bedding."
@@ -440,6 +524,17 @@
 	category = "Structures"
 	skillcraft = /datum/attribute/skill/misc/sewing
 
+/datum/blueprint_recipe/structure/sunrug
+	name = "Sug Rug"
+	desc = "A decorative rug depicting the sun."
+	result_type = /obj/structure/fluff/sunrug
+	required_materials = list(
+		/obj/item/natural/cloth = 3
+	)
+	construct_tool = /obj/item/needle
+	category = "Structures"
+	skillcraft = /datum/attribute/skill/misc/sewing
+
 /datum/blueprint_recipe/structure/fibermat/square
 	name = "Square Fiber Mat"
 	desc = "A rustic mat woven from fiber."
@@ -467,7 +562,8 @@
 	desc = "A few stacks of books with a pot of ink & quill waiting for inspiration."
 	result_type = /obj/structure/fluff/clutter/books
 	required_materials = list(
-		/obj/item/natural/fibers = 2
+		/obj/item/natural/fibers = 2,
+		/obj/item/natural/hide/cured = 1
 	)
 	category = "Structures"
 
@@ -480,12 +576,41 @@
 	)
 	category = "Structures"
 
+/datum/blueprint_recipe/structure/clutter/sewing
+	name = "Clutter (Sewing)"
+	desc = "A handful of fiber and cloth."
+	result_type = /obj/structure/fluff/clutter/sewing
+	required_materials = list(
+		/obj/item/natural/fibers = 1,
+		/obj/item/natural/cloth = 2,
+	)
+	category = "Structures"
+
+/datum/blueprint_recipe/structure/clutter/tablecloth/moon
+	name = "Clutter (Tablecloth, Moon)"
+	desc = "A decorative table cloth depicting the moon."
+	result_type = /obj/structure/fluff/clutter/tablecloth/moon
+	required_materials = list(
+		/obj/item/natural/cloth = 2
+	)
+	category = "Structures"
+
+/datum/blueprint_recipe/structure/clutter/tablecloth/sun
+	name = "Clutter (Tablecloth, Sun)"
+	desc = "A decorative table cloth depicting the sun."
+	result_type = /obj/structure/fluff/clutter/tablecloth/sun
+	required_materials = list(
+		/obj/item/natural/cloth = 2
+	)
+	category = "Structures"
+
 /datum/blueprint_recipe/structure/clutter/shrub/tundra
 	name = "potted shrub blue"
 	desc = "A stone pot with a cold tundra shrub there-in."
 	result_type = /obj/structure/fluff/clutter/shrub/tundra
 	required_materials = list(
-		/obj/item/natural/stone = 2
+		/obj/item/natural/stone = 2,
+		/obj/item/natural/clod/dirt
 	)
 	category = "Structures"
 
@@ -494,7 +619,8 @@
 	desc = "A stone pot with a red autumnal shrub there-in."
 	result_type = /obj/structure/fluff/clutter/shrub/red
 	required_materials = list(
-		/obj/item/natural/stone = 2
+		/obj/item/natural/stone = 2,
+		/obj/item/natural/clod/dirt
 	)
 	category = "Structures"
 
@@ -585,6 +711,35 @@
 	check_adjacent_wall = TRUE
 	supports_directions = TRUE
 	place_on_wall = TRUE
+
+/datum/blueprint_recipe/structure/hanging_bell_wall
+	name = "Hanging Wall Bell"
+	desc = "A ringable bell that hangs on a chain and can sync to the mind."
+	result_type = /obj/structure/yeoman_bell/hanging_bell
+	required_materials = list(
+		/obj/item/ingot/iron = 2,
+	)
+	construct_tool = /obj/item/weapon/hammer
+	category = "Wall Fixtures"
+	floor_object = FALSE
+	skillcraft = /datum/attribute/skill/craft/crafting
+	craftdiff = 2
+	check_adjacent_wall = TRUE
+	supports_directions = TRUE
+	place_on_wall = TRUE
+
+/datum/blueprint_recipe/structure/hanging_bell_ceiling
+	name = "Hanging Ceiling Bell"
+	desc = "A ringable bell that hangs on a chain and can sync to the mind."
+	result_type = /obj/structure/yeoman_bell/hanging_bell
+	required_materials = list(
+		/obj/item/ingot/iron = 2,
+	)
+	construct_tool = /obj/item/weapon/hammer
+	category = "Wall Fixtures"
+	floor_object = FALSE
+	skillcraft = /datum/attribute/skill/craft/crafting
+	craftdiff = 2
 
 /datum/blueprint_recipe/structure/bearpelt
 	name = "bear pelt rug"
@@ -1007,3 +1162,98 @@
 	construct_tool = /obj/item/weapon/hammer
 	craftdiff = 2
 
+/datum/blueprint_recipe/structure/large_pillow
+	name = "large floor pillow"
+	desc = "A large floor pillow stuffed with feathers."
+	result_type = /obj/structure/bed/wool/pillow
+	required_materials = list(
+		/obj/item/natural/feather = 2,
+		/obj/item/natural/cloth = 2
+	)
+	construct_tool = /obj/item/needle
+	skillcraft = /datum/attribute/skill/misc/sewing
+	craftdiff = 2
+
+/datum/blueprint_recipe/structure/large_pillow/red
+	name = "large floor pillow (red)"
+	result_type = /obj/structure/bed/wool/pillow/red
+
+/datum/blueprint_recipe/structure/large_pillow/red/regal
+	name = "large floor pillow (regal red)"
+	required_materials = list(
+		/obj/item/natural/feather = 3,
+		/obj/item/natural/cloth = 2,
+		/obj/item/ore/dust/gold = 2
+	)
+	craftdiff = 3
+	result_type = /obj/structure/bed/wool/pillow/red/regal
+
+/datum/blueprint_recipe/structure/large_pillow/blue
+	name = "large floor pillow (blue)"
+	result_type = /obj/structure/bed/wool/pillow/blue
+
+/datum/blueprint_recipe/structure/large_pillow/blue/regal
+	name = "large floor pillow (regal blue)"
+	required_materials = list(
+		/obj/item/natural/feather = 3,
+		/obj/item/natural/cloth = 2,
+		/obj/item/ore/dust/gold = 2
+	)
+	craftdiff = 3
+	result_type = /obj/structure/bed/wool/pillow/blue/regal
+
+/datum/blueprint_recipe/structure/large_pillow/orange
+	name = "large floor pillow (orange)"
+	result_type = /obj/structure/bed/wool/pillow/orange
+
+/datum/blueprint_recipe/structure/large_pillow/orange/regal
+	name = "large floor pillow (regal orange)"
+	required_materials = list(
+		/obj/item/natural/feather = 3,
+		/obj/item/natural/cloth = 2,
+		/obj/item/ore/dust/gold = 2
+	)
+	craftdiff = 3
+	result_type = /obj/structure/bed/wool/pillow/orange/regal
+
+/datum/blueprint_recipe/structure/large_pillow/cyan
+	name = "large floor pillow (cyan)"
+	result_type = /obj/structure/bed/wool/pillow/cyan
+
+/datum/blueprint_recipe/structure/large_pillow/cyan/regal
+	name = "large floor pillow (regal cyan)"
+	required_materials = list(
+		/obj/item/natural/feather = 3,
+		/obj/item/natural/cloth = 2,
+		/obj/item/ore/dust/gold = 2
+	)
+	craftdiff = 3
+	result_type = /obj/structure/bed/wool/pillow/cyan/regal
+
+/datum/blueprint_recipe/structure/large_pillow/purple
+	name = "large floor pillow (purple)"
+	result_type = /obj/structure/bed/wool/pillow/purple
+
+/datum/blueprint_recipe/structure/large_pillow/purple/regal
+	name = "large floor pillow (regal purple)"
+	required_materials = list(
+		/obj/item/natural/feather = 3,
+		/obj/item/natural/cloth = 2,
+		/obj/item/ore/dust/gold = 2
+	)
+	craftdiff = 3
+	result_type = /obj/structure/bed/wool/pillow/purple/regal
+
+/datum/blueprint_recipe/structure/large_pillow/navy
+	name = "large floor pillow (navy)"
+	result_type = /obj/structure/bed/wool/pillow/navy
+
+/datum/blueprint_recipe/structure/large_pillow/navy/regal
+	name = "large floor pillow (regal navy)"
+	required_materials = list(
+		/obj/item/natural/feather = 3,
+		/obj/item/natural/cloth = 2,
+		/obj/item/ore/dust/gold = 2
+	)
+	craftdiff = 3
+	result_type = /obj/structure/bed/wool/pillow/navy/regal

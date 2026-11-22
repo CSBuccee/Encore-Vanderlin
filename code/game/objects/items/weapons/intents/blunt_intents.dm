@@ -142,3 +142,47 @@
 /datum/intent/flail/strike/smash/deceiversflail
 	reach = 2
 
+// MAUL DERIVING INTENTS //
+// MAUL STRIKE INTENTS //
+
+/datum/intent/maul/strike
+	name = "strike"
+	blade_class = BCLASS_BLUNT
+	attack_verb = list("strikes", "hits")
+	hitsound = list('sound/combat/hits/blunt/metalblunt (1).ogg', 'sound/combat/hits/blunt/metalblunt (2).ogg', 'sound/combat/hits/blunt/metalblunt (3).ogg')
+	penfactor = AP_CLUB_STRIKE
+	swingdelay = 6
+	clickcd = 22
+	icon_state = "instrike"
+	misscost = 12
+	item_damage_type = "blunt"
+
+/datum/intent/maul/strike/heavy
+	penfactor = AP_CLUB_HEAVY_STRIKE
+	swingdelay = 6
+	clickcd = 22
+	icon_state = "instrike"
+	misscost = 16
+
+/datum/intent/maul/smash
+	name = "smash"
+	blade_class = BCLASS_SMASH
+	attack_verb = list("smashes")
+	hitsound = list('sound/combat/hits/blunt/metalblunt (1).ogg', 'sound/combat/hits/blunt/metalblunt (2).ogg', 'sound/combat/hits/blunt/metalblunt (3).ogg')
+	penfactor = AP_CLUB_SMASH
+	damfactor = 1.2
+	clickcd = 30
+	swingdelay = 6
+	icon_state = "insmash"
+	misscost = 14
+	item_damage_type = "blunt"
+	acc_bonus = -5
+
+/datum/intent/maul/smash/heavy
+	penfactor = AP_HEAVY_SMASH
+	damfactor = 1.3
+	clickcd = 30
+	swingdelay = 6
+	misscost = 24
+	warnie = "mobwarning"
+	acc_bonus = -5

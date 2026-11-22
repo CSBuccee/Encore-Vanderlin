@@ -133,16 +133,18 @@
 	mob_overlay_icon = 'icons/roguetown/clothing/special/onmob/gronn.dmi'
 	sleeved = 'icons/roguetown/clothing/special/onmob/gronn.dmi'
 
-/obj/item/clothing/gloves/plate/kote
-	name = "jjajeungna gauntlets"
-	desc = "A set of reinforced Blackmeadow gauntlets. Difficult to do much other than fight in, but not entirely arresting."
+/obj/item/clothing/gloves/plate/cudese
+	name = "cudese gauntlets"
+	desc = "A set of Cudese-style gauntlets."
 	icon_state = "kazengungauntlets"
 	item_state = "kazengungauntlets"
 	body_parts_covered = HANDS|ARMS
 	detail_tag = "_detail"
 	detail_color = CLOTHING_ASH_GREY
+	melt_amount = 75
+	melting_material = /datum/material/blacksteel
 
-/obj/item/clothing/gloves/plate/kote/attack_hand_secondary(mob/user, list/modifiers)
+/obj/item/clothing/gloves/plate/cudese/attack_hand_secondary(mob/user, list/modifiers)
 	. = ..()
 	var/choice = tgui_input_list(user, "Choose a color.", "Uniform colors", GLOB.noble_dyes)
 	if(!choice)

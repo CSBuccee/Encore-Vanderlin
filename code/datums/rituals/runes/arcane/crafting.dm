@@ -167,7 +167,7 @@
 	return null
 
 /obj/effect/decal/cleanable/ritual_rune/arcyne/crafting/proc/try_invoke(mob/living/user)
-	if(GET_MOB_SKILL_VALUE(user, /datum/attribute/skill/magic/arcane) <= SKILL_LEVEL_NONE)
+	if(GET_MOB_SKILL_VALUE_RAW(user, magictype) < SKILL_LEVEL_NOVICE)
 		to_chat(user, span_warning("You aren't able to invoke these symbols."))
 		return
 	if(rune_in_use)
@@ -177,7 +177,7 @@
 	animating = TRUE
 
 	// Check skill gate.
-	var/skill_level = GET_MOB_SKILL_VALUE(user, /datum/attribute/skill/magic/arcane)
+	var/skill_level = GET_MOB_SKILL_VALUE(user, magictype)
 	if(skill_level < matched_recipe.required_skill)
 		to_chat(user, span_hierophant_warning("My arcyne is not refined enough to complete this working..."))
 		abort_ritual()
@@ -243,7 +243,7 @@
 	animating = FALSE
 	rune_in_use = FALSE
 
-	user.mind.add_sleep_experience(/datum/attribute/skill/magic/arcane, (GET_MOB_ATTRIBUTE_VALUE(user, STAT_INTELLIGENCE) * 2) + matched_recipe.required_skill, FALSE)
+	user.mind.add_sleep_experience(magictype, (GET_MOB_ATTRIBUTE_VALUE(user, STAT_INTELLIGENCE) * 2) + matched_recipe.required_skill, FALSE)
 
 	matched_recipe = null
 	do_invoke_glow()

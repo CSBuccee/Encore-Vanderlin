@@ -306,6 +306,51 @@
 	icon_state = "woolbed"
 	sleepy = 2
 
+//Pillows for honk shoo honk shoo
+/obj/structure/bed/wool/pillow//no need to repeat behaviors for this
+	name = "large floor pillow"
+	desc = "It's a large pillow. Even your astounding width can lay on it with ease."
+	icon = 'icons/roguetown/misc/pillows.dmi'
+	icon_state = "large"
+	max_integrity = 50
+	density = FALSE
+
+/obj/structure/bed/wool/pillow/red
+	icon_state = "redl"
+
+/obj/structure/bed/wool/pillow/red/regal
+	icon_state = "redlr"
+
+/obj/structure/bed/wool/pillow/blue
+	icon_state = "bluel"
+
+/obj/structure/bed/wool/pillow/blue/regal
+	icon_state = "bluelr"
+
+/obj/structure/bed/wool/pillow/cyan
+	icon_state = "cyanl"
+
+/obj/structure/bed/wool/pillow/cyan/regal
+	icon_state = "cyanlr"
+
+/obj/structure/bed/wool/pillow/orange
+	icon_state = "orangel"
+
+/obj/structure/bed/wool/pillow/orange/regal
+	icon_state = "orangelr"
+
+/obj/structure/bed/wool/pillow/purple
+	icon_state = "purplel"
+
+/obj/structure/bed/wool/pillow/purple/regal
+	icon_state = "purplelr"
+
+/obj/structure/bed/wool/pillow/navy
+	icon_state = "navyl"
+
+/obj/structure/bed/wool/pillow/navy/regal
+	icon_state = "navylr"
+
 /obj/structure/bed/wool/double
 	name = "big wool bed"
 	desc = "A large soft bed, could fit two people."
@@ -452,5 +497,3 @@
 /obj/item/chair/stool/crafted
 	origin_type = /obj/structure/chair/stool/crafted
 	sellprice = 6
-
-

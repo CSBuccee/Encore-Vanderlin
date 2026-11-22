@@ -1,0 +1,5 @@
+author: "furrycactus"
+delete-after: True
+changes:
+  - rscadd: "Added weapon selection to the Forgotten Child subclass."
+  - bugfix: "Fixed the Forgotten Child not having a satchel or keyring."

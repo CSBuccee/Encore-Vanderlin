@@ -98,6 +98,7 @@
 	backr = /obj/item/storage/backpack/satchel
 	belt = /obj/item/storage/belt/leather
 	beltr = /obj/item/storage/magebag/apprentice
+	beltl = /obj/item/storage/belt/pouch/coins/mid
 	backl = /obj/item/weapon/polearm/woodstaff
 	shoes = /obj/item/clothing/shoes/shortboots
 	backpack_contents = list(

@@ -86,6 +86,7 @@
 		/datum/supply_pack/armor/light/heavy_gloves,
 		/datum/supply_pack/armor/steel/steel_boots,
 		/datum/supply_pack/armor/steel/pegasushelm,
+		/datum/supply_pack/armor/steel/aelondanhelm,
 		/datum/supply_pack/apparel/tabardP,
 		/datum/supply_pack/armor/light/icuirass,
 		/datum/supply_pack/armor/light/shamaniccoat,

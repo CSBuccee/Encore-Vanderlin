@@ -374,8 +374,8 @@
 	if(picked.receive_damage(brute, burn,check_armor ? run_armor_check(picked, (brute ? "blunt" : burn ? "fire" :  null)) : FALSE))
 		update_damage_overlays()
 
-//Heal MANY bodyparts, in random order
-/mob/living/carbon/heal_overall_damage(brute = 0, burn = 0, required_status, updating_health = TRUE, forced = FALSE)
+//Heal MANY bodyparts, in random order, up to bp_limit as a reverse percentage of max limb damage (e.g. 0.1 = 90% healthy)
+/mob/living/carbon/heal_overall_damage(brute = 0, burn = 0, required_status, updating_health = TRUE, forced = FALSE, bp_limit = 0)
 	. = FALSE
 
 	var/list/obj/item/bodypart/parts = get_damaged_bodyparts(brute, burn, required_status, forced)
@@ -386,6 +386,11 @@
 		var/brute_was = picked.brute_dam
 		var/burn_was = picked.burn_dam
 		. += picked.get_damage()
+
+		// if we're healthier than the limit threshold, skip this part
+		if ((. / picked.max_damage) <= bp_limit)
+			parts -= picked
+			continue
 
 		update |= picked.heal_damage(brute, burn, updating_health = FALSE, forced = forced, required_status = required_status)
 

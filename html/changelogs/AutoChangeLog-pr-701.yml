@@ -1,0 +1,6 @@
+author: "crimsonFig"
+delete-after: True
+changes:
+  - rscadd: "adds the bell to regent and heir spawn items"
+  - qol: "makes it reach further and let the ringer know if servants were too far to hear"
+  - bugfix: "fix servents disconnecting from bell on adminheal"

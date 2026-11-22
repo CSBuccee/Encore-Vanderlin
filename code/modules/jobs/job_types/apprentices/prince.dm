@@ -129,6 +129,10 @@
 	neck = /obj/item/storage/belt/pouch/coins/rich
 	backr = /obj/item/storage/backpack/satchel
 
+	backpack_contents = list(
+		/obj/item/servant_bell/lord = 1,
+	)
+
 /datum/attribute_holder/sheet/job/heir/aristocrat
 	raw_attribute_list = list(
 		STAT_PERCEPTION = 2,
@@ -182,6 +186,10 @@
 	beltl = /obj/item/storage/keyring/heir
 	beltr = /obj/item/storage/belt/pouch/coins/rich
 
+	backpack_contents = list(
+		/obj/item/servant_bell/lord = 1,
+	)
+
 /datum/outfit/heir/aristocrat/pre_equip(mob/living/carbon/human/equipped_human, visuals_only)
 	. = ..()
 	if(equipped_human.gender == MALE)
@@ -202,10 +210,10 @@
 		STAT_FORTUNE = 1,
 		STAT_CONSTITUTION = 1,
 		STAT_ENDURANCE = 2,
-		
+
 		/datum/attribute/skill/combat/crossbows = 10,
 		/datum/attribute/skill/combat/bows = 10,
-		/datum/attribute/skill/combat/swords = 30,
+		/datum/attribute/skill/combat/swords = 10,
 		/datum/attribute/skill/combat/wrestling = 25,
 		/datum/attribute/skill/combat/unarmed = 25,
 		/datum/attribute/skill/combat/knives = 25,
@@ -218,6 +226,17 @@
 		/datum/attribute/skill/misc/sewing = 10,
 		/datum/attribute/skill/labor/mathematics = 30,
 		/datum/attribute/skill/misc/athletics = 30,
+	)
+
+/datum/attribute_holder/sheet/job/heir/forgotten/sword
+	raw_attribute_list = list(
+		/datum/attribute/skill/combat/swords = 20,
+	)
+
+/datum/attribute_holder/sheet/job/heir/forgotten/bow
+	raw_attribute_list = list(
+		/datum/attribute/skill/combat/bows = 20,
+		/datum/attribute/skill/combat/swords = 10,
 	)
 
 /datum/job/advclass/heir/forgotten
@@ -245,7 +264,39 @@
 	shirt = /obj/item/clothing/armor/gambeson/arming
 	armor = /obj/item/clothing/armor/brigandine/light
 	gloves = /obj/item/clothing/gloves/fingerless
-	beltr = /obj/item/weapon/knife/dagger/steel/special
-	beltl = /obj/item/weapon/sword/rapier/ironestoc
+	beltl = /obj/item/storage/keyring/heir
 	belt = /obj/item/storage/belt/leather
 	shoes = /obj/item/clothing/shoes/nobleboot
+
+	backr = /obj/item/storage/backpack/satchel
+	backpack_contents = list(/obj/item/weapon/knife/dagger/steel/special = 1, /obj/item/weapon/scabbard/knife/royal = 1, /obj/item/servant_bell/lord = 1,)
+
+/datum/job/advclass/heir/forgotten/on_roundstart(mob/living/carbon/human/spawned, client/player_client)
+	. = ..()
+	var/static/list/selectable = list(
+		"Decorated Sword" = list(/obj/item/weapon/sword/decorated, /obj/item/weapon/scabbard/sword/royal),
+		"Decorated Rapier" = list(/obj/item/weapon/sword/rapier/dec, /obj/item/weapon/scabbard/sword/royal),
+		"Decorated Sabre" = list(/obj/item/weapon/sword/sabre/dec, /obj/item/weapon/scabbard/sword/royal),
+		"Qadirid Scimitar" = list(/obj/item/weapon/sword/long/rider, /obj/item/weapon/scabbard/sword/royal),
+		"Steppe Sabre" = list(/obj/item/weapon/sword/long/rider/steppe, /obj/item/weapon/scabbard/sword/royal),
+		"Katana" = list(/obj/item/weapon/sword/katana, /obj/item/weapon/scabbard/cudese/gold),
+		"Shortbow + Shortsword" = list(/obj/item/gun/ballistic/bow/short, /obj/item/ammo_holder/quiver/arrows, /obj/item/weapon/sword/short, /obj/item/weapon/scabbard/sword/royal),
+	)
+	var/choice = spawned.select_equippable(player_client, selectable, message = "Choose Your Blade", title = "HEIR")
+	if(!choice)
+		return
+	switch(choice)
+		if("Decorated Sword")
+			spawned.attributes?.add_sheet(/datum/attribute_holder/sheet/job/heir/forgotten/sword)
+		if("Decorated Rapier")
+			spawned.attributes?.add_sheet(/datum/attribute_holder/sheet/job/heir/forgotten/sword)
+		if("Decorated Sabre")
+			spawned.attributes?.add_sheet(/datum/attribute_holder/sheet/job/heir/forgotten/sword)
+		if("Qadirid Scimitar")
+			spawned.attributes?.add_sheet(/datum/attribute_holder/sheet/job/heir/forgotten/sword)
+		if("Steppe Sabre")
+			spawned.attributes?.add_sheet(/datum/attribute_holder/sheet/job/heir/forgotten/sword)
+		if("Katana")
+			spawned.attributes?.add_sheet(/datum/attribute_holder/sheet/job/heir/forgotten/sword)
+		if("Shortbow + Shortsword")
+			spawned.attributes?.add_sheet(/datum/attribute_holder/sheet/job/heir/forgotten/bow)

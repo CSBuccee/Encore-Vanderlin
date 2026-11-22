@@ -60,7 +60,7 @@
 	noble.mind.add_personal_objective(new_objective)
 
 	to_chat(noble, span_userdanger("YOU ARE VISIRES'S CHOSEN!"))
-	to_chat(noble, span_notice("Visires wants you to demonstrate your ability to lead as a proper noble! Recruit at least one retainer to serve you!"))
+	to_chat(noble, span_notice("Visires wants you to demonstrate your desire for power! Recruit at least one retainer to serve you!"))
 	noble.playsound_local(noble, 'sound/magic/bless.ogg', 100)
 
 	noble.mind.announce_personal_objectives()

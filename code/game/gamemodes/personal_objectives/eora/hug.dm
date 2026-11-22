@@ -20,12 +20,11 @@
 	if(completed)
 		return
 
-	if(target.job == JOB_BEGGAR || istype(target.mind?.assigned_role, /datum/job/vagrant))
-		complete_objective()
+	complete_objective()
 
 /datum/objective/personal/hug_beggar/complete_objective()
 	. = ..()
-	to_chat(owner.current, span_greentext("You've hugged a beggar, completing Pomette's objective!"))
+	to_chat(owner.current, span_greentext("You've hugged someone, completing Pomette's objective!"))
 	adjust_storyteller_influence(POMETTE, 20)
 	UnregisterSignal(owner.current, COMSIG_MOB_HUGGED)
 
@@ -34,4 +33,4 @@
 	ADD_TRAIT(owner.current, TRAIT_EMPATH, OBJECTIVE_TRAIT)
 
 /datum/objective/personal/hug_beggar/update_explanation_text()
-	explanation_text = "Everyone deserves love! Hug a beggar to please Pomette!"
+	explanation_text = "Everyone deserves love! Hug people to please Pomette!"

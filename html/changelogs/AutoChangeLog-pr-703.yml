@@ -1,0 +1,4 @@
+author: "crimsonFig"
+delete-after: True
+changes:
+  - rscadd: "adds library archive to the butler key, keep garrison access to the atarms key"

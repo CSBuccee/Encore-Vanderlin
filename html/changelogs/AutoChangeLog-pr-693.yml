@@ -1,0 +1,4 @@
+author: "Minomato"
+delete-after: True
+changes:
+  - bugfix: "added BCLASS_DRILL to the wounds.dm list to match categories including BCLASS_PICK"

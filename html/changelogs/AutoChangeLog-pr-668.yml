@@ -1,0 +1,5 @@
+author: "crimsonFig"
+delete-after: True
+changes:
+  - bugfix: "fixed skeletonized limbs being a constant source of infection"
+  - qol: "lets the germ level of the skeletonized limb be indicated"

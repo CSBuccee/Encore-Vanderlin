@@ -115,8 +115,8 @@
 	body_parts_covered = COVERAGE_HEAD
 	item_weight = 2.2 KILOGRAMS
 
-/obj/item/clothing/head/helmet/kettle/jingasa
-	name = "jingasa"
+/obj/item/clothing/head/helmet/kettle/cudese
+	name = "cudese kettle helmet"
 	desc = "A steel-reinforced conical hat with a decorative rim of fabric. It protects the head and ears as much as it shields the eyes from the sun."
 	icon_state = "kazengunmedhelm"
 	item_state = "kazengunmedhelm"
@@ -126,6 +126,8 @@
 	flags_inv = HIDEEARS|HIDEHAIR
 	worn_x_dimension = 32
 	worn_y_dimension = 32
+	melt_amount = 75
+	melting_material = /datum/material/blacksteel
 
 /obj/item/clothing/head/helmet/kettle/iron
 	name = "iron kettle helmet"

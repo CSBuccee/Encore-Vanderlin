@@ -65,7 +65,9 @@
 
 /datum/reagent/medicine/herbal/urtica_brew/on_mob_life(mob/living/carbon/M, efficiency)
 	if(!HAS_TRAIT(M,TRAIT_NOSTAMINA))
-		M.adjust_stamina(-0.75, internal_regen = FALSE)
+		M.adjust_blood_volume(2*REM*efficiency, maximum = BLOOD_VOLUME_NORMAL)
+		M.adjust_energy(2*REM)
+		M.adjust_stamina(-0.75*REM, internal_regen = FALSE)
 	..()
 
 /datum/reagent/medicine/herbal/calendula_salve
@@ -110,9 +112,10 @@
 /datum/reagent/medicine/herbal/hypericum_tonic/on_mob_life(mob/living/carbon/M, efficiency)
 	if(volume > 0.99)
 		if(M.mana_pool)
-			M.mana_pool.adjust_mana(1.5)
+			M.mana_pool.adjust_mana(3*REM)
 		if(!HAS_TRAIT(M,TRAIT_NOSTAMINA))
-			M.adjust_stamina(-0.5, internal_regen = FALSE)
+			M.adjust_stamina(-0.5*REM, internal_regen = FALSE)
+			M.adjust_energy(2*REM)
 	..()
 
 /datum/reagent/medicine/herbal/mentha_tea
@@ -136,7 +139,7 @@
 	if(volume > 0.99)
 		M.add_nausea(-1)
 		if(M.mana_pool)
-			M.mana_pool.adjust_mana(1)
+			M.mana_pool.adjust_mana(2*REM)
 	..()
 
 // Mild Buff Potions (based on salvia/artemisia)
@@ -416,7 +419,7 @@
 	description = "A potent blend of multiple healing herbs that provides comprehensive restoration."
 	reagent_state = LIQUID
 	color = "#228b22"
-	metabolization_rate = 0.6
+	metabolization_rate = 0.5
 	overdose_threshold = 35
 	taste_description = "complex herbal harmony"
 
@@ -440,7 +443,8 @@
 	M.adjustFireLoss(-1.5*REM*efficiency, FALSE)
 	M.adjustToxLoss(-1*REM*efficiency, FALSE)
 	M.adjustOxyLoss(-1*efficiency, TRUE)
-	M.adjust_stamina(2*REM*efficiency)
+	M.adjust_energy(2*REM*efficiency)
+	M.adjust_blood_volume(2*REM*efficiency, maximum = BLOOD_VOLUME_NORMAL)
 	. = ..()
 
 // Anti-Poison Blend

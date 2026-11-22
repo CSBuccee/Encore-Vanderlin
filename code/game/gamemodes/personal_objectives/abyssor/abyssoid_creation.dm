@@ -1,9 +1,9 @@
 /datum/objective/personal/create_abyssoids
 	name = "Create Abyssoids"
-	category = "Mjallidhorn's Chosen"
+	category = "Erdl's Chosen"
 	triumph_count = 2
 	immediate_effects = list("Gained an ability to create abyssoid leeches")
-	rewards = list("2 Triumphs", "Mjallidhorn grows stronger", "Mjallidhorn blesses you (+1 Constitution)")
+	rewards = list("2 Triumphs", "Erdl grows stronger", "Erdl blesses you (+1 Constitution)")
 	var/abyssoids_created = 0
 	var/abyssoids_required = 5
 
@@ -32,13 +32,13 @@
 
 /datum/objective/personal/create_abyssoids/complete_objective()
 	. = ..()
-	to_chat(owner.current, span_greentext("You have created enough abyssoids to satisfy Mjallidhorn!"))
-	adjust_storyteller_influence(MJALLIDHORN, 20)
+	to_chat(owner.current, span_greentext("You have created enough abyssoids to satisfy Erdl!"))
+	adjust_storyteller_influence(ERDL, 20)
 	UnregisterSignal(owner.current, COMSIG_ABYSSOID_CREATED)
 
 /datum/objective/personal/create_abyssoids/reward_owner()
 	. = ..()
-	owner.current.adjust_stat_modifier(STATMOD_MJALLIDHORN_BLESSING, list(STAT_CONSTITUTION = 1))
+	owner.current.adjust_stat_modifier(STATMOD_ERDL_BLESSING, list(STAT_CONSTITUTION = 1))
 
 /datum/objective/personal/create_abyssoids/update_explanation_text()
-	explanation_text = "Create [abyssoids_required] abyssoid\s from the common leeches, and then distribute them among the ingrate population!"
+	explanation_text = "Create [abyssoids_required] abyssoid\s from the common leeches, and then distribute them among the leechless population!"

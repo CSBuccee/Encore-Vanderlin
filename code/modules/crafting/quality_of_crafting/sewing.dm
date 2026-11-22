@@ -475,6 +475,22 @@
 	craftdiff = 1
 	category = "Armor"
 
+/datum/repeatable_crafting_recipe/sewing/cudese_trousers
+	name = "Cudese Trousers"
+	output = /obj/item/clothing/pants/trou/leather/cudese
+	requirements = list(/obj/item/natural/cloth = 2,
+				/obj/item/natural/fibers = 1)
+	craftdiff = 1
+	category = "Pants"
+
+/datum/repeatable_crafting_recipe/sewing/cudese_sashimono
+	name = "Cudese Sashimono"
+	output = /obj/item/clothing/cloak/cudese/sashimono
+	requirements = list(/obj/item/natural/cloth = 2,
+				/obj/item/natural/fibers = 1, /obj/item/grown/log/tree/stick = 1,)
+	craftdiff = 1
+	category = "Cloak"
+
 /datum/repeatable_crafting_recipe/sewing/stepperobe
 	name = "steppe robes"
 	output = /obj/item/clothing/armor/gambeson/light/steppe
@@ -1989,3 +2005,202 @@
 	name = "honse caparison"
 	output =/obj/item/caparison/honse
 
+/datum/repeatable_crafting_recipe/sewing/pillow
+	name = "small pillow"
+	requirements = list(
+		/obj/item/natural/cloth = 1,
+		/obj/item/natural/feather = 1,
+	)
+	output = /obj/item/pillow
+	craftdiff = 2
+	category = "Misc Sewing"
+
+/datum/repeatable_crafting_recipe/sewing/pillow/red
+	name = "small pillow (red)"
+	output = /obj/item/pillow/red
+
+/datum/repeatable_crafting_recipe/sewing/pillow/red/regal
+	name = "small pillow (regal red)"
+	requirements = list(
+		/obj/item/natural/cloth = 2,
+		/obj/item/natural/feather = 2,
+		/obj/item/ore/dust/gold = 2,
+	)
+	craftdiff = 3
+	output = /obj/item/pillow/red/regal
+
+/datum/repeatable_crafting_recipe/sewing/pillow/purple
+	name = "small pillow (purple)"
+	output = /obj/item/pillow/purple
+
+/datum/repeatable_crafting_recipe/sewing/pillow/purple/regal
+	name = "small pillow (regal purple)"
+	requirements = list(
+		/obj/item/natural/cloth = 2,
+		/obj/item/natural/feather = 2,
+		/obj/item/ore/dust/gold = 2,
+	)
+	craftdiff = 3
+	output = /obj/item/pillow/purple/regal
+
+/datum/repeatable_crafting_recipe/sewing/pillow/blue
+	name = "small pillow (blue)"
+	output = /obj/item/pillow/blue
+
+/datum/repeatable_crafting_recipe/sewing/pillow/blue/regal
+	name = "small pillow (regal blue)"
+	requirements = list(
+		/obj/item/natural/cloth = 2,
+		/obj/item/natural/feather = 2,
+		/obj/item/ore/dust/gold = 2,
+	)
+	craftdiff = 3
+	output = /obj/item/pillow/blue/regal
+
+/datum/repeatable_crafting_recipe/sewing/pillow/cyan
+	name = "small pillow (cyan)"
+	output = /obj/item/pillow/cyan
+
+/datum/repeatable_crafting_recipe/sewing/pillow/cyan/regal
+	name = "small pillow (regal cyan)"
+	requirements = list(
+		/obj/item/natural/cloth = 2,
+		/obj/item/natural/feather = 2,
+		/obj/item/ore/dust/gold = 2,
+	)
+	craftdiff = 3
+	output = /obj/item/pillow/cyan/regal
+
+/datum/repeatable_crafting_recipe/sewing/pillow/navy
+	name = "small pillow (navy)"
+	output = /obj/item/pillow/navy
+
+/datum/repeatable_crafting_recipe/sewing/pillow/navy/regal
+	name = "small pillow (regal navy)"
+	requirements = list(
+		/obj/item/natural/cloth = 2,
+		/obj/item/natural/feather = 2,
+		/obj/item/ore/dust/gold = 2,
+	)
+	craftdiff = 3
+	output = /obj/item/pillow/navy/regal
+
+/datum/repeatable_crafting_recipe/sewing/pillow/purple
+	name = "small pillow (purple)"
+	output = /obj/item/pillow/purple
+
+/datum/repeatable_crafting_recipe/sewing/pillow/purple/regal
+	name = "small pillow (regal purple)"
+	requirements = list(
+		/obj/item/natural/cloth = 2,
+		/obj/item/natural/feather = 2,
+		/obj/item/ore/dust/gold = 2,
+	)
+	craftdiff = 3
+	output = /obj/item/pillow/purple/regal
+
+/datum/repeatable_crafting_recipe/sewing/pillow/orange
+	name = "small pillow (orange)"
+	output = /obj/item/pillow/orange
+
+/datum/repeatable_crafting_recipe/sewing/pillow/orange/regal
+	name = "small pillow (regal orange)"
+	requirements = list(
+		/obj/item/natural/cloth = 2,
+		/obj/item/natural/feather = 2,
+		/obj/item/ore/dust/gold = 2,
+	)
+	craftdiff = 3
+	output = /obj/item/pillow/orange/regal
+
+/datum/repeatable_crafting_recipe/sewing/pillow/medium
+	name = "medium pillow"
+	requirements = list(
+		/obj/item/natural/cloth = 2,
+		/obj/item/natural/feather = 1,
+	)
+	output = /obj/item/pillow/medium
+
+/datum/repeatable_crafting_recipe/sewing/pillow/medium/red
+	name = "medium pillow (red)"
+	output = /obj/item/pillow/medium/red
+
+/datum/repeatable_crafting_recipe/sewing/pillow/medium/red/regal
+	name = "medium pillow (regal red)"
+	requirements = list(
+		/obj/item/natural/cloth = 3,
+		/obj/item/natural/feather = 3,
+		/obj/item/ore/dust/gold = 2,
+	)
+	craftdiff = 3
+	output = /obj/item/pillow/medium/red/regal
+
+/datum/repeatable_crafting_recipe/sewing/pillow/medium/purple
+	name = "medium pillow (purple)"
+	output = /obj/item/pillow/medium/purple
+
+/datum/repeatable_crafting_recipe/sewing/pillow/medium/purple/regal
+	name = "medium pillow (regal purple)"
+	requirements = list(
+		/obj/item/natural/cloth = 3,
+		/obj/item/natural/feather = 3,
+		/obj/item/ore/dust/gold = 2,
+	)
+	craftdiff = 3
+	output = /obj/item/pillow/medium/purple/regal
+
+/datum/repeatable_crafting_recipe/sewing/pillow/medium/navy
+	name = "medium pillow (navy)"
+	output = /obj/item/pillow/medium/navy
+
+/datum/repeatable_crafting_recipe/sewing/pillow/medium/navy/regal
+	name = "medium pillow (regal navy)"
+	requirements = list(
+		/obj/item/natural/cloth = 3,
+		/obj/item/natural/feather = 3,
+		/obj/item/ore/dust/gold = 2,
+	)
+	craftdiff = 3
+	output = /obj/item/pillow/medium/navy/regal
+
+/datum/repeatable_crafting_recipe/sewing/pillow/medium/cyan
+	name = "medium pillow (cyan)"
+	output = /obj/item/pillow/medium/cyan
+
+/datum/repeatable_crafting_recipe/sewing/pillow/medium/cyan/regal
+	name = "medium pillow (regal cyan)"
+	requirements = list(
+		/obj/item/natural/cloth = 3,
+		/obj/item/natural/feather = 3,
+		/obj/item/ore/dust/gold = 2,
+	)
+	craftdiff = 3
+	output = /obj/item/pillow/medium/cyan/regal
+
+/datum/repeatable_crafting_recipe/sewing/pillow/medium/blue
+	name = "medium pillow (blue)"
+	output = /obj/item/pillow/medium/blue
+
+/datum/repeatable_crafting_recipe/sewing/pillow/medium/blue/regal
+	name = "medium pillow (regal blue)"
+	requirements = list(
+		/obj/item/natural/cloth = 3,
+		/obj/item/natural/feather = 3,
+		/obj/item/ore/dust/gold = 2,
+	)
+	craftdiff = 3
+	output = /obj/item/pillow/medium/blue/regal
+
+/datum/repeatable_crafting_recipe/sewing/pillow/medium/orange
+	name = "medium pillow (orange)"
+	output = /obj/item/pillow/medium/orange
+
+/datum/repeatable_crafting_recipe/sewing/pillow/medium/orange/regal
+	name = "medium pillow (regal orange)"
+	requirements = list(
+		/obj/item/natural/cloth = 3,
+		/obj/item/natural/feather = 3,
+		/obj/item/ore/dust/gold = 2,
+	)
+	craftdiff = 3
+	output = /obj/item/pillow/medium/orange/regal

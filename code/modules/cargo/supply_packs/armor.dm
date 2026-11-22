@@ -167,6 +167,11 @@
 	cost = 90
 	contains = /obj/item/clothing/head/rare/qadiridplate
 
+/datum/supply_pack/armor/steel/zhelmlight
+	name = "Qadirid Mass Production Helm"
+	cost = 20
+	contains = /obj/item/clothing/head/helmet/kettle/qadirid
+
 /datum/supply_pack/armor/steel/zsallet
 	name = "Qadirid Sallet"
 	cost = 60
@@ -196,6 +201,11 @@
 	name = "Pegasus Knight Helm"
 	cost = 60
 	contains = /obj/item/clothing/head/helmet/pegasusknight
+
+/datum/supply_pack/armor/steel/aelondanhelm
+	name = "Aelondan Pegasus Corsair Helm"
+	cost = 80
+	contains = /obj/item/clothing/head/helmet/heavy/necked/aelondan
 
 /datum/supply_pack/armor/steel/elvenhelm
 	name = "Elf Sallet"

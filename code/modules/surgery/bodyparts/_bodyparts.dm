@@ -697,6 +697,9 @@
 
 /// Handle infection effects
 /obj/item/bodypart/proc/handle_germ_effects(delta_time, times_fired, immunity, antibiotics, immunity_weakness)
+	// No flesh means germs don't naturally heal or fester further, and we don't feel them
+	if (skeletonized) return
+
 	var/arterial_efficiency = getorganslotefficiency(ORGAN_SLOT_ARTERY)
 
 	// Being properly oxygenated

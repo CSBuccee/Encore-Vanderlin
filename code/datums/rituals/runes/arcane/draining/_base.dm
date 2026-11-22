@@ -50,7 +50,7 @@
 		set_light(0, 0, 0)
 
 /obj/effect/decal/cleanable/ritual_rune/arcyne/mana_siphon/attack_hand(mob/living/user)
-	if(GET_MOB_SKILL_VALUE(user, /datum/attribute/skill/magic/arcane) <= SKILL_LEVEL_NONE)
+	if(GET_MOB_SKILL_VALUE_RAW(user, magictype) < SKILL_LEVEL_NOVICE)
 		to_chat(user, span_warning("You aren't able to invoke these symbols."))
 		return
 
@@ -94,7 +94,7 @@
 		return SECONDARY_ATTACK_CANCEL_ATTACK_CHAIN
 
 	var/mob/living/L = user
-	if(GET_MOB_SKILL_VALUE(L, /datum/attribute/skill/magic/arcane) <= SKILL_LEVEL_NONE)
+	if(GET_MOB_SKILL_VALUE(L, magictype) < SKILL_LEVEL_NOVICE)
 		to_chat(L, span_warning("You aren't able to commune with these symbols."))
 		return SECONDARY_ATTACK_CANCEL_ATTACK_CHAIN
 

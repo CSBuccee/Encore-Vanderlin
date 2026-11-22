@@ -228,7 +228,7 @@
 	. = ..()
 	var/mob/living/lastattacker = owner.lastattacker_weakref?.resolve()
 	if(isliving(lastattacker))
-		lastattacker.adjust_stamina(-80)
+		lastattacker.adjust_stamina(80)
 		lastattacker.adjust_fire_stacks(6)
 		lastattacker.adjustFireLoss(10)
 		to_chat(owner, "You send your curse on [lastattacker], the last creature you attacked.")

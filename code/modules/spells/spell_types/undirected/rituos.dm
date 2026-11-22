@@ -11,23 +11,20 @@
 
 	charge_required = TRUE
 	charge_time = 10 SECONDS
-	cooldown_time = 30 MINUTES
+	cooldown_time = 13 MINUTES
 	spell_cost = 120
 
-	/// Weakref to granted spell, for the dream ending
-	var/datum/weakref/granted_spell
+	/// Weakref to granted spells, for the dream ending
+	var/datum/weakref/granted_spells = list()
 
 /datum/action/cooldown/spell/undirected/rituos/Destroy(force)
-	granted_spell = null // Deleted with us
+	granted_spells = null // Deleted with us
 	return ..()
 
 /datum/action/cooldown/spell/undirected/rituos/before_cast(atom/cast_on)
 	. = ..()
 	if(. & SPELL_CANCEL_CAST)
 		return
-
-	if(istype(granted_spell))
-		return . | SPELL_CANCEL_CAST
 
 	if(!length(get_unskeletonized_bodyparts(cast_on)))
 		to_chat(cast_on, span_notice("I have completed Her Lesser Work. Only lichdom awaits me now, but just out of reach..."))
@@ -79,6 +76,13 @@
 		//! MAGIC BALANCE POINT
 		cast_on.adjust_form_mastery_points(20)
 		cast_on.adjust_technique_mastery_points(12)
+		// you are mage-nificient, so drop all your borrowed spells and unregister the sleep proc
+		if (granted_spells)
+			cast_on.remove_spells(source = src)
+			to_chat(cast_on, span_warning("My glimpse of borrowed spells fades as something in me changes!"))
+			granted_spells = list()
+			UnregisterSignal(cast_on, COMSIG_LIVING_DREAM_END)
+
 		cast_on.visible_message(
 			span_boldwarning("[cast_on]'s form swells with terrible power as they cast away almost all of \
 			the remnants of their mortal flesh, arcyne runes glowing upon their exposed bones..."),
@@ -91,11 +95,13 @@
 		qdel(src)
 		return
 
-	RegisterSignal(cast_on, COMSIG_LIVING_DREAM_END, PROC_REF(on_dream_end))
+	// if no granted spells yet, register our dream on proc
+	if(!granted_spells)
+		RegisterSignal(cast_on, COMSIG_LIVING_DREAM_END, PROC_REF(on_dream_end))
 	var/datum/action/cooldown/spell = new spell_type(src)
 	to_chat(cast_on, span_notice("The Lesser Work of Rituos floods my mind with stolen arcyne knowledge: I can now cast [spell.name] until I next rest..."))
 	cast_on.add_spell(spell)
-	granted_spell = WEAKREF(spell)
+	granted_spells += WEAKREF(spell)
 
 /datum/action/cooldown/spell/undirected/rituos/proc/get_unskeletonized_bodyparts(mob/living/carbon/caster)
 	var/static/list/excluded_bodypart_types = list(/obj/item/bodypart/head, /obj/item/bodypart/mouth, /obj/item/bodypart/chest)
@@ -116,12 +122,11 @@
 	if(QDELETED(src))
 		return
 
-	var/datum/action/cooldown/spell = granted_spell?.resolve()
-	if(spell)
-		to_chat(user, span_warning("My glimpse of [spell.name] fades as I awaken..."))
+	if(granted_spells)
+		to_chat(user, span_warning("My glimpse of borrowed spells fades as I awaken..."))
 
 	user.remove_spells(source = src)
-	granted_spell = null
+	granted_spells = list()
 	to_chat(user, span_smallnotice("The toil of invoking Her Lesser Work slips away. I may begin anew…"))
 	reset_spell_cooldown()
 	UnregisterSignal(user, COMSIG_LIVING_DREAM_END)

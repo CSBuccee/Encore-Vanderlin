@@ -67,6 +67,7 @@
 		/turf/open/floor/churchrough/green,
 		/turf/open/floor/metal/red,
 		/turf/open/floor/metal/red/alt,
+		/turf/open/floor/metal/cogs,
 	) \
 	+ typesof(/turf/open/floor/mushroom) \
 	+ typesof(/turf/open/floor/sandstone_tile) \

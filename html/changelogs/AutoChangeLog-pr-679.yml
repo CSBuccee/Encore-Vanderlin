@@ -1,0 +1,6 @@
+author: "furrycactus"
+delete-after: True
+changes:
+  - rscadd: "Added new Templar Subclass: Ranger-Zealot."
+  - rscadd: "Added new weapon selection to the Paladin subclass for Templar."
+  - bugfix: "Made various fixes to the Monk subclass for Templar."

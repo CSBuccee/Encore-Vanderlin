@@ -42,7 +42,7 @@
 	. = ..()
 	set_holdable(list(/obj/item/weapon/sword), list(/obj/item/weapon/sword/long/exe, /obj/item/weapon/sword/long/greatsword, /obj/item/weapon/sword/long/daewalker, /obj/item/weapon/sword/long/silver/nitewalker))
 
-/datum/component/storage/concrete/scabbard/kazengun/New(list/raw_args)
+/datum/component/storage/concrete/scabbard/cudese/New(list/raw_args)
 	. = ..()
 	set_holdable(list(/obj/item/weapon/sword/katana))
 

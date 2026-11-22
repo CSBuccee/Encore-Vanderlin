@@ -1,0 +1,4 @@
+author: "crimsonFig"
+delete-after: True
+changes:
+  - balance: "gold/silver ore infusion now just gold/silver dust instead"

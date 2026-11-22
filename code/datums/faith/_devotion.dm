@@ -104,7 +104,13 @@
 /datum/devotion/proc/grant_miracle(datum/action/miracle)
 	if(!miracle)
 		return
-	holder_mob.add_spell(miracle, source = src)
+	// make any mana or essence based spells a faith based spell instead
+	var/datum/action/cooldown/spell/new_miracle = new miracle(src)
+	if (new_miracle.spell_type == SPELL_MANA || new_miracle.spell_type == SPELL_ESSENCE)
+		new_miracle.spell_type = SPELL_MIRACLE
+		new_miracle.associated_skill = /datum/attribute/skill/magic/holy
+	// override so we replace any mana spells they had mid-round with the faithful version to avoid miracles not sticking
+	holder_mob.add_spell(new_miracle, source = src, override = TRUE)
 
 /datum/devotion/proc/update_devotion(amount)
 	. += devotion

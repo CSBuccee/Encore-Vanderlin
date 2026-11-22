@@ -49,13 +49,13 @@
 
 /obj/item/clothing/cloak/angrostabard/black
 	name = "blessed tabard"
-	desc = "A tabard worn by the worshippers of Psydon. A funeral shroud for the paradise that could've been, and a solemn vow to continue the struggle towards salvation."
+	desc = "A tabard worn by the worshippers of Angros. A funeral shroud for the paradise that could've been, and a solemn vow to continue the struggle towards salvation."
 	icon_state = "blackpsydontabard"
 	item_state = "blackpsydontabard"
 
 /obj/item/clothing/cloak/angrostabard/black/alt
 	name = "opened blessed tabard"
-	desc = "A tabard worn by the worshippers of Psydon, peeled back to reveal its mourning innards."
+	desc = "A tabard worn by the worshippers of Angros, peeled back to reveal its mourning innards."
 	body_parts_covered = GROIN
 
 /obj/item/clothing/cloak/angrostabard/black/MiddleClick(mob/user)
@@ -66,22 +66,22 @@
 	switch(open_wear)
 		if(FALSE)
 			name = "opened blessed tabard"
-			desc = "A tabard worn by the worshippers of Psydon, peeled back to reveal its mourning innards."
+			desc = "A tabard worn by the worshippers of Angros, peeled back to reveal its mourning innards."
 			body_parts_covered = GROIN
 			icon_state = "blackpsydontabardalt"
 			item_state = "blackpsydontabardalt"
 			open_wear = TRUE
 			flags_inv = NONE
-			to_chat(usr, span_warning("You pull back the threaded burlap, baring your heart to Psydonia's eyes."))
+			to_chat(usr, span_warning("You pull back the threaded burlap, baring your heart to the world's eyes."))
 		if(TRUE)
 			name = "blessed tabard"
-			desc = "A tabard worn by the worshippers of Psydon. A funeral shroud for the paradise that could've been, and a solemn vow to continue the struggle towards salvation."
+			desc = "A tabard worn by the worshippers of Angros. A funeral shroud for the paradise that could've been, and a solemn vow to continue the struggle towards salvation."
 			body_parts_covered = CHEST|GROIN
 			icon_state = "blackpsydontabard"
 			item_state = "blackpsydontabard"
 			flags_inv = HIDEBOOB
 			open_wear = FALSE
-			to_chat(usr, span_warning("You cloak yourself in the threaded burlap, veiling your heart from Psydonia's eyes."))
+			to_chat(usr, span_warning("You cloak yourself in the threaded burlap, veiling your heart from the world's eyes."))
 	update_icon()
 	if(user)
 		if(ishuman(user))
@@ -91,7 +91,7 @@
 
 /obj/item/clothing/cloak/tabard/toga
 	name = "toga"
-	desc = "The ancestral predecessor to Psydonia's many tabards, worn by the heroes and villains of antiquity."
+	desc = "The ancestral predecessor to the old world's many tabards, worn by the heroes and villains of antiquity."
 	icon_state = "whitepsydontabard"
 	item_state = "whitepsydontabard"
 	mob_overlay_icon = 'icons/roguetown/clothing/onmob/cloaks.dmi'
@@ -105,7 +105,7 @@
 
 /obj/item/clothing/cloak/tabard/toga/alt
 	name = "opened toga"
-	desc = "The ancestral predecessor to Psydonia's many tabards, parted to reveal what lies beneath its cloth."
+	desc = "The ancestral predecessor to the old world's many tabards, parted to reveal what lies beneath its cloth."
 	body_parts_covered = GROIN
 	icon_state = "whitepsydontabardalt"
 	item_state = "whitepsydontabardalt"
@@ -119,22 +119,22 @@
 	switch(open_wear)
 		if(FALSE)
 			name = "opened toga"
-			desc = "The ancestral predecessor to Psydonia's many tabards, parted to reveal what lies beneath its cloth."
+			desc = "The ancestral predecessor to the old world's many tabards, parted to reveal what lies beneath its cloth."
 			body_parts_covered = GROIN
 			icon_state = "whitepsydontabardalt"
 			item_state = "whitepsydontabardalt"
 			open_wear = TRUE
 			flags_inv = NONE
-			to_chat(usr, span_warning("You pull back the threaded cloth, baring your heart to Psydonia's eyes."))
+			to_chat(usr, span_warning("You pull back the threaded cloth, baring your heart to the world's eyes."))
 		if(TRUE)
 			name = "toga"
-			desc = "The ancestral predecessor to Psydonia's many tabards, worn by the heroes and villains of antiquity."
+			desc = "The ancestral predecessor to the old world's many tabards, worn by the heroes and villains of antiquity."
 			body_parts_covered = CHEST|GROIN
 			icon_state = "whitepsydontabard"
 			item_state = "whitekpsydontabard"
 			flags_inv = HIDEBOOB
 			open_wear = FALSE
-			to_chat(usr, span_warning("You cloak yourself in the threaded cloth, veiling your heart from Psydonia's eyes."))
+			to_chat(usr, span_warning("You cloak yourself in the threaded cloth, veiling your heart from the world's eyes."))
 	update_icon()
 	if(user)
 		if(ishuman(user))
@@ -144,7 +144,7 @@
 
 /obj/item/clothing/cloak/ordinatorcape
 	name = "ordinator cape"
-	desc = "A flowing red cape complete with an ornately patterned steel shoulderguard. Made to last. Made to ENDURE. Made to LIVE."
+	desc = "A flowing red cape complete with an ornately patterned steel shoulderguard. Made to last. Made to last."
 	slot_flags = ITEM_SLOT_BACK_R|ITEM_SLOT_CLOAK
 	sleeved = 'icons/roguetown/clothing/onmob/cloaks.dmi'
 	icon_state = "ordinatorcape"

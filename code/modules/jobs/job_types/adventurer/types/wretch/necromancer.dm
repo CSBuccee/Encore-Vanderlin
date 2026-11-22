@@ -24,7 +24,7 @@
 	exp_types_granted = list(EXP_TYPE_COMBAT, EXP_TYPE_MAGICK)
 	allowed_patrons = list(/datum/patron/inhumen/archdevils)
 	form_points = 5
-	technique_points = 3
+	technique_points = 4
 	languages = list(/datum/language/undead)
 	factions = list(FACTION_CABAL)
 

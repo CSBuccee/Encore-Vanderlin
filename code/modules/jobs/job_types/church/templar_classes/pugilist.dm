@@ -1,12 +1,11 @@
 /datum/attribute_holder/sheet/job/templar/pugilist
 	raw_attribute_list = list(
-		STAT_STRENGTH = 2,
 		STAT_ENDURANCE = 2,
-		STAT_CONSTITUTION = 3,
-		STAT_INTELLIGENCE = -2,
-		STAT_SPEED = -1,
+		STAT_CONSTITUTION = 2,
+		STAT_SPEED = 2,
+		STAT_INTELLIGENCE = -1,
 		/datum/attribute/skill/combat/wrestling = 30,
-		/datum/attribute/skill/combat/unarmed = 20,
+		/datum/attribute/skill/combat/unarmed = 30,
 		/datum/attribute/skill/misc/swimming = 30,
 		/datum/attribute/skill/misc/climbing = 30,
 		/datum/attribute/skill/misc/athletics = 30,
@@ -27,7 +26,6 @@
 /datum/attribute_holder/sheet/job/templar/pugilist/patron/visires/quarterstaff
 	raw_attribute_list = list(
 		STAT_PERCEPTION = 1,
-		STAT_INTELLIGENCE = 1,
 	)
 	clamped_adjustment = list(
 		/datum/attribute/skill/combat/polearms = list(30, 30)
@@ -43,7 +41,6 @@
 /datum/attribute_holder/sheet/job/templar/pugilist/patron/akan/quarterstaff
 	raw_attribute_list = list(
 		STAT_PERCEPTION = 1,
-		STAT_INTELLIGENCE = 1,
 	)
 	clamped_adjustment = list(
 		/datum/attribute/skill/combat/polearms = list(30, 30)
@@ -59,7 +56,6 @@
 /datum/attribute_holder/sheet/job/templar/pugilist/patron/gani/quarterstaff
 	raw_attribute_list = list(
 		STAT_PERCEPTION = 1,
-		STAT_INTELLIGENCE = 1,
 	)
 	clamped_adjustment = list(
 		/datum/attribute/skill/combat/polearms = list(30, 30)
@@ -75,7 +71,6 @@
 /datum/attribute_holder/sheet/job/templar/pugilist/patron/valdala/quarterstaff
 	raw_attribute_list = list(
 		STAT_PERCEPTION = 1,
-		STAT_INTELLIGENCE = 1,
 	)
 	clamped_adjustment = list(
 		/datum/attribute/skill/combat/polearms = list(30, 30)
@@ -95,7 +90,6 @@
 /datum/attribute_holder/sheet/job/templar/pugilist/patron/erdl/quarterstaff
 	raw_attribute_list = list(
 		STAT_PERCEPTION = 1,
-		STAT_INTELLIGENCE = 1,
 	)
 	clamped_adjustment = list(
 		/datum/attribute/skill/combat/polearms = list(30, 30)
@@ -110,7 +104,6 @@
 /datum/attribute_holder/sheet/job/templar/pugilist/patron/mordsol/quarterstaff
 	raw_attribute_list = list(
 		STAT_PERCEPTION = 1,
-		STAT_INTELLIGENCE = 1,
 	)
 	clamped_adjustment = list(
 		/datum/attribute/skill/combat/polearms = list(30, 30)
@@ -125,7 +118,6 @@
 /datum/attribute_holder/sheet/job/templar/pugilist/patron/golerkanh/quarterstaff
 	raw_attribute_list = list(
 		STAT_PERCEPTION = 1,
-		STAT_INTELLIGENCE = 1,
 	)
 	clamped_adjustment = list(
 		/datum/attribute/skill/combat/polearms = list(30, 30)
@@ -143,7 +135,6 @@
 /datum/attribute_holder/sheet/job/templar/pugilist/patron/iliope/quarterstaff
 	raw_attribute_list = list(
 		STAT_PERCEPTION = 1,
-		STAT_INTELLIGENCE = 1,
 	)
 	clamped_adjustment = list(
 		/datum/attribute/skill/combat/polearms = list(30, 30)
@@ -159,7 +150,6 @@
 /datum/attribute_holder/sheet/job/templar/pugilist/patron/pomette/quarterstaff
 	raw_attribute_list = list(
 		STAT_PERCEPTION = 1,
-		STAT_INTELLIGENCE = 1,
 	)
 	clamped_adjustment = list(
 		/datum/attribute/skill/combat/polearms = list(30, 30)
@@ -173,7 +163,6 @@
 /datum/attribute_holder/sheet/job/templar/pugilist/patron/mjallidhorn/quarterstaff
 	raw_attribute_list = list(
 		STAT_PERCEPTION = 1,
-		STAT_INTELLIGENCE = 1,
 	)
 	clamped_adjustment = list(
 		/datum/attribute/skill/combat/polearms = list(30, 30)
@@ -191,6 +180,7 @@
 	traits = list(
 		TRAIT_STEELHEARTED,
 		TRAIT_VIRGIN,
+		TRAIT_DODGEEXPERT,
 	)
 
 /datum/job/advclass/templar/pugilist/on_roundstart(mob/living/carbon/human/spawned, client/player_client)
@@ -202,9 +192,9 @@
 			spawned.cmode_music = 'sound/music/cmode/church/CombatAstrata.ogg'
 			var/static/list/selectable = list(
 				"Discipline - Unarmed" = /obj/item/clothing/gloves/bandages/pugilist,
-				"Steel Katar" = /obj/item/weapon/katar,
-				"Knuckledusters" = /obj/item/weapon/knuckles,
-				"Quarterstaff" = /obj/item/weapon/polearm/woodstaff/quarterstaff/silver,
+				"Katholikon Katar" = /obj/item/weapon/katar/angros,
+				"Katholikon Knuckledusters" = /obj/item/weapon/knuckles/angros,
+				"Silver Quarterstaff" = /obj/item/weapon/polearm/woodstaff/quarterstaff/silver,
 			)
 			var/choice = spawned.select_equippable(player_client, selectable, message = "Choose Your Specialisation", title = "TEMPLAR")
 			if(!choice)
@@ -216,15 +206,15 @@
 					ADD_TRAIT(spawned, TRAIT_IGNOREDAMAGESLOWDOWN, JOB_TRAIT)
 					spawned.add_spell(/datum/action/innate/clench_fists, TRUE)
 					ADD_TRAIT(spawned, TRAIT_CLOSECOMBAT, JOB_TRAIT)
-				if("Katar")
+				if("Katholikon Katar")
 					spawned.equip_to_slot_or_del(new /obj/item/clothing/gloves/bandages/weighted, ITEM_SLOT_GLOVES, TRUE)
 					spawned.clamped_adjust_skill_level(/datum/attribute/skill/combat/unarmed, 10, 40)
 					ADD_TRAIT(spawned, TRAIT_CRITICAL_RESISTANCE, JOB_TRAIT)
-				if("Knuckledusters")
+				if("Katholikon Knuckledusters")
 					spawned.equip_to_slot_or_del(new /obj/item/clothing/gloves/bandages/weighted, ITEM_SLOT_GLOVES, TRUE)
 					spawned.clamped_adjust_skill_level(/datum/attribute/skill/combat/unarmed, 10, 40)
 					ADD_TRAIT(spawned, TRAIT_CRITICAL_RESISTANCE, JOB_TRAIT)
-				if("Quarterstaff")
+				if("Silver Quarterstaff")
 					spawned.equip_to_slot_or_del(new /obj/item/clothing/gloves/bandages, ITEM_SLOT_GLOVES, TRUE)
 					spawned.attributes?.add_sheet(/datum/attribute_holder/sheet/job/templar/pugilist/patron/visires/quarterstaff)
 		if(/datum/patron/divine/akan)
@@ -233,9 +223,9 @@
 			spawned.cmode_music = 'sound/music/cmode/church/CombatNoc.ogg'
 			var/static/list/selectable = list(
 				"Discipline - Unarmed" = /obj/item/clothing/gloves/bandages/pugilist,
-				"Steel Katar" = /obj/item/weapon/katar,
-				"Knuckledusters" = /obj/item/weapon/knuckles,
-				"Quarterstaff" = /obj/item/weapon/polearm/woodstaff/quarterstaff/silver,
+				"Katholikon Katar" = /obj/item/weapon/katar/angros,
+				"Katholikon Knuckledusters" = /obj/item/weapon/knuckles/angros,
+				"Silver Quarterstaff" = /obj/item/weapon/polearm/woodstaff/quarterstaff/silver,
 			)
 			var/choice = spawned.select_equippable(player_client, selectable, message = "Choose Your Specialisation", title = "TEMPLAR")
 			if(!choice)
@@ -247,15 +237,15 @@
 					ADD_TRAIT(spawned, TRAIT_IGNOREDAMAGESLOWDOWN, JOB_TRAIT)
 					spawned.add_spell(/datum/action/innate/clench_fists, TRUE)
 					ADD_TRAIT(spawned, TRAIT_CLOSECOMBAT, JOB_TRAIT)
-				if("Katar")
+				if("Katholikon Katar")
 					spawned.equip_to_slot_or_del(new /obj/item/clothing/gloves/bandages/weighted, ITEM_SLOT_GLOVES, TRUE)
 					spawned.clamped_adjust_skill_level(/datum/attribute/skill/combat/unarmed, 10, 40)
 					ADD_TRAIT(spawned, TRAIT_CRITICAL_RESISTANCE, JOB_TRAIT)
-				if("Knuckledusters")
+				if("Katholikon Knuckledusters")
 					spawned.equip_to_slot_or_del(new /obj/item/clothing/gloves/bandages/weighted, ITEM_SLOT_GLOVES, TRUE)
 					spawned.clamped_adjust_skill_level(/datum/attribute/skill/combat/unarmed, 10, 40)
 					ADD_TRAIT(spawned, TRAIT_CRITICAL_RESISTANCE, JOB_TRAIT)
-				if("Quarterstaff")
+				if("Silver Quarterstaff")
 					spawned.equip_to_slot_or_del(new /obj/item/clothing/gloves/bandages, ITEM_SLOT_GLOVES, TRUE)
 					spawned.attributes?.add_sheet(/datum/attribute_holder/sheet/job/templar/pugilist/patron/akan/quarterstaff)
 
@@ -278,9 +268,9 @@
 			spawned.cmode_music = 'sound/music/cmode/church/CombatDendor.ogg'
 			var/static/list/selectable = list(
 				"Discipline - Unarmed" = /obj/item/clothing/gloves/bandages/pugilist,
-				"Steel Katar" = /obj/item/weapon/katar,
-				"Knuckledusters" = /obj/item/weapon/knuckles,
-				"Quarterstaff" = /obj/item/weapon/polearm/woodstaff/quarterstaff/silver,
+				"Katholikon Katar" = /obj/item/weapon/katar/angros,
+				"Katholikon Knuckledusters" = /obj/item/weapon/knuckles/angros,
+				"Silver Quarterstaff" = /obj/item/weapon/polearm/woodstaff/quarterstaff/silver,
 			)
 			var/choice = spawned.select_equippable(player_client, selectable, message = "Choose Your Specialisation", title = "TEMPLAR")
 			if(!choice)
@@ -292,15 +282,15 @@
 					ADD_TRAIT(spawned, TRAIT_IGNOREDAMAGESLOWDOWN, JOB_TRAIT)
 					spawned.add_spell(/datum/action/innate/clench_fists, TRUE)
 					ADD_TRAIT(spawned, TRAIT_CLOSECOMBAT, JOB_TRAIT)
-				if("Katar")
+				if("Katholikon Katar")
 					spawned.equip_to_slot_or_del(new /obj/item/clothing/gloves/bandages/weighted, ITEM_SLOT_GLOVES, TRUE)
 					spawned.clamped_adjust_skill_level(/datum/attribute/skill/combat/unarmed, 10, 40)
 					ADD_TRAIT(spawned, TRAIT_CRITICAL_RESISTANCE, JOB_TRAIT)
-				if("Knuckledusters")
+				if("Katholikon Knuckledusters")
 					spawned.equip_to_slot_or_del(new /obj/item/clothing/gloves/bandages/weighted, ITEM_SLOT_GLOVES, TRUE)
 					spawned.clamped_adjust_skill_level(/datum/attribute/skill/combat/unarmed, 10, 40)
 					ADD_TRAIT(spawned, TRAIT_CRITICAL_RESISTANCE, JOB_TRAIT)
-				if("Quarterstaff")
+				if("Silver Quarterstaff")
 					spawned.equip_to_slot_or_del(new /obj/item/clothing/gloves/bandages, ITEM_SLOT_GLOVES, TRUE)
 					spawned.attributes?.add_sheet(/datum/attribute_holder/sheet/job/templar/pugilist/patron/gani/quarterstaff)
 		if(/datum/patron/divine/valdala)
@@ -310,9 +300,9 @@
 			spawned.cmode_music = 'sound/music/cmode/church/CombatGravekeeper.ogg'
 			var/static/list/selectable = list(
 				"Discipline - Unarmed" = /obj/item/clothing/gloves/bandages/pugilist,
-				"Steel Katar" = /obj/item/weapon/katar,
-				"Knuckledusters" = /obj/item/weapon/knuckles,
-				"Quarterstaff" = /obj/item/weapon/polearm/woodstaff/quarterstaff/silver,
+				"Katholikon Katar" = /obj/item/weapon/katar/angros,
+				"Katholikon Knuckledusters" = /obj/item/weapon/knuckles/angros,
+				"Silver Quarterstaff" = /obj/item/weapon/polearm/woodstaff/quarterstaff/silver,
 			)
 			var/choice = spawned.select_equippable(player_client, selectable, message = "Choose Your Specialisation", title = "TEMPLAR")
 			if(!choice)
@@ -324,15 +314,15 @@
 					ADD_TRAIT(spawned, TRAIT_IGNOREDAMAGESLOWDOWN, JOB_TRAIT)
 					spawned.add_spell(/datum/action/innate/clench_fists, TRUE)
 					ADD_TRAIT(spawned, TRAIT_CLOSECOMBAT, JOB_TRAIT)
-				if("Katar")
+				if("Katholikon Katar")
 					spawned.equip_to_slot_or_del(new /obj/item/clothing/gloves/bandages/weighted, ITEM_SLOT_GLOVES, TRUE)
 					spawned.clamped_adjust_skill_level(/datum/attribute/skill/combat/unarmed, 10, 40)
 					ADD_TRAIT(spawned, TRAIT_CRITICAL_RESISTANCE, JOB_TRAIT)
-				if("Knuckledusters")
+				if("Katholikon Knuckledusters")
 					spawned.equip_to_slot_or_del(new /obj/item/clothing/gloves/bandages/weighted, ITEM_SLOT_GLOVES, TRUE)
 					spawned.clamped_adjust_skill_level(/datum/attribute/skill/combat/unarmed, 10, 40)
 					ADD_TRAIT(spawned, TRAIT_CRITICAL_RESISTANCE, JOB_TRAIT)
-				if("Quarterstaff")
+				if("Silver Quarterstaff")
 					spawned.equip_to_slot_or_del(new /obj/item/clothing/gloves/bandages, ITEM_SLOT_GLOVES, TRUE)
 					spawned.attributes?.add_sheet(/datum/attribute_holder/sheet/job/templar/pugilist/patron/valdala/quarterstaff)
 		if(/datum/patron/divine/erdl)
@@ -340,9 +330,9 @@
 			spawned.cmode_music = 'sound/music/cmode/adventurer/CombatMonk.ogg'
 			var/static/list/selectable = list(
 				"Discipline - Unarmed" = /obj/item/clothing/gloves/bandages/pugilist,
-				"Steel Katar" = /obj/item/weapon/katar,
-				"Knuckledusters" = /obj/item/weapon/knuckles,
-				"Quarterstaff" = /obj/item/weapon/polearm/woodstaff/quarterstaff/silver,
+				"Katholikon Katar" = /obj/item/weapon/katar/angros,
+				"Katholikon Knuckledusters" = /obj/item/weapon/knuckles/angros,
+				"Silver Quarterstaff" = /obj/item/weapon/polearm/woodstaff/quarterstaff/silver,
 				"Plaguebearer Sickles (Knives)" = list(/obj/item/weapon/knife/dagger/steel/erdlsickle, /obj/item/weapon/knife/dagger/steel/erdlsickle)
 
 			)
@@ -356,15 +346,15 @@
 					ADD_TRAIT(spawned, TRAIT_IGNOREDAMAGESLOWDOWN, JOB_TRAIT)
 					spawned.add_spell(/datum/action/innate/clench_fists, TRUE)
 					ADD_TRAIT(spawned, TRAIT_CLOSECOMBAT, JOB_TRAIT)
-				if("Katar")
+				if("Katholikon Katar")
 					spawned.equip_to_slot_or_del(new /obj/item/clothing/gloves/bandages/weighted, ITEM_SLOT_GLOVES, TRUE)
 					spawned.clamped_adjust_skill_level(/datum/attribute/skill/combat/unarmed, 10, 40)
 					ADD_TRAIT(spawned, TRAIT_CRITICAL_RESISTANCE, JOB_TRAIT)
-				if("Knuckledusters")
+				if("Katholikon Knuckledusters")
 					spawned.equip_to_slot_or_del(new /obj/item/clothing/gloves/bandages/weighted, ITEM_SLOT_GLOVES, TRUE)
 					spawned.clamped_adjust_skill_level(/datum/attribute/skill/combat/unarmed, 10, 40)
 					ADD_TRAIT(spawned, TRAIT_CRITICAL_RESISTANCE, JOB_TRAIT)
-				if("Quarterstaff")
+				if("Silver Quarterstaff")
 					spawned.equip_to_slot_or_del(new /obj/item/clothing/gloves/bandages, ITEM_SLOT_GLOVES, TRUE)
 					spawned.attributes?.add_sheet(/datum/attribute_holder/sheet/job/templar/pugilist/patron/erdl/quarterstaff)
 				if("Plaguebearer Sickles (Knives)")
@@ -376,9 +366,9 @@
 			spawned.cmode_music = 'sound/music/cmode/church/CombatEora.ogg'
 			var/static/list/selectable = list(
 				"Discipline - Unarmed" = /obj/item/clothing/gloves/bandages/pugilist,
-				"Steel Katar" = /obj/item/weapon/katar,
-				"Knuckledusters" = /obj/item/weapon/knuckles,
-				"Quarterstaff" = /obj/item/weapon/polearm/woodstaff/quarterstaff/silver,
+				"Katholikon Katar" = /obj/item/weapon/katar/angros,
+				"Katholikon Knuckledusters" = /obj/item/weapon/knuckles/angros,
+				"Silver Quarterstaff" = /obj/item/weapon/polearm/woodstaff/quarterstaff/silver,
 				"Close Caress (Knuckles)" = /obj/item/weapon/knuckles/pomette,
 			)
 			var/choice = spawned.select_equippable(player_client, selectable, message = "Choose Your Specialisation", title = "TEMPLAR")
@@ -391,15 +381,15 @@
 					ADD_TRAIT(spawned, TRAIT_IGNOREDAMAGESLOWDOWN, JOB_TRAIT)
 					spawned.add_spell(/datum/action/innate/clench_fists, TRUE)
 					ADD_TRAIT(spawned, TRAIT_CLOSECOMBAT, JOB_TRAIT)
-				if("Katar")
+				if("Katholikon Katar")
 					spawned.equip_to_slot_or_del(new /obj/item/clothing/gloves/bandages/weighted, ITEM_SLOT_GLOVES, TRUE)
 					spawned.clamped_adjust_skill_level(/datum/attribute/skill/combat/unarmed, 10, 40)
 					ADD_TRAIT(spawned, TRAIT_CRITICAL_RESISTANCE, JOB_TRAIT)
-				if("Knuckledusters")
+				if("Katholikon Knuckledusters")
 					spawned.equip_to_slot_or_del(new /obj/item/clothing/gloves/bandages/weighted, ITEM_SLOT_GLOVES, TRUE)
 					spawned.clamped_adjust_skill_level(/datum/attribute/skill/combat/unarmed, 10, 40)
 					ADD_TRAIT(spawned, TRAIT_CRITICAL_RESISTANCE, JOB_TRAIT)
-				if("Quarterstaff")
+				if("Silver Quarterstaff")
 					spawned.equip_to_slot_or_del(new /obj/item/clothing/gloves/bandages, ITEM_SLOT_GLOVES, TRUE)
 					spawned.attributes?.add_sheet(/datum/attribute_holder/sheet/job/templar/pugilist/patron/pomette/quarterstaff)
 				if("Close Caress (Knuckles)")
@@ -411,9 +401,9 @@
 			spawned.cmode_music = 'sound/music/cmode/church/CombatRavox.ogg'
 			var/static/list/selectable = list(
 				"Discipline - Unarmed" = /obj/item/clothing/gloves/bandages/pugilist,
-				"Steel Katar" = /obj/item/weapon/katar,
-				"Knuckledusters" = /obj/item/weapon/knuckles,
-				"Quarterstaff" = /obj/item/weapon/polearm/woodstaff/quarterstaff/silver,
+				"Katholikon Katar" = /obj/item/weapon/katar/angros,
+				"Katholikon Knuckledusters" = /obj/item/weapon/knuckles/angros,
+				"Silver Quarterstaff" = /obj/item/weapon/polearm/woodstaff/quarterstaff/silver,
 
 			)
 			var/choice = spawned.select_equippable(player_client, selectable, message = "Choose Your Specialisation", title = "TEMPLAR")
@@ -426,15 +416,15 @@
 					ADD_TRAIT(spawned, TRAIT_IGNOREDAMAGESLOWDOWN, JOB_TRAIT)
 					spawned.add_spell(/datum/action/innate/clench_fists, TRUE)
 					ADD_TRAIT(spawned, TRAIT_CLOSECOMBAT, JOB_TRAIT)
-				if("Katar")
+				if("Katholikon Katar")
 					spawned.equip_to_slot_or_del(new /obj/item/clothing/gloves/bandages/weighted, ITEM_SLOT_GLOVES, TRUE)
 					spawned.clamped_adjust_skill_level(/datum/attribute/skill/combat/unarmed, 10, 40)
 					ADD_TRAIT(spawned, TRAIT_CRITICAL_RESISTANCE, JOB_TRAIT)
-				if("Knuckledusters")
+				if("Katholikon Knuckledusters")
 					spawned.equip_to_slot_or_del(new /obj/item/clothing/gloves/bandages/weighted, ITEM_SLOT_GLOVES, TRUE)
 					spawned.clamped_adjust_skill_level(/datum/attribute/skill/combat/unarmed, 10, 40)
 					ADD_TRAIT(spawned, TRAIT_CRITICAL_RESISTANCE, JOB_TRAIT)
-				if("Quarterstaff")
+				if("Silver Quarterstaff")
 					spawned.equip_to_slot_or_del(new /obj/item/clothing/gloves/bandages, ITEM_SLOT_GLOVES, TRUE)
 					spawned.attributes?.add_sheet(/datum/attribute_holder/sheet/job/templar/pugilist/patron/mordsol/quarterstaff)
 		if(/datum/patron/divine/golerkanh)
@@ -442,9 +432,9 @@
 			spawned.cmode_music = 'sound/music/cmode/adventurer/CombatOutlander2.ogg'
 			var/static/list/selectable = list(
 				"Discipline - Unarmed" = /obj/item/clothing/gloves/bandages/pugilist,
-				"Steel Katar" = /obj/item/weapon/katar,
-				"Knuckledusters" = /obj/item/weapon/knuckles,
-				"Quarterstaff" = /obj/item/weapon/polearm/woodstaff/quarterstaff/silver,
+				"Katholikon Katar" = /obj/item/weapon/katar/angros,
+				"Katholikon Knuckledusters" = /obj/item/weapon/knuckles/angros,
+				"Silver Quarterstaff" = /obj/item/weapon/polearm/woodstaff/quarterstaff/silver,
 
 			)
 			var/choice = spawned.select_equippable(player_client, selectable, message = "Choose Your Specialisation", title = "TEMPLAR")
@@ -457,15 +447,15 @@
 					ADD_TRAIT(spawned, TRAIT_IGNOREDAMAGESLOWDOWN, JOB_TRAIT)
 					spawned.add_spell(/datum/action/innate/clench_fists, TRUE)
 					ADD_TRAIT(spawned, TRAIT_CLOSECOMBAT, JOB_TRAIT)
-				if("Katar")
+				if("Katholikon Katar")
 					spawned.equip_to_slot_or_del(new /obj/item/clothing/gloves/bandages/weighted, ITEM_SLOT_GLOVES, TRUE)
 					spawned.clamped_adjust_skill_level(/datum/attribute/skill/combat/unarmed, 10, 40)
 					ADD_TRAIT(spawned, TRAIT_CRITICAL_RESISTANCE, JOB_TRAIT)
-				if("Knuckledusters")
+				if("Katholikon Knuckledusters")
 					spawned.equip_to_slot_or_del(new /obj/item/clothing/gloves/bandages/weighted, ITEM_SLOT_GLOVES, TRUE)
 					spawned.clamped_adjust_skill_level(/datum/attribute/skill/combat/unarmed, 10, 40)
 					ADD_TRAIT(spawned, TRAIT_CRITICAL_RESISTANCE, JOB_TRAIT)
-				if("Quarterstaff")
+				if("Silver Quarterstaff")
 					spawned.equip_to_slot_or_del(new /obj/item/clothing/gloves/bandages, ITEM_SLOT_GLOVES, TRUE)
 					spawned.attributes?.add_sheet(/datum/attribute_holder/sheet/job/templar/pugilist/patron/golerkanh/quarterstaff)
 		if(/datum/patron/divine/mjallidhorn)
@@ -473,9 +463,9 @@
 			spawned.cmode_music = 'sound/music/cmode/church/CombatAbyssor.ogg'
 			var/static/list/selectable = list(
 				"Discipline - Unarmed" = /obj/item/clothing/gloves/bandages/pugilist,
-				"Steel Katar" = /obj/item/weapon/katar,
-				"Knuckledusters" = /obj/item/weapon/knuckles,
-				"Quarterstaff" = /obj/item/weapon/polearm/woodstaff/quarterstaff/silver,
+				"Katholikon Katar" = /obj/item/weapon/katar/angros,
+				"Katholikon Knuckledusters" = /obj/item/weapon/knuckles/angros,
+				"Silver Quarterstaff" = /obj/item/weapon/polearm/woodstaff/quarterstaff/silver,
 				"Barotrauma (Katars)" = /obj/item/weapon/katar/mjallidhorn,
 			)
 			var/choice = spawned.select_equippable(player_client, selectable, message = "Choose Your Specialisation", title = "TEMPLAR")
@@ -488,15 +478,15 @@
 					ADD_TRAIT(spawned, TRAIT_IGNOREDAMAGESLOWDOWN, JOB_TRAIT)
 					spawned.add_spell(/datum/action/innate/clench_fists, TRUE)
 					ADD_TRAIT(spawned, TRAIT_CLOSECOMBAT, JOB_TRAIT)
-				if("Katar")
+				if("Katholikon Katar")
 					spawned.equip_to_slot_or_del(new /obj/item/clothing/gloves/bandages/weighted, ITEM_SLOT_GLOVES, TRUE)
 					spawned.clamped_adjust_skill_level(/datum/attribute/skill/combat/unarmed, 10, 40)
 					ADD_TRAIT(spawned, TRAIT_CRITICAL_RESISTANCE, JOB_TRAIT)
-				if("Knuckledusters")
+				if("Katholikon Knuckledusters")
 					spawned.equip_to_slot_or_del(new /obj/item/clothing/gloves/bandages/weighted, ITEM_SLOT_GLOVES, TRUE)
 					spawned.clamped_adjust_skill_level(/datum/attribute/skill/combat/unarmed, 10, 40)
 					ADD_TRAIT(spawned, TRAIT_CRITICAL_RESISTANCE, JOB_TRAIT)
-				if("Quarterstaff")
+				if("Silver Quarterstaff")
 					spawned.equip_to_slot_or_del(new /obj/item/clothing/gloves/bandages, ITEM_SLOT_GLOVES, TRUE)
 					spawned.attributes?.add_sheet(/datum/attribute_holder/sheet/job/templar/pugilist/patron/mjallidhorn/quarterstaff)
 				if("Barotrauma (Katars)")
@@ -508,9 +498,9 @@
 			spawned.cmode_music = 'sound/music/cmode/church/CombatXylix.ogg'
 			var/static/list/selectable = list(
 				"Discipline - Unarmed" = /obj/item/clothing/gloves/bandages/pugilist,
-				"Steel Katar" = /obj/item/weapon/katar,
-				"Knuckledusters" = /obj/item/weapon/knuckles,
-				"Quarterstaff" = /obj/item/weapon/polearm/woodstaff/quarterstaff/silver,
+				"Katholikon Katar" = /obj/item/weapon/katar/angros,
+				"Katholikon Knuckledusters" = /obj/item/weapon/knuckles/angros,
+				"Silver Quarterstaff" = /obj/item/weapon/polearm/woodstaff/quarterstaff/silver,
 			)
 			var/choice = spawned.select_equippable(player_client, selectable, message = "Choose Your Specialisation", title = "TEMPLAR")
 			if(!choice)
@@ -522,15 +512,15 @@
 					ADD_TRAIT(spawned, TRAIT_CRITICAL_RESISTANCE, JOB_TRAIT)
 					ADD_TRAIT(spawned, TRAIT_IGNOREDAMAGESLOWDOWN, JOB_TRAIT)
 					ADD_TRAIT(spawned, TRAIT_CLOSECOMBAT, JOB_TRAIT)
-				if("Katar")
+				if("Katholikon Katar")
 					spawned.equip_to_slot_or_del(new /obj/item/clothing/gloves/bandages/weighted, ITEM_SLOT_GLOVES, TRUE)
 					spawned.clamped_adjust_skill_level(/datum/attribute/skill/combat/unarmed, 10, 40)
 					ADD_TRAIT(spawned, TRAIT_CRITICAL_RESISTANCE, JOB_TRAIT)
-				if("Knuckledusters")
+				if("Katholikon Knuckledusters")
 					spawned.equip_to_slot_or_del(new /obj/item/clothing/gloves/bandages/weighted, ITEM_SLOT_GLOVES, TRUE)
 					spawned.clamped_adjust_skill_level(/datum/attribute/skill/combat/unarmed, 10, 40)
 					ADD_TRAIT(spawned, TRAIT_CRITICAL_RESISTANCE, JOB_TRAIT)
-				if("Quarterstaff")
+				if("Silver Quarterstaff")
 					spawned.equip_to_slot_or_del(new /obj/item/clothing/gloves/bandages, ITEM_SLOT_GLOVES, TRUE)
 					spawned.attributes?.add_sheet(/datum/attribute_holder/sheet/job/templar/pugilist/patron/iliope/quarterstaff)
 

@@ -61,9 +61,9 @@
 
 	triumph_cost_permanent = 2
 
-/datum/loadout_item/kazengunpants
-	name = "Gambeson Trousers"
-	item_path = /obj/item/clothing/pants/trou/leather/kazengun
+/datum/loadout_item/cudese_pants
+	name = "Cudese Trousers"
+	item_path = /obj/item/clothing/pants/trou/leather/cudese
 	ui_category = "Pants"
 
 	triumph_cost_permanent = 2

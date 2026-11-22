@@ -4,7 +4,7 @@
 	typepath = /datum/round_event/pomette_marriage
 	weight = 7
 	earliest_start = 15 MINUTES
-	max_occurrences = 1
+	max_occurrences = 0 // TODO: turn off until we can properly remove this or rework it to something less annoying to others and feasible for the player
 	min_players = LOWPOP_THRESHOLD
 
 	tags = list(

@@ -1,0 +1,5 @@
+author: "crimsonFig"
+delete-after: True
+changes:
+  - rscadd: "functionality for general healing to be threshold capped per bodypart"
+  - balance: "rebalances lifeblood and brewed potions"

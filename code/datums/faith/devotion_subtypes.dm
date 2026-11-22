@@ -107,7 +107,7 @@
 
 /datum/devotion/divine/erdl
 	miracles = list(
-		CLERIC_T0 = list(/datum/action/cooldown/spell/diagnose/holy, /datum/action/cooldown/spell/essence/regeneration_cycle),
+		CLERIC_T0 = list(/datum/action/cooldown/spell/diagnose/holy, /datum/action/cooldown/spell/healing, /datum/action/cooldown/spell/essence/regeneration_cycle),
 		CLERIC_T1 = list(/datum/action/cooldown/spell/undirected/conjure_item/summon_leech/erdl),
 		CLERIC_T2 = list(/datum/action/cooldown/spell/attach_bodypart, /datum/action/cooldown/spell/cure_rot, /datum/action/cooldown/spell/projectile/sickness, /datum/action/cooldown/spell/aoe/abrogation),
 		CLERIC_T3 = /datum/action/cooldown/spell/essence/toxic_cleanse,

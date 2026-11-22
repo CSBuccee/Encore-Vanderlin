@@ -3518,6 +3518,10 @@
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/concrete,
 /area/indoors/town/cell)
+"cmq" = (
+/obj/item/reagent_containers/food/snacks/seagull,
+/turf/open/floor/rooftop,
+/area/outdoors/town/roofs)
 "cmt" = (
 /obj/structure/fluff/steamvent,
 /turf/open/floor/cobble,
@@ -7415,6 +7419,11 @@
 "eHx" = (
 /turf/open/floor/hexstone,
 /area/indoors/town/church/inquisition)
+"eHD" = (
+/obj/item/reagent_containers/food/snacks/seagull,
+/obj/structure/fluff/nest,
+/turf/open/floor/ruinedwood/turned,
+/area/outdoors/town)
 "eHE" = (
 /obj/structure/table/wood{
 	icon_state = "largetable";
@@ -10870,6 +10879,11 @@
 	},
 /turf/open/floor/ruinedwood/chevron,
 /area/indoors/town/clinic_large)
+"gJR" = (
+/obj/structure/fluff/nest,
+/obj/item/reagent_containers/food/snacks/seagull,
+/turf/open/floor/rooftop,
+/area/outdoors/town/roofs)
 "gKd" = (
 /obj/structure/table/wood,
 /obj/item/natural/feather,
@@ -38362,9 +38376,10 @@
 /turf/open/floor/cobble,
 /area/outdoors/town/neighborhood/west)
 "xkJ" = (
-/obj/item/reagent_containers/food/snacks/crow,
-/turf/open/floor/rooftop,
-/area/outdoors/town/roofs)
+/obj/item/reagent_containers/food/snacks/seagull,
+/obj/structure/fluff/nest,
+/turf/open/floor/metal/alt,
+/area/outdoors/farm)
 "xkK" = (
 /turf/open/openspace,
 /area/indoors/town/keep/library)
@@ -39729,6 +39744,8 @@
 /area/indoors/town/keep)
 "ydu" = (
 /obj/machinery/light/fueled/torchholder/l,
+/obj/item/reagent_containers/food/snacks/seagull,
+/obj/structure/fluff/nest,
 /turf/open/floor/rooftop,
 /area/outdoors/town/roofs)
 "ydJ" = (
@@ -68842,7 +68859,7 @@ aJX
 aJX
 myp
 nLu
-rzU
+eHD
 rzU
 rzU
 cTg
@@ -83616,7 +83633,7 @@ vHj
 vmn
 pxt
 sza
-dvc
+cmq
 fNx
 glJ
 glJ
@@ -84030,7 +84047,7 @@ oes
 swd
 dvc
 dvc
-dvc
+cmq
 fNx
 fNx
 kla
@@ -86008,7 +86025,7 @@ aBx
 aBx
 keV
 xBS
-xkJ
+dvc
 ydu
 anm
 fNx
@@ -87563,7 +87580,7 @@ oeH
 qEy
 dvc
 dvc
-dvc
+gJR
 fNx
 eKK
 bwD
@@ -101185,7 +101202,7 @@ fNx
 fNx
 jBB
 tAI
-fLv
+xkJ
 wmB
 boj
 tAI

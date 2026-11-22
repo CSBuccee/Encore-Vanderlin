@@ -1,0 +1,5 @@
+author: "crimsonFig"
+delete-after: True
+changes:
+  - rscadd: "Added craftable/loadout yeoman bells that can alert bound players"
+  - image: "added bell sprites by kyres"

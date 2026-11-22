@@ -6,7 +6,6 @@
 	dead_life = TRUE
 
 /datum/reagent/medicine/on_mob_life(mob/living/carbon/M, efficiency)
-	current_cycle++
 	. = ..()
 
 /datum/reagent/medicine/atropine
@@ -75,7 +74,7 @@
 		M.adjustToxLoss(-1 * efficiency, 0)
 	if(prob(10))
 		M.add_nausea(2 * efficiency)
-	M.adjustOrganLoss(ORGAN_SLOT_LUNGS, -2 * efficiency)
+	M.adjustOrganLoss(ORGAN_SLOT_LUNGS, -2 * REM * efficiency)
 	. = ..()
 
 /datum/reagent/medicine/thornmorrow_tincture
@@ -85,7 +84,7 @@
 	color = "#228B22"
 	taste_description = "thorny bitterness"
 	scent_description = "briars and undergrowth"
-	metabolization_rate = REAGENTS_METABOLISM * 0.2  // Very slow metabolization
+	metabolization_rate = REAGENTS_SLOW_METABOLISM  // Very slow metabolization
 
 /datum/reagent/medicine/thornmorrow_tincture/on_mob_life(mob/living/carbon/M, efficiency)
 	if(volume > 0.99)
@@ -102,7 +101,7 @@
 	color = "#E0BBE4"
 	taste_description = "floral bitterness and light"
 	scent_description = "sunrise petals"
-	metabolization_rate = REAGENTS_METABOLISM * 1.5
+	metabolization_rate = REAGENTS_DOMA_METABOLISM
 
 /datum/reagent/medicine/soulweave_distillate/on_mob_metabolize(mob/living/L)
 	. = ..()
@@ -158,7 +157,7 @@
 	color = "#D4AF37"
 	taste_description = "animal fat and sweetness"
 	scent_description = "rendered tallow"
-	metabolization_rate = REAGENTS_METABOLISM * 0.75
+	metabolization_rate = REAGENTS_DOMA_METABOLISM
 
 /datum/reagent/medicine/ichor_of_mending/on_mob_life(mob/living/carbon/M, efficiency)
 	if(volume > 0.99)
@@ -178,7 +177,7 @@
 	color = "#555555"
 	taste_description = "ash and oil"
 	scent_description = "cooling embers"
-	metabolization_rate = REAGENTS_METABOLISM
+	metabolization_rate = REAGENTS_DOMA_METABOLISM
 
 /datum/reagent/medicine/ashbinders_salve/on_mob_life(mob/living/carbon/M, efficiency)
 	if(volume > 0.99)
@@ -205,7 +204,7 @@
 	color = "#4CAF50"
 	taste_description = "bitter roots"
 	scent_description = "deep earth and mineral water"
-	metabolization_rate = REAGENTS_METABOLISM
+	metabolization_rate = REAGENTS_SLOW_METABOLISM
 	boiling_point = T0C + 130
 
 /datum/reagent/medicine/vitalroot_draught/on_mob_metabolize(mob/living/L)
@@ -300,7 +299,7 @@
 	color = "#F5F5F0"
 	taste_description = "mineral and chalk"
 	scent_description = "clean sterility"
-	metabolization_rate = REAGENTS_METABOLISM * 0.75
+	metabolization_rate = REAGENTS_SLOW_METABOLISM
 	boiling_point = T0C + 150
 	dead_life = TRUE
 
@@ -317,6 +316,11 @@
 /datum/reagent/medicine/pale_serum/on_mob_life(mob/living/carbon/M, efficiency)
 	if(volume > 0.99)
 		M.adjustOrganLoss(ORGAN_SLOT_BRAIN, -3 * REM * efficiency, 150)
+		M.adjustOrganLoss(ORGAN_SLOT_HEART, -3 * REM * efficiency, 150)
+		M.adjustOrganLoss(ORGAN_SLOT_SPLEEN, -3 * REM * efficiency, 150)
+		M.adjustOrganLoss(ORGAN_SLOT_LIVER, -3 * REM * efficiency, 150)
+		M.adjustOrganLoss(ORGAN_SLOT_STOMACH, -3 * REM * efficiency, 150)
+		M.adjustOrganLoss(ORGAN_SLOT_TONGUE, -3 * REM * efficiency, 150)
 		M.adjustOrganLoss(ORGAN_SLOT_EYES, -2 * REM * efficiency, 150)
 		M.adjustCloneLoss(-1 * REM * efficiency, 0)
 	. = ..()
@@ -328,7 +332,7 @@
 	color = "#8FBC8F"
 	taste_description = "bark and sap"
 	scent_description = "ancient forest"
-	metabolization_rate = REAGENTS_METABOLISM * 2
+	metabolization_rate = REAGENTS_DOMA_METABOLISM
 
 /datum/reagent/medicine/spiritwood_elixir/on_mob_metabolize(mob/living/L)
 	. = ..()
@@ -346,6 +350,7 @@
 
 /datum/reagent/medicine/spiritwood_elixir/on_mob_life(mob/living/carbon/M, efficiency)
 	if(volume > 0.99)
+		M.adjust_blood_volume(5*REM*efficiency, maximum = BLOOD_VOLUME_NORMAL)
 		M.adjustBruteLoss(-2.5 * REM * efficiency, 0)
 		M.adjustFireLoss(-2.5 * REM * efficiency, 0)
 		M.heal_wounds(5 * efficiency)
@@ -358,7 +363,7 @@
 	color = "#FFFACD"
 	taste_description = "rich fat and meat"
 	scent_description = "bone broth"
-	metabolization_rate = REAGENTS_METABOLISM * 0.5
+	metabolization_rate = REAGENTS_DOMA_METABOLISM
 
 /datum/reagent/medicine/marrowbrew/on_mob_metabolize(mob/living/L)
 	. = ..()
@@ -372,10 +377,10 @@
 
 /datum/reagent/medicine/marrowbrew/on_mob_life(mob/living/carbon/M, efficiency)
 	if(volume > 0.99)
-		M.adjustBruteLoss(-0.75 * REM * efficiency, 0)
-		M.adjustFireLoss(-0.75 * REM * efficiency, 0)
-		M.adjustToxLoss(-0.5 * efficiency, 0)
-		M.adjustOxyLoss(-0.5 * efficiency, 0)
+		M.adjustBruteLoss(-1 * REM * efficiency, 0)
+		M.adjustFireLoss(-1 * REM * efficiency, 0)
+		M.adjustToxLoss(-1 * efficiency, 0)
+		M.adjustOxyLoss(-1 * efficiency, 0)
 	. = ..()
 
 /datum/reagent/medicine/mindclear_tonic
@@ -385,7 +390,7 @@
 	color = "#00CED1"
 	taste_description = "cold mint and ozone"
 	scent_description = "crisp water and crystal"
-	metabolization_rate = REAGENTS_METABOLISM * 1.5
+	metabolization_rate = REAGENTS_METABOLISM
 
 /datum/reagent/medicine/mindclear_tonic/on_mob_metabolize(mob/living/L)
 	. = ..()
@@ -434,7 +439,7 @@
 	color = "#FF4500"
 	taste_description = "scorching pepper and oil"
 	scent_description = "burning spice"
-	metabolization_rate = REAGENTS_METABOLISM
+	metabolization_rate = REAGENTS_SLOW_METABOLISM
 
 /datum/reagent/medicine/fever_oil/on_mob_metabolize(mob/living/L)
 	. = ..()
@@ -522,7 +527,7 @@
 	color = "#8B0000"
 	taste_description = "dark berries and iron"
 	scent_description = "fermented fruit and copper"
-	metabolization_rate = REAGENTS_METABOLISM
+	metabolization_rate = REAGENTS_DOMA_METABOLISM
 
 /datum/reagent/medicine/bloodelder_wine/on_mob_metabolize(mob/living/L)
 	. = ..()
@@ -537,6 +542,7 @@
 /datum/reagent/medicine/bloodelder_wine/on_mob_life(mob/living/carbon/M, efficiency)
 	if(prob(20))
 		M.adjust_dizzy(3 SECONDS * efficiency)
+	M.adjust_blood_volume(20*REM*efficiency, maximum = BLOOD_VOLUME_NORMAL)
 	M.adjustOrganLoss(ORGAN_SLOT_HEART, -2 * efficiency)
 	. = ..()
 
@@ -547,7 +553,7 @@
 	color = "#B0E0E6"
 	taste_description = "still water and static"
 	scent_description = "ionized air"
-	metabolization_rate = REAGENTS_METABOLISM * 2
+	metabolization_rate = REAGENTS_SLOW_METABOLISM
 
 /datum/reagent/medicine/crystalline_lymph/on_mob_metabolize(mob/living/L)
 	. = ..()

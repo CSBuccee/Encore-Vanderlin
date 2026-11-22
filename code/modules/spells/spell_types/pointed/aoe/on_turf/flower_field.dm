@@ -393,7 +393,7 @@
 
 	if (tick_counter % 15 == 5)
 		if (!HAS_TRAIT(L, TRAIT_NOSTAMINA) && prob(30))
-			L.adjust_stamina(-1, internal_regen = FALSE)
+			L.adjust_stamina(1)
 			to_chat(L, span_notice("You feel drained..."))
 
 	if (tick_counter % 15 == 10 && !L.has_status_effect(/datum/status_effect/incapacitating/sleeping))

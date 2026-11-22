@@ -421,9 +421,9 @@
 	desc = "A old reminder. Chainbreakers company wears these to remind themselves what they fight for, and to proudly announce their fight to those that behold them."
 	icon_state = "chainbreaker_collar"
 
-/obj/item/clothing/neck/gorget/kazengun
-	name = "blackmeadow gorget"
-	desc = "A series of interlocking rings of metal set around the throat. Used by the kouken of Blackmeadow for precisely the same reason as the knights of Psydonia."
+/obj/item/clothing/neck/gorget/cudese
+	name = "cudese gorget"
+	desc = "A protective neck guard worn by Cudese warriors."
 	icon_state = "kazengunneckguard"
 
 /obj/item/clothing/neck/gorget/explosive

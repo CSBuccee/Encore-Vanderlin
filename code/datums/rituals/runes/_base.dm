@@ -150,7 +150,7 @@
 			continue
 		if(!invoker.can_speak() || invoker.stat != CONSCIOUS)
 			continue
-		if(GET_MOB_SKILL_VALUE(invoker, magictype) > SKILL_LEVEL_NONE)
+		if(GET_MOB_SKILL_VALUE(invoker, magictype) >= SKILL_LEVEL_NOVICE)
 			invokers += invoker
 	return invokers
 

@@ -1,0 +1,5 @@
+author: "crimsonFig"
+delete-after: True
+changes:
+  - rscadd: "re-added erdl basic healing miracle"
+  - balance: "reduced cooldown of greater healing miracle from 20 seconds to 12 seconds"

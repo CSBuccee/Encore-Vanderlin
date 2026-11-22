@@ -33,7 +33,7 @@
 	attribute_sheet = /datum/attribute_holder/sheet/job/hollowranger
 
 	traits = list(
-		TRAIT_BESTIALSENSE, // Gani influence in nature blesses them with the Eyes of the Zad
+		TRAIT_BESTIALSENSE, // Gani influence in nature blesses them with the Eyes of the Crow
 	)
 
 /datum/job/advclass/combat/hollowranger/after_spawn(mob/living/carbon/human/spawned, client/player_client)

@@ -72,6 +72,13 @@
 	smeltresult = /obj/item/ingot/steel_slag
 	weapon_special = /datum/special_intent/triple_stab
 
+/obj/item/weapon/sword/short/katana
+	desc = "A Cudese steel sword of shortened design and a reduced grip for single hand use."
+	icon_state = "eastshortsword"
+	wdefense = GOOD_PARRY
+	sellprice = 30
+	item_weight = 700 GRAMS
+
 /obj/item/weapon/sword/short/iron
 	desc = "An iron sword of shortened design and a reduced grip for single hand use."
 	icon_state = "iswordshort"
@@ -988,7 +995,7 @@
 
 /obj/item/weapon/sword/long/rider
 	icon_state = "tabi"
-	name = "kilij scimitar"
+	name = "qadirid scimitar"
 	desc = "A curved blade of Qadirid origin meaning 'curved one'. The standard sword that saw the conquest of the Qadirid continent and peoples."
 	possible_item_intents = list(SWORD_CUT, SWORD_STRIKE)
 	gripped_intents = list(SWORD_CUT, SWORD_STRIKE, SWDLONG_CHOP)
@@ -1695,8 +1702,8 @@
 
 //A weapon meant to be used with two hands.
 /obj/item/weapon/sword/katana
-	name = "katana"
-	desc = "A foreign sword."
+	name = "cudese katana"
+	desc = "A style of sword popular amongst nobility in Cudao, decorated with a red tassel."
 	icon_state = "eastsword1"
 	force_wielded = DAMAGE_SWORD_WIELD + 3
 	wdefense = GOOD_PARRY
@@ -1717,13 +1724,13 @@
 	icon_state = "eastsword1"
 
 /obj/item/weapon/sword/katana/mulyeog/rumahench
-	name = "hwang blade"
-	desc = "A foreign steel sword with cloud patterns on the groove."
+	name = "cudese cloud katana"
+	desc = "A Cudese sword with cloud patterns on the groove."
 	icon_state = "eastsword2"
 
 /obj/item/weapon/sword/katana/mulyeog/rumacaptain
-	name = "samjeongdo"
-	desc = "A gold-stained with cloud patterns on the groove. One of a kind."
+	name = "cudese gold katana"
+	desc = "A gold-stained Cudese sword with cloud patterns on the groove."
 	icon_state = "eastsword3"
 	force = DAMAGE_SWORD + 3
 	wdefense = GREAT_PARRY

@@ -4,7 +4,7 @@
 	typepath = /datum/round_event/hertannea_torture
 	weight = 7
 	earliest_start = 10 MINUTES
-	max_occurrences = 1
+	max_occurrences = 0 // TODO: this is bugged, technically. the associated objective is for one envy but this event is hertannea
 	min_players = HIGHPOP_THRESHOLD
 
 	tags = list(

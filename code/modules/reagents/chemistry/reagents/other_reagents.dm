@@ -324,7 +324,7 @@
 	taste_description = "the bog"
 
 /datum/reagent/caveweep
-	name = "Psydonian Tears"
+	name = "Angrosian Tears"
 	description = "Tears from a caveweep. It has its uses in modern alchemy."
 	taste_description = "everything"
 	color = "#334274"

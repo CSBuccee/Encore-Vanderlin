@@ -1,0 +1,15 @@
+author: "Minomato"
+delete-after: True
+changes:
+  - rscadd: "Sledgehammer intents: defined new maul weapon intents for STRIKE, SMASH & HVY variants that are slower and more costly than mace equivalents. One-handed Maul SMASH intent currently not applied to weapons to encourage 2H use."
+  - balance: " #define DAMAGE_HAMMER from 10 to 15"
+  - balance: " #define DAMAGE_HAMMER_WIELD from 15 to 25"
+  - balance: "Hammer baseline is now average parry (2) instead of good parry (3)."
+  - balance: "Ground Slam special has been proliferated to sledgehammers."
+  - balance: "Iron Sledgehammer now deals DAMAGE_HAMMER + 4 (19, up from 10) & DAMAGE_HAMMER_WIELD +4 (29, up from 20), wbalance = VERY_EASY_TO_DODGE (down from EASY TO DODGE), uses AVERAGE_PARRY (2, down from 4), weighs 8.4kg (up from 7.4kg)"
+  - balance: "Steel Sledgehammer now deals DAMAGE_HAMMER + 5 (20, up from 15) & DAMAGE_HAMMER_WIELD +5 (30, up from 25), on par with Forgefiend (Goler Kanh Sledgehammer). Both variants use EASY_TO_DODGE and GOOD_PARRY to reflect their more war-purposed nature."
+  - balance: "Steel Sledgehammer weighs 6kg (down from 8.4kg)"
+  - balance: "Forgefiend now weighs 8kg (down from 8.4kg)"
+  - balance: "UPDATE 10/23: slowdown removed from sledgehammers"
+  - balance: "UPDATE 10/23: Goler Kanh sledgehammer variant durability up from INTEGRITY_STRONGEST x 1.2 (600) to x 1.4 (700) to be slightly better than a masterwork steel sledgehammer."
+  - bugfix: "adjusted hammer toolspeeds to better match tool quality and practicality."

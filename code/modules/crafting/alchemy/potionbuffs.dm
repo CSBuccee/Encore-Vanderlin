@@ -7,7 +7,6 @@
 
 /datum/status_effect/buff/alch/strengthpot/weak
 	effectedstats = list(STAT_STRENGTH = 1)
-	duration = 5 MINUTES
 
 /datum/status_effect/buff/alch/strengthpot
 	id = "Strength Potion"
@@ -23,7 +22,6 @@
 
 /datum/status_effect/buff/alch/perceptionpot/weak
 	effectedstats = list(STAT_PERCEPTION = 1)
-	duration = 5 MINUTES
 
 /datum/status_effect/buff/alch/perceptionpot
 	id = "Perception Potion"
@@ -51,7 +49,6 @@
 
 /datum/status_effect/buff/alch/constitutionpot/weak
 	effectedstats = list(STAT_CONSTITUTION = 1)
-	duration = 5 MINUTES
 
 /datum/status_effect/buff/alch/constitutionpot
 	id = "Constitution Potion"
@@ -67,7 +64,6 @@
 
 /datum/status_effect/buff/alch/endurancepot/weak
 	effectedstats = list(STAT_ENDURANCE = 1)
-	duration = 5 MINUTES
 
 /datum/status_effect/buff/alch/endurancepot
 	id = "Endurance Potion"
@@ -88,7 +84,6 @@
 	id = "artemisia_luck"
 	alert_type = /atom/movable/screen/alert/status_effect/buff/alch/artemisia_luck
 	effectedstats = list(STAT_SPEED = 1, STAT_FORTUNE = 1)
-	duration = 5 MINUTES
 
 /datum/status_effect/buff/alch/speedpot
 	id = "Speed Potion"
