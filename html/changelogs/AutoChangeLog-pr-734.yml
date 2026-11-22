@@ -1,0 +1,4 @@
+author: "niennab"
+delete-after: True
+changes:
+  - rscadd: "Added new seagull and crow sprites."
