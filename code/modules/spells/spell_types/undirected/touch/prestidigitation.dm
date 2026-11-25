@@ -384,7 +384,7 @@
 /datum/presti_trick/warm
 	name = "Warm"
 	desc = "Gently warm the contents of a cup, bottle or pot. It will never get hotter than a warm bath."
-	radial_atom = /obj/item/reagent_containers/glass/cup
+	radial_icon_state = "create_campfire"
 	sort_order = 6
 	fatigue_mult = 0.5
 	/// Degrees added per use
@@ -413,8 +413,7 @@
 /datum/presti_trick/chill
 	name = "Chill"
 	desc = "Draw the warmth out of a cup, bottle or pot. It cannot cool anything already hot, nor freeze it."
-	radial_atom = /obj/item/reagent_containers/glass/cup
-	radial_color = "#9fd8ff"
+	radial_icon_state = "fridigitation"
 	sort_order = 7
 	fatigue_mult = 0.5
 	/// Degrees removed per use
@@ -509,8 +508,7 @@
 /datum/presti_trick/beckon
 	name = "Beckon"
 	desc = "Crook a finger to draw a tiny, loose object within reach into your free hand. It won't move coins, nor anything held, worn or stored."
-	radial_atom = /obj/item/flint
-	radial_color = "#a0f0c0"
+	radial_icon_state = "fetch"
 	sort_order = 9
 	fatigue_mult = 0.5
 	extra_fatigue = 3
@@ -554,18 +552,13 @@
 /datum/presti_trick/whisper
 	name = "Whisper"
 	desc = "Touch the air toward someone within reach and send them a few words only they can hear."
+	radial_icon_state = "message"
 	sort_order = 10
 	fatigue_mult = 0 // social, gives no experience
 	extra_fatigue = 3
 	var/max_length = 120
 	var/cooldown = 10 SECONDS
 	COOLDOWN_DECLARE(whisper_cd)
-
-/datum/presti_trick/whisper/get_radial_image()
-	if(!radial_image)
-		radial_image = image(icon = 'icons/mob/actions/roguespells.dmi', icon_state = "prestidigitation")
-		radial_image.color = "#c8c8ff"
-	return radial_image
 
 /datum/presti_trick/whisper/perform(datum/action/cooldown/spell/undirected/touch/prestidigitation/spell, mob/living/caster, atom/target)
 	if(!isliving(target) || target == caster)
@@ -671,7 +664,7 @@
 /datum/presti_trick/color_spray
 	name = "Color Spray"
 	desc = "Release a harmless spray of coloured light over anything within reach, or over yourself. Choose the colour when you prepare this trick."
-	radial_color = "#e98bd8"
+	radial_icon_state = "shieldsparkles"
 	sort_order = 12
 	fatigue_mult = 0 // cosmetic, gives no experience
 	extra_fatigue = 3
@@ -719,7 +712,7 @@
 /datum/presti_trick/fireworks
 	name = "Fireworks"
 	desc = "Toss a pinch of arcyne power into the air, where it bursts into a crackling shower of light."
-	radial_color = "#ffe066"
+	radial_icon_state = "force_dart"
 	sort_order = 13
 	fatigue_mult = 0 // cosmetic, gives no experience
 	extra_fatigue = 8
