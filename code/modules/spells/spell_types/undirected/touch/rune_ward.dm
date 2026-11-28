@@ -65,7 +65,32 @@
 			return draw_rune(hand, victim, caster)
 		if(/datum/intent/hand/clean)
 			return scrub_rune(hand, victim, caster)
+		if(/datum/intent/use)
+			return toggle_ally(victim, caster)
 	return FALSE
+
+/// Memorizes or forgets a person so they will not trigger runes drawn with this spell.
+/datum/action/cooldown/spell/undirected/touch/rune_ward/proc/toggle_ally(atom/victim, mob/living/carbon/caster)
+	if(!ishuman(victim) || victim == caster)
+		to_chat(caster, span_warning("I can only attune my wards to another person."))
+		return FALSE
+
+	var/mob/living/carbon/human/target = victim
+	var/target_name = target.real_name
+	if(!target_name)
+		return FALSE
+
+	if(target_name in allowed_names)
+		allowed_names -= target_name
+		to_chat(caster, span_notice("I let [target_name]'s essence slip from my memory. My wards will no longer spare them."))
+	else
+		allowed_names += target_name
+		to_chat(caster, span_notice("I commit [target_name]'s essence to memory. My wards will let them pass."))
+	return FALSE
+
+/// Returns TRUE if the given mob has been memorized as an ally by this spell.
+/datum/action/cooldown/spell/undirected/touch/rune_ward/proc/is_ally(mob/living/target)
+	return target?.real_name && (target.real_name in allowed_names)
 
 /datum/action/cooldown/spell/undirected/touch/rune_ward/proc/draw_rune(obj/item/melee/touch_attack/hand, atom/victim, mob/living/carbon/caster)
 	var/turf/target_turf = get_turf(victim)
@@ -138,8 +163,9 @@
 	return FALSE
 
 /datum/action/cooldown/spell/undirected/touch/rune_ward/proc/scrub_rune(obj/item/melee/touch_attack/hand, atom/victim, mob/living/carbon/caster)
-	var/obj/structure/trap/target_trap
-	if(istype(victim, /obj/structure/trap))
+	// Either an /obj/structure/trap or an /obj/structure/rune_ward - they share no common parent beyond /obj/structure.
+	var/obj/structure/target_trap
+	if(istype(victim, /obj/structure/trap) || istype(victim, /obj/structure/rune_ward))
 		target_trap = victim
 	else
 		var/turf/T = get_turf(victim)
@@ -166,8 +192,8 @@
 
 	if(!do_after(caster, scrub_time, target = target_trap))
 		to_chat(caster, span_warning("My concentration breaks!"))
-		if(!skilled && (target_trap.charges > 0))
-			target_trap.trigger_step_on(caster)
+		if(!skilled && !QDELETED(target_trap))
+			backfire_scrub(target_trap, caster)
 		return FALSE
 
 	if(QDELETED(target_trap))
@@ -180,6 +206,33 @@
 
 	qdel(target_trap)
 	return FALSE
+
+/// Called when an unskilled scrub is interrupted - the ward or trap goes off on the scrubber.
+/datum/action/cooldown/spell/undirected/touch/rune_ward/proc/backfire_scrub(obj/structure/target, mob/living/carbon/caster)
+	if(istype(target, /obj/structure/rune_ward))
+		var/obj/structure/rune_ward/rune = target
+		// A caster fumbling their own rune is spared, same as walking over it.
+		if(rune.owner_ref?.resolve() == caster)
+			return
+		log_combat(caster, rune, "triggered [rune.name] placed by [rune.owner_name] ([rune.owner_ckey]) while scrubbing at [AREACOORD(rune)]")
+		rune.rune_effect(caster)
+		rune.trigger_visual()
+		qdel(rune)
+		return
+
+	if(istype(target, /obj/structure/trap))
+		var/obj/structure/trap/trap = target
+		if(trap.charges > 0)
+			trap.trigger_step_on(caster)
+
+/// Runes drawn via Rune Ward let the caster's memorized allies pass.
+/// Battle Ward runes have no spell_ref, so they are unaffected and still hit everyone but the caster.
+/// Note: relies on this file being included after battle_ward.dm so ..() reaches the base Crossed().
+/obj/structure/rune_ward/Crossed(atom/movable/AM)
+	var/datum/action/cooldown/spell/undirected/touch/rune_ward/ward_spell = spell_ref?.resolve()
+	if(istype(ward_spell) && isliving(AM) && ward_spell.is_ally(AM))
+		return
+	return ..()
 
 /obj/item/melee/touch_attack/rune_ward
 	name = "\improper inscribing hand"
